@@ -4,7 +4,13 @@
  * Remplaçable par une API / base de données plus tard.
  */
 
-export const SITE_CONTENT_STORAGE_KEY = "peleai-site-content-v10"
+export const SITE_CONTENT_STORAGE_KEY = "peleai-site-content-v12"
+
+/** Logos partenaires servis en local (fiable vs hotlink + localStorage). */
+export const TRUSTED_PARTNER_LOGOS: Record<string, string> = {
+  MenuPro: "/realisations/logos/menupro-official.png",
+  "Grand Bazar": "/realisations/logos/grand-bazar-official.png",
+}
 
 export type SocialPlatform =
   | "linkedin"
@@ -51,13 +57,13 @@ export interface PartnerEntry {
 
 /** Logos par défaut pour les noms connus (rétrocompatibilité ancien format string[]). */
 export const KNOWN_PARTNER_LOGOS: Record<string, string> = {
-  MenuPro: "/realisations/logos/menupro-logo.png",
+  MenuPro: TRUSTED_PARTNER_LOGOS.MenuPro,
   "BOUA GROUP":
     "https://bouagroup.com/_next/image?url=%2Fimages%2Flogo.jpg&w=256&q=75",
   "Charm's":
     "https://charms-ci.com/storage/settings/xWFzbkU9zvi7tuyNZU0tKhINyP1EIfk15TpcEY2m.jpg",
-  "Grand Bazar": "/realisations/grandbazar.svg",
-  "Khara Consulting": "/realisations/showcase/khara-consulting-logo.png",
+  "Grand Bazar": TRUSTED_PARTNER_LOGOS["Grand Bazar"],
+  "Khara Consulting": "/realisations/khara.svg",
 }
 
 export interface SiteContent {
@@ -148,7 +154,7 @@ export const defaultSiteContent: SiteContent = {
   partners: [
     {
       name: "MenuPro",
-      logo: "/realisations/logos/menupro-logo.png",
+      logo: TRUSTED_PARTNER_LOGOS.MenuPro,
     },
     {
       name: "BOUA GROUP",
@@ -161,7 +167,7 @@ export const defaultSiteContent: SiteContent = {
     },
     {
       name: "Grand Bazar",
-      logo: "/realisations/grandbazar.svg",
+      logo: TRUSTED_PARTNER_LOGOS["Grand Bazar"],
     },
   ],
   partnersSectionTitle: "Ils nous font confiance",
@@ -224,7 +230,7 @@ export const defaultSiteContent: SiteContent = {
         description:
           "Plateforme de commande en ligne pour restaurants : menu digital, Mobile Money, QR par table — menupro.ci.",
         link: "https://menupro.ci/",
-        image: "/realisations/showcase/menupro-promo-scan-qr.png",
+        image: TRUSTED_PARTNER_LOGOS.MenuPro,
       },
       {
         id: "p2",
@@ -251,7 +257,7 @@ export const defaultSiteContent: SiteContent = {
         category: "E-commerce",
         description: "Marketplace / e-commerce — legrandbazar.ci.",
         link: "https://legrandbazar.ci/",
-        image: "/realisations/showcase/grand-bazar-promo.png",
+        image: TRUSTED_PARTNER_LOGOS["Grand Bazar"],
       },
       {
         id: "p5",
@@ -296,7 +302,7 @@ export const defaultSiteContent: SiteContent = {
         description:
           "Réalisation du site internet pour Khara Consulting (cabinet de conseil) : présentation de l’offre, identité en ligne et prise de contact — visuel : extrait de la charte (logo KC).",
         link: "https://kharaconsulting.com/",
-        image: "/realisations/showcase/khara-consulting-logo.png",
+        image: "/realisations/khara.svg",
       },
     ],
   },
@@ -360,10 +366,14 @@ export function normalizePartners(raw: unknown): PartnerEntry[] {
       return { name, logo }
     })
   }
-  if (out.some((p) => LEGACY_DEMO_PARTNER_NAMES.has(p.name))) {
+  const withTrustedLogos = out.map((p) => {
+    const trusted = TRUSTED_PARTNER_LOGOS[p.name]
+    return trusted ? { ...p, logo: trusted } : p
+  })
+  if (withTrustedLogos.some((p) => LEGACY_DEMO_PARTNER_NAMES.has(p.name))) {
     return defaultPartnersClone()
   }
-  return out
+  return withTrustedLogos
 }
 
 function normalizePortfolioProjects(projects: PortfolioProject[]): PortfolioProject[] {

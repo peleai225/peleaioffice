@@ -118,20 +118,8 @@ const plans = [
 
 const communicationGallery: { src: string; alt: string }[] = [
   {
-    src: '/realisations/showcase/menupro-promo-scan-qr.png',
-    alt: 'MenuPro — QR code, commande et paiement en 30 secondes',
-  },
-  {
-    src: '/realisations/showcase/menupro-promo-encaissez-momo.png',
-    alt: 'MenuPro — encaissement Mobile Money (Wave, MTN, Orange, Moov)',
-  },
-  {
-    src: '/realisations/showcase/menupro-promo-brunch.png',
-    alt: 'MenuPro — réservations et commandes brunch',
-  },
-  {
-    src: '/realisations/showcase/menupro-promo-menu-digitale.png',
-    alt: 'MenuPro — menu digital interactif et panier',
+    src: '/realisations/logos/menupro-official.png',
+    alt: 'MenuPro — identité visuelle officielle (menupro.ci)',
   },
 ]
 

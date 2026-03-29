@@ -39,7 +39,7 @@ const projects: Project[] = [
     tags: ["SaaS", "Restauration", "Mobile Money", "WhatsApp"],
     url: "https://menupro.ci/",
     isExternal: true,
-    image: "/realisations/showcase/menupro-promo-scan-qr.png",
+    image: "/realisations/logos/menupro-official.png",
   },
   {
     title: "BOUA GROUP",
@@ -71,7 +71,7 @@ const projects: Project[] = [
     tags: ["Marketplace", "E-commerce", "Afrique"],
     url: "https://legrandbazar.ci/",
     isExternal: true,
-    image: "/realisations/showcase/grand-bazar-promo.png",
+    image: "/realisations/logos/grand-bazar-official.png",
   },
   {
     title: "Master Class IA & Codage",

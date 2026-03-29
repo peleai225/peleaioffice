@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { cn } from "@/lib/utils"
+import { TRUSTED_PARTNER_LOGOS } from "@/lib/site-content"
 import { useSiteContent } from "@/components/providers/site-content-provider"
 
 export function TrustedBy() {
@@ -35,6 +36,13 @@ export function TrustedBy() {
                     src={client.logo}
                     alt={client.name}
                     className="max-h-10 w-auto max-w-[180px] object-contain object-center"
+                    onError={(e) => {
+                      const fallback = TRUSTED_PARTNER_LOGOS[client.name]
+                      if (!fallback) return
+                      const img = e.currentTarget
+                      if (img.src.endsWith(fallback)) return
+                      img.src = fallback
+                    }}
                   />
                 ) : (
                   <span className="text-sm font-semibold text-muted-foreground whitespace-nowrap text-center">
