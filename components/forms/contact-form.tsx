@@ -103,7 +103,7 @@ export function ContactForm() {
         <h3 className="text-lg font-semibold text-green-800 mb-2">WhatsApp ouvert</h3>
         <p className="text-sm text-green-700">
           Votre message a été préparé dans WhatsApp. Vérifiez le texte puis appuyez sur
-          « Envoyer » dans l’application pour nous le transmettre.
+          « Envoyer » dans l'application pour nous le transmettre.
         </p>
         <Button
           variant="outline"
@@ -215,8 +215,8 @@ export function ContactForm() {
       </Button>
 
       <p className="text-xs text-center text-muted-foreground">
-        En soumettant ce formulaire, un message prérempli s’ouvre dans WhatsApp vers notre numéro.
-        Validez l’envoi dans l’application WhatsApp.
+        En soumettant ce formulaire, un message prérempli s'ouvre dans WhatsApp vers notre numéro.
+        Validez l'envoi dans l'application WhatsApp.
       </p>
     </form>
   )

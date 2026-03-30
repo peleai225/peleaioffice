@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
   /* African-inspired color palette — terracotta, gold, warm cream */
   --background: oklch(0.98 0.012 72);          /* warm cream */
   --foreground: oklch(0.16 0.03 35);           /* deep brown */

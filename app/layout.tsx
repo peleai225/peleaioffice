@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Geist_Mono } from 'next/font/google'
+// Google Fonts unavailable in this environment — using CSS font-family fallback
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Header } from '@/components/layout/header'
@@ -13,15 +13,7 @@ import { getSiteUrl } from '@/lib/site-url'
 const siteUrl = getSiteUrl()
 const defaultOgImage = '/images/peleai-logo-on-white.png'
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
-
-const geistMono = Geist_Mono({ 
-  subsets: ['latin'],
-  variable: '--font-geist-mono',
-})
+const fontVars = '--font-inter --font-geist-mono'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -103,7 +95,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${geistMono.variable}`}>
+    <html lang="fr">
       <body className="font-sans antialiased" suppressHydrationWarning>
         <OrganizationJsonLd />
         <SiteContentProvider>

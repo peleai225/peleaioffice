@@ -26,7 +26,7 @@ import { PortfolioMajorProjects } from '@/components/portfolio/portfolio-major-p
 export const metadata: Metadata = {
   title: 'Pelecho Junior Kone - Consultant & Fondateur PeleAI | Portfolio',
   description:
-    'Consultant en transformation numérique (MIRIGROUP), fondateur de PeleAI et MenuPro (2025). Masterclass IA & digital (organisation et formation), expert IA & metavers (UVCI, IUA). Côte d’Ivoire.',
+    "Consultant en transformation numérique (MIRIGROUP), fondateur de PeleAI et MenuPro (2025). Masterclass IA & digital (organisation et formation), expert IA & metavers (UVCI, IUA). Côte d'Ivoire.",
   alternates: { canonical: '/portfolio' },
   openGraph: { url: '/portfolio' },
 }
@@ -49,7 +49,7 @@ const experiences = [
     company: 'PeleAI',
     period: '2025 - Présent',
     description:
-      'Création de l’agence PeleAI et des produits SaaS pour accompagner la transformation digitale des entreprises.',
+      "Création de l'agence PeleAI et des produits SaaS pour accompagner la transformation digitale des entreprises.",
     achievements: [
       'Lancement de PeleAI et de MenuPro (2025)',
       'PeleAI360 : CRM, facturation et pilotage',
@@ -61,7 +61,7 @@ const experiences = [
     company: 'MIRIGROUP',
     period: '2023 - Présent',
     description:
-      'Accompagnement stratégique et opérationnel autour du digital et de l’innovation.',
+      "Accompagnement stratégique et opérationnel autour du digital et de l'innovation.",
     achievements: [
       'Conseil et suivi de missions de transformation numérique',
       'Alignement des initiatives avec les objectifs business',
@@ -75,15 +75,15 @@ const experiences = [
       'Chargé de la transformation digitale : outils, processus et accompagnement des équipes.',
     achievements: [
       'Mise en œuvre des solutions et processus digitaux',
-      'Accompagnement au changement et à l’adoption des outils',
+      "Accompagnement au changement et à l'adoption des outils",
     ],
   },
   {
     title: 'Concepteur metavers & assistant formateur IA pédagogique',
-    company: 'IUA (Institut Universitaire d’Abidjan)',
+    company: "IUA (Institut Universitaire d'Abidjan)",
     period: '2024 - Présent',
     description:
-      'Conception d’expériences immersives et accompagnement pédagogique autour de l’intelligence artificielle.',
+      "Conception d'expériences immersives et accompagnement pédagogique autour de l'intelligence artificielle.",
     achievements: [
       'Concepteur metavers',
       'Assistant formateur en IA pédagogique',
@@ -91,10 +91,10 @@ const experiences = [
   },
   {
     title: 'Développeur metavers, formateur & plateformes virtuelles',
-    company: 'UVCI (Université Virtuelle de Côte d’Ivoire)',
+    company: "UVCI (Université Virtuelle de Côte d'Ivoire)",
     period: '2022 - Oct. 2024 · missions ponctuelles depuis',
     description:
-      'Développement de solutions dans le metavers et l’IA ; animation de formations et d’événements en ligne.',
+      "Développement de solutions dans le metavers et l'IA ; animation de formations et d'événements en ligne.",
     achievements: [
       'Développeur metavers & solutions innovantes (IA / immersif)',
       'Formateur metavers (juillet 2024)',
@@ -109,7 +109,7 @@ const experiences = [
       'Transmission des bonnes pratiques et des outils numériques au sein de la communauté.',
     achievements: [
       'Formation des membres aux outils digitaux',
-      'Accompagnement et sensibilisation à l’innovation',
+      "Accompagnement et sensibilisation à l'innovation",
     ],
   },
   {
@@ -123,15 +123,15 @@ const experiences = [
     title: 'Développeur de plateforme e-commerce',
     company: 'Junior',
     period: '2022 - 2023',
-    description: 'Conception et mise en production d’une plateforme e-commerce.',
+    description: "Conception et mise en production d'une plateforme e-commerce.",
     achievements: ['Développement et déploiement réussi de la plateforme'],
   },
   {
     title: 'Développeur de plateforme multiservice',
     company: 'CVD',
     period: '2021 - 2022',
-    description: 'Conception et développement d’une plateforme multiservice.',
-    achievements: ['Mise en place d’une solution multiservice pour la CVD'],
+    description: "Conception et développement d'une plateforme multiservice.",
+    achievements: ["Mise en place d'une solution multiservice pour la CVD"],
   },
 ]
 
@@ -145,7 +145,7 @@ const values = [
     icon: Rocket,
     title: 'Innovation',
     description:
-      'Explorer le metavers, l’IA et les outils numériques pour des solutions concrètes.',
+      "Explorer le metavers, l'IA et les outils numériques pour des solutions concrètes.",
   },
   {
     icon: Brain,
@@ -211,24 +211,24 @@ export default function PortfolioPage() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: ‘#FFFAF4’ }}>
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFAF4' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-0.5 w-8 rounded" style={{ backgroundColor: ‘#C1440E’ }}/>
-                <div className="h-3 w-3 rotate-45" style={{ backgroundColor: ‘#C1440E’ }}/>
+                <div className="h-0.5 w-8 rounded" style={{ backgroundColor: '#C1440E' }}/>
+                <div className="h-3 w-3 rotate-45" style={{ backgroundColor: '#C1440E' }}/>
               </div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: ‘#1a0a00’ }}>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#1a0a00' }}>
                 Compétences & expertise
               </h2>
-              <p className="mt-4 text-lg" style={{ color: ‘#6B4423’ }}>
+              <p className="mt-4 text-lg" style={{ color: '#6B4423' }}>
                 Domaines dans lesquels j&apos;interviens : de la stratégie à la production (web, IA,
                 metavers, marketing, médias).
               </p>
               {/* Kente strip decoration */}
               <div className="flex gap-px mt-6 w-48 h-2 overflow-hidden rounded">
-                {[‘#C1440E’,’#D4891A’,’#1B3A6B’,’#C1440E’,’#8B5A00’,’#D4891A’,’#C1440E’,’#D4891A’,’#1B3A6B’,’#8B5A00’,’#C1440E’,’#D4891A’].map(
+                {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E','#D4891A','#1B3A6B','#8B5A00','#C1440E','#D4891A'].map(
                   (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
                 )}
               </div>
@@ -236,13 +236,13 @@ export default function PortfolioPage() {
 
             <div className="space-y-5">
               {skills.map((skill, i) => {
-                const accent = i % 3 === 0 ? ‘#C1440E’ : i % 3 === 1 ? ‘#D4891A’ : ‘#1B3A6B’
+                const accent = i % 3 === 0 ? '#C1440E' : i % 3 === 1 ? '#D4891A' : '#1B3A6B'
                 return (
                   <div key={skill.name}>
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <skill.icon className="h-4 w-4 shrink-0" style={{ color: accent }} />
-                        <span className="font-medium text-sm" style={{ color: ‘#1a0a00’ }}>{skill.name}</span>
+                        <span className="font-medium text-sm" style={{ color: '#1a0a00' }}>{skill.name}</span>
                       </div>
                       <span className="text-sm font-semibold" style={{ color: accent }}>{skill.level}%</span>
                     </div>

@@ -163,7 +163,7 @@ export function DemoForm() {
       </Button>
 
       <p className="text-xs text-center text-muted-foreground">
-        Un message prérempli s’ouvre dans WhatsApp ; validez l’envoi dans l’application.
+        Un message prérempli s'ouvre dans WhatsApp ; validez l'envoi dans l'application.
       </p>
     </form>
   )
