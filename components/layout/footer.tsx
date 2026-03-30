@@ -30,7 +30,15 @@ export function Footer() {
   }))
 
   return (
-    <footer className="bg-black text-zinc-100">
+    <footer className="text-zinc-100" style={{ backgroundColor: '#0D1B2E' }}>
+      {/* African Kente-strip top border */}
+      <div className="flex w-full overflow-hidden h-1.5">
+        {['#C1440E', '#D4891A', '#C1440E', '#1B3A6B', '#D4891A', '#C1440E', '#8B5A00', '#D4891A', '#C1440E', '#1B3A6B', '#D4891A', '#C1440E', '#8B5A00', '#C1440E', '#D4891A', '#1B3A6B', '#C1440E', '#D4891A', '#C1440E', '#8B5A00'].map(
+          (color, i) => (
+            <div key={i} className="flex-1 h-full" style={{ backgroundColor: color }} />
+          )
+        )}
+      </div>
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid gap-8 lg:grid-cols-4">
           <div className="lg:col-span-1">
@@ -131,7 +139,15 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-8">
+        {/* Kente strip separator */}
+        <div className="mt-12 flex w-full overflow-hidden h-1 mb-0">
+          {['#C1440E', '#D4891A', '#1B3A6B', '#C1440E', '#D4891A', '#8B5A00', '#C1440E', '#D4891A', '#1B3A6B', '#C1440E', '#8B5A00', '#D4891A'].map(
+            (color, i) => (
+              <div key={i} className="flex-1 h-full" style={{ backgroundColor: color, opacity: 0.7 }} />
+            )
+          )}
+        </div>
+        <div className="pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-sm text-zinc-500">
               &copy; {new Date().getFullYear()} {content.brand.siteName}. Tous droits réservés.
