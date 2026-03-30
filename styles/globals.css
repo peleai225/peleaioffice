@@ -4,74 +4,81 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /* African-inspired color palette — terracotta, gold, warm cream */
+  --background: oklch(0.98 0.012 72);          /* warm cream */
+  --foreground: oklch(0.16 0.03 35);           /* deep brown */
+  --card: oklch(1 0.005 72);
+  --card-foreground: oklch(0.16 0.03 35);
+  --popover: oklch(1 0.005 72);
+  --popover-foreground: oklch(0.16 0.03 35);
+  --primary: oklch(0.52 0.185 32);             /* terracotta */
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.94 0.018 72);           /* light warm sand */
+  --secondary-foreground: oklch(0.2 0.03 35);
+  --muted: oklch(0.94 0.018 72);
+  --muted-foreground: oklch(0.52 0.04 40);
+  --accent: oklch(0.74 0.13 78);              /* gold */
+  --accent-foreground: oklch(0.16 0.03 35);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --border: oklch(0.86 0.025 65);
+  --input: oklch(0.86 0.025 65);
+  --ring: oklch(0.52 0.185 32);
+  --chart-1: oklch(0.52 0.185 32);             /* terracotta */
+  --chart-2: oklch(0.74 0.13 78);              /* gold */
+  --chart-3: oklch(0.35 0.08 260);             /* deep navy */
+  --chart-4: oklch(0.62 0.12 140);             /* forest green */
+  --chart-5: oklch(0.65 0.15 55);              /* amber */
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: oklch(0.94 0.018 72);
+  --sidebar-foreground: oklch(0.16 0.03 35);
+  --sidebar-primary: oklch(0.52 0.185 32);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.90 0.025 65);
+  --sidebar-accent-foreground: oklch(0.2 0.03 35);
+  --sidebar-border: oklch(0.86 0.025 65);
+  --sidebar-ring: oklch(0.52 0.185 32);
+  /* African theme extras */
+  --african-navy: oklch(0.18 0.06 255);        /* deep navy */
+  --african-terracotta: oklch(0.52 0.185 32);  /* terracotta */
+  --african-gold: oklch(0.74 0.13 78);         /* gold */
+  --african-sand: oklch(0.91 0.03 75);         /* warm sand */
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  /* Dark mode: deep African navy inspired by image 1 */
+  --background: oklch(0.16 0.055 255);         /* deep navy */
+  --foreground: oklch(0.96 0 0);
+  --card: oklch(0.20 0.055 255);               /* slightly lighter navy */
+  --card-foreground: oklch(0.96 0 0);
+  --popover: oklch(0.20 0.055 255);
+  --popover-foreground: oklch(0.96 0 0);
+  --primary: oklch(0.65 0.18 32);              /* lighter terracotta on dark */
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.24 0.055 255);
+  --secondary-foreground: oklch(0.96 0 0);
+  --muted: oklch(0.24 0.055 255);
+  --muted-foreground: oklch(0.68 0.03 255);
+  --accent: oklch(0.74 0.13 78);               /* gold stays vibrant */
+  --accent-foreground: oklch(0.16 0.03 35);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --border: oklch(0.28 0.055 255);
+  --input: oklch(0.28 0.055 255);
+  --ring: oklch(0.65 0.18 32);
+  --chart-1: oklch(0.65 0.18 32);
+  --chart-2: oklch(0.74 0.13 78);
+  --chart-3: oklch(0.62 0.12 140);
+  --chart-4: oklch(0.65 0.15 55);
+  --chart-5: oklch(0.56 0.15 290);
+  --sidebar: oklch(0.19 0.055 255);
+  --sidebar-foreground: oklch(0.96 0 0);
+  --sidebar-primary: oklch(0.65 0.18 32);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.24 0.055 255);
+  --sidebar-accent-foreground: oklch(0.96 0 0);
+  --sidebar-border: oklch(0.28 0.055 255);
+  --sidebar-ring: oklch(0.65 0.18 32);
 }
 
 @theme inline {
@@ -121,5 +128,16 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* ─── African design utilities ────────────────────────────────────────────── */
+@layer utilities {
+  .african-pattern-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cdefs%3E%3Cpattern id='p' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpolyline points='0,12 10,0 20,12 30,0 40,12 50,0 60,12 70,0 80,12' fill='none' stroke='currentColor' stroke-width='1.4'/%3E%3Cpolyline points='0,28 10,16 20,28 30,16 40,28 50,16 60,28 70,16 80,28' fill='none' stroke='currentColor' stroke-width='1.4'/%3E%3Cline x1='0' y1='36' x2='80' y2='36' stroke='currentColor' stroke-width='0.6'/%3E%3Cpolygon points='40,40 52,52 40,64 28,52' fill='none' stroke='currentColor' stroke-width='1.2'/%3E%3Ccircle cx='40' cy='52' r='3' fill='currentColor' opacity='0.5'/%3E%3Cline x1='0' y1='72' x2='80' y2='72' stroke='currentColor' stroke-width='0.6'/%3E%3Ccircle cx='10' cy='77' r='1.8' fill='currentColor'/%3E%3Ccircle cx='30' cy='77' r='1.8' fill='currentColor'/%3E%3Ccircle cx='50' cy='77' r='1.8' fill='currentColor'/%3E%3Ccircle cx='70' cy='77' r='1.8' fill='currentColor'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='80' height='80' fill='url(%23p)'/%3E%3C/svg%3E");
+  }
+
+  .african-tribal-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cdefs%3E%3Cpattern id='t' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M10 10 Q25 0 40 10 Q55 20 70 10 Q85 0 95 10' fill='none' stroke='currentColor' stroke-width='1.5'/%3E%3Cpath d='M0 30 Q15 20 30 30 Q45 40 60 30 Q75 20 90 30' fill='none' stroke='currentColor' stroke-width='1.5'/%3E%3Crect x='15' y='40' width='12' height='12' rx='2' fill='none' stroke='currentColor' stroke-width='1.2' transform='rotate(45 21 46)'/%3E%3Crect x='65' y='40' width='12' height='12' rx='2' fill='none' stroke='currentColor' stroke-width='1.2' transform='rotate(45 71 46)'/%3E%3Cpath d='M10 65 Q20 55 30 65 Q40 75 50 65 Q60 55 70 65 Q80 75 90 65' fill='none' stroke='currentColor' stroke-width='1.5'/%3E%3Ccircle cx='50' cy='85' r='5' fill='none' stroke='currentColor' stroke-width='1.2'/%3E%3Ccircle cx='50' cy='85' r='2' fill='currentColor'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23t)'/%3E%3C/svg%3E");
   }
 }
