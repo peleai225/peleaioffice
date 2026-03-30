@@ -45,9 +45,9 @@ export function Footer() {
             <Image
               src={content.brand.logoOnBlueBg || "/images/peleai-logo-on-blue.png"}
               alt={`${content.brand.siteName} Logo`}
-              width={200}
-              height={56}
-              className="h-10 w-auto max-w-[220px] object-contain object-left"
+              width={280}
+              height={80}
+              className="h-16 w-auto max-w-[280px] object-contain object-left"
               unoptimized
             />
             <p className="mt-4 text-sm text-zinc-400 leading-relaxed">

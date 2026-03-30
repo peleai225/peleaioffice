@@ -26,10 +26,15 @@ import { ProcessSteps } from '@/components/sections/process-steps'
 import { CTASection } from '@/components/sections/cta-section'
 
 export const metadata: Metadata = {
-  title: 'Nos Services',
-  description: 'Découvrez nos services de création web, marketing digital, branding et solutions IA pour transformer votre entreprise.',
+  title: 'Nos Services — Web, Marketing, Branding & IA',
+  description: 'Création de sites web, marketing digital, branding et solutions IA à Abidjan. PeleAI accompagne les PME et startups africaines dans leur transformation digitale. Résultats mesurables.',
+  keywords: ['création site web Abidjan', 'marketing digital Côte d\'Ivoire', 'branding Afrique', 'solutions IA PME', 'agence digitale Abidjan'],
   alternates: { canonical: '/services' },
-  openGraph: { url: '/services' },
+  openGraph: {
+    url: '/services',
+    title: 'Services PeleAI — Web, Marketing, Branding & IA | Abidjan',
+    description: 'Création web, marketing digital, branding et IA pour PME africaines à Abidjan.',
+  },
 }
 
 const services = [
@@ -107,99 +112,174 @@ const services = [
   },
 ]
 
+/* ─── African service accent colors ─────────────────────────────────────── */
+const SERVICE_ACCENTS = ['#C1440E', '#D4891A', '#1B3A6B', '#8B5A00']
+
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-gradient-to-b from-secondary/50 to-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Hero — dark navy + African pattern (cohérent avec homepage) */}
+      <section
+        className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-20"
+        style={{ backgroundColor: '#0D1B2E' }}
+      >
+        {/* Kente strip top */}
+        <div className="absolute top-0 left-0 right-0 flex overflow-hidden h-1">
+          {['#C1440E','#D4891A','#1B3A6B','#C1440E','#D4891A','#8B5A00','#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E','#D4891A','#C1440E','#8B5A00'].map(
+            (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
+          )}
+        </div>
+        {/* Geometric texture */}
+        <div className="absolute inset-0 opacity-[0.055]" style={{ color: 'white' }}>
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <pattern id="svc-geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                <polyline points="0,12 10,0 20,12 30,0 40,12 50,0 60,12 70,0 80,12" fill="none" stroke="white" strokeWidth="1.2"/>
+                <polyline points="0,26 10,14 20,26 30,14 40,26 50,14 60,26 70,14 80,26" fill="none" stroke="white" strokeWidth="1.2"/>
+                <line x1="0" y1="34" x2="80" y2="34" stroke="white" strokeWidth="0.5"/>
+                <polygon points="40,38 52,50 40,62 28,50" fill="none" stroke="white" strokeWidth="1"/>
+                <circle cx="10" cy="75" r="1.8" fill="white"/><circle cx="30" cy="75" r="1.8" fill="white"/>
+                <circle cx="50" cy="75" r="1.8" fill="white"/><circle cx="70" cy="75" r="1.8" fill="white"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#svc-geo)"/>
+          </svg>
+        </div>
+        {/* Soft glow */}
+        <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full blur-3xl opacity-15" style={{ backgroundColor: '#C1440E' }} />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+            {/* Gold ornament */}
+            <div className="flex items-center gap-3 justify-center mb-5">
+              <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#D4891A]"/>
+              <div className="h-2 w-2 rotate-45 bg-[#D4891A]"/>
+              <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#D4891A]"/>
+            </div>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#F5A470' }}>
               Nos services
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl text-balance">
               Des solutions complètes pour votre{' '}
-              <span className="text-primary">transformation digitale</span>
+              <span style={{ color: '#F5A470' }}>transformation digitale</span>
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Nous accompagnons les PME, startups et entrepreneurs africains dans leur croissance 
+            <p className="mt-6 text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.72)' }}>
+              Nous accompagnons les PME, startups et entrepreneurs africains dans leur croissance
               avec des services digitaux sur-mesure et adaptés à vos objectifs.
             </p>
+            {/* Service anchor links */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              {services.map((s, i) => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium transition-all hover:scale-105"
+                  style={{ backgroundColor: `${SERVICE_ACCENTS[i]}25`, border: `1px solid ${SERVICE_ACCENTS[i]}55`, color: SERVICE_ACCENTS[i] === '#1B3A6B' ? '#7BA7E8' : '#F5A470' }}
+                >
+                  <s.icon className="h-3.5 w-3.5" />
+                  {s.title.split(' ')[0]}
+                </a>
+              ))}
+            </div>
           </div>
+        </div>
+        {/* Kente bottom border */}
+        <div className="absolute bottom-0 left-0 right-0 flex overflow-hidden h-1">
+          {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E','#D4891A','#1B3A6B','#8B5A00','#C1440E','#D4891A'].map(
+            (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c, opacity: 0.7 }} />
+          )}
         </div>
       </section>
 
       {/* Services detailed */}
-      <section className="py-16 lg:py-24">
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFAF4' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-24">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                id={service.id}
-                className="scroll-mt-24"
-              >
-                <div className={`grid gap-12 lg:grid-cols-2 lg:gap-16 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-dense' : ''
-                }`}>
-                  {/* Content */}
-                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary mb-6">
-                      <service.icon className="h-7 w-7" />
-                    </div>
-                    
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                      {service.title}
-                    </h2>
-                    
-                    <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    <ul className="mt-8 space-y-3">
-                      {service.benefits.map((benefit) => (
-                        <li key={benefit} className="flex items-center gap-3">
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
-                            <Check className="h-4 w-4 text-primary" />
-                          </div>
-                          <span className="text-foreground">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <Button asChild size="lg" className="mt-8 gap-2">
-                      <Link href="/contact">
-                        Discuter de votre projet
-                        <ArrowRight className="h-4 w-4" />
-                      </Link>
-                    </Button>
+          <div className="space-y-20">
+            {services.map((service, index) => {
+              const accent = SERVICE_ACCENTS[index]
+              return (
+                <div
+                  key={service.id}
+                  id={service.id}
+                  className="scroll-mt-24"
+                >
+                  {/* Section divider with color */}
+                  <div className="flex items-center gap-4 mb-10">
+                    <div className="h-0.5 w-8 rounded" style={{ backgroundColor: accent }} />
+                    <div className="h-3 w-3 rotate-45 rounded-sm" style={{ backgroundColor: accent }} />
+                    <div className="h-0.5 flex-1 rounded opacity-20" style={{ backgroundColor: accent }} />
                   </div>
 
-                  {/* Features cards */}
-                  <div className={`grid grid-cols-2 gap-4 ${
-                    index % 2 === 1 ? 'lg:col-start-1' : ''
-                  }`}>
-                    {service.features.map((feature) => (
-                      <Card
-                        key={feature.text}
-                        className="border-border/50 hover:border-primary/20 hover:shadow-md transition-all duration-300"
+                  <div className={`grid gap-12 lg:grid-cols-2 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+                    {/* Content */}
+                    <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                      <div
+                        className="flex h-14 w-14 items-center justify-center rounded-xl mb-6 relative"
+                        style={{ backgroundColor: `${accent}18` }}
                       >
-                        <CardHeader className="pb-2">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-primary">
+                        <div className="absolute inset-0 rotate-45 rounded-xl opacity-10" style={{ border: `2px solid ${accent}` }} />
+                        <service.icon className="h-7 w-7 relative" style={{ color: accent }} />
+                      </div>
+
+                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: '#1a0a00' }}>
+                        {service.title}
+                      </h2>
+
+                      <p className="mt-4 text-lg leading-relaxed" style={{ color: '#6B4423' }}>
+                        {service.description}
+                      </p>
+
+                      <ul className="mt-8 space-y-3">
+                        {service.benefits.map((benefit) => (
+                          <li key={benefit} className="flex items-center gap-3">
+                            <div
+                              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
+                              style={{ backgroundColor: `${accent}20` }}
+                            >
+                              <Check className="h-3.5 w-3.5" style={{ color: accent }} />
+                            </div>
+                            <span style={{ color: '#3a1a00' }}>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <Button
+                        asChild
+                        size="lg"
+                        className="mt-8 gap-2 text-white font-semibold"
+                        style={{ background: `linear-gradient(135deg, ${accent}, ${accent}cc)`, border: 'none' }}
+                      >
+                        <Link href="/contact">
+                          Discuter de votre projet
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
+
+                    {/* Features cards */}
+                    <div className={`grid grid-cols-2 gap-4 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                      {service.features.map((feature) => (
+                        <div
+                          key={feature.text}
+                          className="rounded-xl p-5 border transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                          style={{ backgroundColor: 'white', borderColor: `${accent}22`, borderWidth: '1.5px' }}
+                        >
+                          <div
+                            className="flex h-10 w-10 items-center justify-center rounded-lg mb-3"
+                            style={{ backgroundColor: `${accent}15`, color: accent }}
+                          >
                             <feature.icon className="h-5 w-5" />
                           </div>
-                        </CardHeader>
-                        <CardContent>
-                          <CardDescription className="text-foreground font-medium">
+                          <p className="font-semibold text-sm" style={{ color: '#1a0a00' }}>
                             {feature.text}
-                          </CardDescription>
-                        </CardContent>
-                      </Card>
-                    ))}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
