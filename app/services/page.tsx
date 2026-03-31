@@ -249,28 +249,11 @@ export default function ServicesPage() {
 
                     {/* Visual + Features */}
                     <div className={`space-y-4 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                      {/* Real photo for the service */}
-                      {[
-                        'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=450&fit=crop',
-                        'https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=450&fit=crop',
-                        'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=450&fit=crop',
-                        'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=450&fit=crop',
-                      ][index] && (
-                        <div className="rounded-xl overflow-hidden shadow-md mb-4" style={{ border: `1.5px solid ${accent}15` }}>
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={[
-                              'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=450&fit=crop',
-                              'https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=450&fit=crop',
-                              'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=450&fit=crop',
-                              'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=450&fit=crop',
-                            ][index]}
-                            alt={`Illustration ${service.title}`}
-                            className="w-full h-48 object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                      )}
+                      {/*
+                        TODO: Ajouter une vraie photo de votre travail / équipe ici.
+                        Exemple: <img src="/images/service-web.jpg" alt="..." className="w-full h-48 object-cover rounded-xl mb-4" />
+                        Photos recommandées: captures de projets livrés, votre équipe au travail, vos clients.
+                      */}
                       <div className="grid grid-cols-2 gap-4">
                         {service.features.map((feature) => (
                           <div
