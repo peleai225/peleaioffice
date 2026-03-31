@@ -6,14 +6,14 @@
 :root {
   --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
-  /* African-inspired color palette — terracotta, gold, warm cream */
+  /* African-inspired color palette — brand blue primary, gold & terracotta accents */
   --background: oklch(0.98 0.012 72);          /* warm cream */
   --foreground: oklch(0.16 0.03 35);           /* deep brown */
   --card: oklch(1 0.005 72);
   --card-foreground: oklch(0.16 0.03 35);
   --popover: oklch(1 0.005 72);
   --popover-foreground: oklch(0.16 0.03 35);
-  --primary: oklch(0.52 0.185 32);             /* terracotta */
+  --primary: oklch(0.40 0.12 260);             /* brand blue #2E5A9C */
   --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.94 0.018 72);           /* light warm sand */
   --secondary-foreground: oklch(0.2 0.03 35);
@@ -25,7 +25,7 @@
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.86 0.025 65);
   --input: oklch(0.86 0.025 65);
-  --ring: oklch(0.52 0.185 32);
+  --ring: oklch(0.40 0.12 260);
   --chart-1: oklch(0.52 0.185 32);             /* terracotta */
   --chart-2: oklch(0.74 0.13 78);              /* gold */
   --chart-3: oklch(0.35 0.08 260);             /* deep navy */
@@ -34,17 +34,18 @@
   --radius: 0.625rem;
   --sidebar: oklch(0.94 0.018 72);
   --sidebar-foreground: oklch(0.16 0.03 35);
-  --sidebar-primary: oklch(0.52 0.185 32);
+  --sidebar-primary: oklch(0.40 0.12 260);
   --sidebar-primary-foreground: oklch(0.98 0 0);
   --sidebar-accent: oklch(0.90 0.025 65);
   --sidebar-accent-foreground: oklch(0.2 0.03 35);
   --sidebar-border: oklch(0.86 0.025 65);
-  --sidebar-ring: oklch(0.52 0.185 32);
-  /* African theme extras */
-  --african-navy: oklch(0.18 0.06 255);        /* deep navy */
-  --african-terracotta: oklch(0.52 0.185 32);  /* terracotta */
-  --african-gold: oklch(0.74 0.13 78);         /* gold */
-  --african-sand: oklch(0.91 0.03 75);         /* warm sand */
+  --sidebar-ring: oklch(0.40 0.12 260);
+  /* Brand colors */
+  --brand-blue: #2E5A9C;
+  --brand-terracotta: #C1440E;
+  --brand-gold: #D4891A;
+  --african-navy: oklch(0.18 0.06 255);
+  --african-sand: oklch(0.91 0.03 75);
 }
 
 .dark {

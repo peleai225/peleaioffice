@@ -49,14 +49,6 @@ export function ProcessSteps() {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#1a0a00' }}>
             De la vision à la réalisation
           </h2>
-          {/* Kente underline */}
-          <div className="flex justify-center mt-3">
-            <div className="flex overflow-hidden h-1 w-24 rounded">
-              {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A'].map((c,i) => (
-                <div key={i} className="flex-1" style={{ backgroundColor: c }}/>
-              ))}
-            </div>
-          </div>
           <p className="mt-4 text-lg" style={{ color: '#6B4423' }}>
             Une méthodologie éprouvée pour garantir le succès de votre projet.
           </p>

@@ -71,7 +71,7 @@ export default function PeleAI360Page() {
       {/* Hero */}
       <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden" style={{ backgroundColor: '#0D1B2E' }}>
         {/* SVG geometric texture */}
-        <div className="absolute inset-0 opacity-[0.07]">
+        <div className="absolute inset-0 opacity-[0.03]">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="p360-hero" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
@@ -160,17 +160,6 @@ export default function PeleAI360Page() {
 
             {/* Dashboard visual */}
             <div className="relative">
-              {/* African geo frame */}
-              <div className="absolute -inset-4 opacity-20">
-                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                  <polygon points="200,10 390,200 200,390 10,200" fill="none" stroke="#D4891A" strokeWidth="2"/>
-                  <polygon points="200,40 360,200 200,360 40,200" fill="none" stroke="#C1440E" strokeWidth="1.5"/>
-                  <circle cx="200" cy="10" r="5" fill="#D4891A"/>
-                  <circle cx="390" cy="200" r="5" fill="#D4891A"/>
-                  <circle cx="200" cy="390" r="5" fill="#D4891A"/>
-                  <circle cx="10" cy="200" r="5" fill="#D4891A"/>
-                </svg>
-              </div>
 
               <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ border: '2px solid rgba(212,137,26,0.3)' }}>
                 {/* Dashboard header */}
@@ -381,10 +370,6 @@ export default function PeleAI360Page() {
           </div>
         </div>
 
-        {/* Bottom kente */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <KenteStrip colors={['#D4891A','#F5C842','#D4891A','#8B5A00','#D4891A','#F5C842','#D4891A','#8B5A00','#D4891A','#F5C842','#D4891A','#8B5A00']}/>
-        </div>
       </section>
 
       {/* How it works */}

@@ -148,7 +148,7 @@ export default function RealisationsPage() {
           )}
         </div>
         {/* Texture */}
-        <div className="absolute inset-0 opacity-[0.055]">
+        <div className="absolute inset-0 opacity-[0.03]">
           <svg className="w-full h-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="real-geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
@@ -162,7 +162,6 @@ export default function RealisationsPage() {
             <rect width="100%" height="100%" fill="url(#real-geo)"/>
           </svg>
         </div>
-        <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full blur-3xl opacity-15" style={{ backgroundColor: '#C1440E' }}/>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -194,12 +193,6 @@ export default function RealisationsPage() {
               ))}
             </div>
           </div>
-        </div>
-        {/* Kente bottom */}
-        <div className="absolute bottom-0 left-0 right-0 flex overflow-hidden h-1">
-          {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E','#D4891A'].map(
-            (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c, opacity: 0.7 }} />
-          )}
         </div>
       </section>
 

@@ -82,7 +82,7 @@ export function CTASection() {
       style={{ backgroundColor: '#B8421A' }}
     >
       {/* Tribal line-art pattern overlay — white, low opacity (like image 2) */}
-      <div className="absolute inset-0 text-white opacity-[0.12]">
+      <div className="absolute inset-0 text-white opacity-[0.05]">
         <TribalLineArt className="w-full h-full" />
       </div>
 
@@ -96,7 +96,7 @@ export function CTASection() {
       />
 
       {/* Decorative gold top border */}
-      <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, transparent, #D4891A, transparent)' }} />
+      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #D4891A, transparent)' }} />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Gold ornamental divider */}
@@ -141,7 +141,7 @@ export function CTASection() {
                 background: 'rgba(255,255,255,0.1)',
               }}
             >
-              <a href="tel:+22900000000">
+              <a href="tel:+225050805382">
                 <Phone className="h-4 w-4" />
                 Nous appeler
               </a>
@@ -166,7 +166,7 @@ export function CTASection() {
       </div>
 
       {/* Decorative gold bottom border */}
-      <div className="absolute bottom-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, transparent, #D4891A, transparent)' }} />
+      <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #D4891A, transparent)' }} />
     </section>
   )
 }

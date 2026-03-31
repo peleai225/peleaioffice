@@ -122,10 +122,6 @@ export function ServicesGrid() {
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </div>
 
-                {/* Bottom-right diamond ornament */}
-                <div className="absolute bottom-3 right-3 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <DiamondOrnament color={service.accent} />
-                </div>
               </div>
             </Link>
           ))}

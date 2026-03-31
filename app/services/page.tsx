@@ -125,12 +125,12 @@ export default function ServicesPage() {
       >
         {/* Kente strip top */}
         <div className="absolute top-0 left-0 right-0 flex overflow-hidden h-1">
-          {['#C1440E','#D4891A','#1B3A6B','#C1440E','#D4891A','#8B5A00','#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E','#D4891A','#C1440E','#8B5A00'].map(
+          {['#C1440E','#D4891A','#1B3A6B','#C1440E','#D4891A','#8B5A00','#C1440E','#D4891A'].map(
             (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
           )}
         </div>
         {/* Geometric texture */}
-        <div className="absolute inset-0 opacity-[0.055]" style={{ color: 'white' }}>
+        <div className="absolute inset-0 opacity-[0.03]" style={{ color: 'white' }}>
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <pattern id="svc-geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
@@ -145,9 +145,6 @@ export default function ServicesPage() {
             <rect width="100%" height="100%" fill="url(#svc-geo)"/>
           </svg>
         </div>
-        {/* Soft glow */}
-        <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full blur-3xl opacity-15" style={{ backgroundColor: '#C1440E' }} />
-
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             {/* Gold ornament */}
@@ -182,12 +179,6 @@ export default function ServicesPage() {
               ))}
             </div>
           </div>
-        </div>
-        {/* Kente bottom border */}
-        <div className="absolute bottom-0 left-0 right-0 flex overflow-hidden h-1">
-          {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E','#D4891A','#1B3A6B','#8B5A00','#C1440E','#D4891A'].map(
-            (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c, opacity: 0.7 }} />
-          )}
         </div>
       </section>
 
@@ -256,25 +247,49 @@ export default function ServicesPage() {
                       </Button>
                     </div>
 
-                    {/* Features cards */}
-                    <div className={`grid grid-cols-2 gap-4 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                      {service.features.map((feature) => (
-                        <div
-                          key={feature.text}
-                          className="rounded-xl p-5 border transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
-                          style={{ backgroundColor: 'white', borderColor: `${accent}22`, borderWidth: '1.5px' }}
-                        >
-                          <div
-                            className="flex h-10 w-10 items-center justify-center rounded-lg mb-3"
-                            style={{ backgroundColor: `${accent}15`, color: accent }}
-                          >
-                            <feature.icon className="h-5 w-5" />
-                          </div>
-                          <p className="font-semibold text-sm" style={{ color: '#1a0a00' }}>
-                            {feature.text}
-                          </p>
+                    {/* Visual + Features */}
+                    <div className={`space-y-4 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                      {/* Real photo for the service */}
+                      {[
+                        'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=450&fit=crop',
+                        'https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=450&fit=crop',
+                        'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=450&fit=crop',
+                        'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=450&fit=crop',
+                      ][index] && (
+                        <div className="rounded-xl overflow-hidden shadow-md mb-4" style={{ border: `1.5px solid ${accent}15` }}>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={[
+                              'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=450&fit=crop',
+                              'https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=450&fit=crop',
+                              'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=450&fit=crop',
+                              'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=450&fit=crop',
+                            ][index]}
+                            alt={`Illustration ${service.title}`}
+                            className="w-full h-48 object-cover"
+                            loading="lazy"
+                          />
                         </div>
-                      ))}
+                      )}
+                      <div className="grid grid-cols-2 gap-4">
+                        {service.features.map((feature) => (
+                          <div
+                            key={feature.text}
+                            className="rounded-xl p-5 border transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                            style={{ backgroundColor: 'white', borderColor: `${accent}22`, borderWidth: '1.5px' }}
+                          >
+                            <div
+                              className="flex h-10 w-10 items-center justify-center rounded-lg mb-3"
+                              style={{ backgroundColor: `${accent}15`, color: accent }}
+                            >
+                              <feature.icon className="h-5 w-5" />
+                            </div>
+                            <p className="font-semibold text-sm" style={{ color: '#1a0a00' }}>
+                              {feature.text}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

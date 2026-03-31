@@ -11,13 +11,7 @@ export function TrustedBy() {
     content.partners.length > 0 ? content.partners : [{ name: "Partenaire" }]
 
   return (
-    <section className="py-10" style={{ backgroundColor: '#FFFAF4', borderTop: '3px solid transparent', borderImage: 'linear-gradient(to right, #C1440E, #D4891A, #1B3A6B, #8B5A00, #C1440E, #D4891A) 1' }}>
-      {/* Top Kente strip */}
-      <div className="flex overflow-hidden h-1 mb-8">
-        {['#C1440E','#D4891A','#1B3A6B','#8B5A00','#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#1B3A6B','#C1440E','#D4891A','#8B5A00','#1B3A6B','#C1440E','#D4891A','#8B5A00','#1B3A6B','#C1440E'].map((c,i) => (
-          <div key={i} className="flex-1" style={{ backgroundColor: c }}/>
-        ))}
-      </div>
+    <section className="py-10" style={{ backgroundColor: '#FFFAF4' }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center gap-3 mb-8">
           <div className="h-px w-8" style={{ backgroundColor: '#D4891A' }}/>

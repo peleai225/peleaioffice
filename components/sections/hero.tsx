@@ -138,7 +138,7 @@ function AfricanProfessionalIllustration() {
       <rect x="278" y="170" width="40" height="5" rx="2" fill="#D4891A" opacity="0.6"/>
       <rect x="278" y="180" width="55" height="4" rx="2" fill="white" opacity="0.3"/>
       <rect x="278" y="188" width="45" height="4" rx="2" fill="white" opacity="0.2"/>
-      <text x="278" y="205" fontSize="8" fill="#D4891A" opacity="0.8" fontFamily="monospace">98% ✓</text>
+      <text x="278" y="205" fontSize="8" fill="#D4891A" opacity="0.8" fontFamily="monospace">98%</text>
 
       {/* Card bottom-right */}
       <rect x="285" y="265" width="80" height="50" rx="8" fill="#C1440E" opacity="0.12" stroke="#C1440E" strokeWidth="1.2"/>
@@ -150,7 +150,7 @@ function AfricanProfessionalIllustration() {
       <rect x="18" y="195" width="85" height="48" rx="8" fill="#1B3A6B" opacity="0.5" stroke="#7BA7E8" strokeWidth="1"/>
       <rect x="26" y="205" width="30" height="5" rx="2" fill="#7BA7E8" opacity="0.6"/>
       <rect x="26" y="214" width="50" height="4" rx="2" fill="white" opacity="0.2"/>
-      <text x="26" y="232" fontSize="8" fill="#7BA7E8" opacity="0.8" fontFamily="monospace">🌍 Afrique</text>
+      <text x="26" y="232" fontSize="8" fill="#7BA7E8" opacity="0.8" fontFamily="monospace">Afrique</text>
 
       {/* Floating dots */}
       {[[285,130],[305,148],[295,165]].map(([x,y], i) => (
@@ -177,24 +177,11 @@ export function Hero() {
       style={{ backgroundColor: '#0D1B2E' }}
     >
       {/* African geometric pattern texture */}
-      <div className="absolute inset-0 opacity-[0.07]">
+      <div className="absolute inset-0 opacity-[0.03]">
         <AfricanGeometricPattern />
       </div>
 
-      {/* Soft glows */}
-      <div className="absolute -bottom-32 -left-32 h-72 w-72 rounded-full blur-3xl opacity-20" style={{ backgroundColor: '#C1440E' }} />
-      <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full blur-3xl opacity-10" style={{ backgroundColor: '#D4891A' }} />
-
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Gold ornamental top bar */}
-        <div className="flex items-center gap-3 justify-center mb-8">
-          <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#D4891A]" />
-          <div className="h-1.5 w-1.5 rounded-full bg-[#D4891A]" />
-          <div className="h-px w-24 bg-[#D4891A]/60" />
-          <div className="h-1.5 w-1.5 rounded-full bg-[#D4891A]" />
-          <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#D4891A]" />
-        </div>
-
         {/* 2-col layout on desktop: text | illustration */}
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
 
@@ -213,7 +200,7 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" style={{ backgroundColor: '#C1440E' }} />
                 <span className="relative inline-flex h-2 w-2 rounded-full" style={{ backgroundColor: '#F5A470' }} />
               </span>
-              Agence digitale #1 en Afrique
+              Agence digitale · Abidjan, Côte d&apos;Ivoire
             </div>
 
             {/* Headline */}
@@ -234,10 +221,10 @@ export function Hero() {
                 asChild
                 size="lg"
                 className="gap-2 text-base text-white font-semibold shadow-lg"
-                style={{ background: 'linear-gradient(135deg, #C1440E, #E05A20)', border: 'none' }}
+                style={{ backgroundColor: '#2E5A9C', border: 'none' }}
               >
                 <Link href="/contact">
-                  Démarrer mon projet
+                  Audit gratuit — Démarrer
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -246,11 +233,11 @@ export function Hero() {
                 variant="outline"
                 size="lg"
                 className="gap-2 text-base"
-                style={{ borderColor: 'rgba(212,137,26,0.5)', color: '#D4891A', background: 'rgba(212,137,26,0.08)' }}
+                style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white', background: 'rgba(255,255,255,0.06)' }}
               >
                 <Link href="/services">
                   <Play className="h-4 w-4" />
-                  Découvrir nos services
+                  Nos services
                 </Link>
               </Button>
             </div>
@@ -292,25 +279,57 @@ export function Hero() {
             </div>
           </div>
 
-          {/* ── Right: African professional illustration ── */}
+          {/* ── Right: Professional photo ── */}
           <div className="hidden lg:flex items-center justify-center">
-            <div className="relative w-[380px] h-[480px]">
-              {/* Glow behind illustration */}
-              <div className="absolute inset-8 rounded-full blur-2xl opacity-20" style={{ backgroundColor: '#C1440E' }} />
-              <AfricanProfessionalIllustration />
+            <div className="relative w-[420px] h-[480px]">
+              {/* Photo container with subtle frame */}
+              <div
+                className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl"
+                style={{ border: '2px solid rgba(212,137,26,0.2)' }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=840&h=960&fit=crop&crop=faces"
+                  alt="Professionnelle africaine travaillant sur un projet digital"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+                {/* Gradient overlay bottom */}
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,27,46,0.7) 0%, transparent 40%)' }} />
+                {/* Stats overlay */}
+                <div className="absolute bottom-4 left-4 right-4 flex gap-3">
+                  {[
+                    { value: '15+', label: 'Projets' },
+                    { value: '98%', label: 'Satisfaction' },
+                  ].map((s) => (
+                    <div
+                      key={s.label}
+                      className="flex-1 text-center rounded-xl py-2.5 px-2"
+                      style={{ background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)' }}
+                    >
+                      <p className="text-lg font-bold text-white">{s.value}</p>
+                      <p className="text-[10px] text-white/60">{s.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Floating badge */}
+              <div
+                className="absolute -top-3 -right-3 rounded-xl px-4 py-2.5 shadow-xl"
+                style={{ backgroundColor: '#2E5A9C', color: 'white' }}
+              >
+                <p className="text-xs font-medium opacity-70">Support</p>
+                <p className="text-xl font-bold">24/7</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom gold ornamental bar */}
-        <div className="flex items-center gap-3 justify-center mt-12">
-          <div className="h-px flex-1 max-w-24 bg-gradient-to-r from-transparent to-[#D4891A]/40" />
-          <div className="flex gap-1.5">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-1.5 w-1.5 rotate-45 bg-[#D4891A]/50" />
-            ))}
-          </div>
-          <div className="h-px flex-1 max-w-24 bg-gradient-to-l from-transparent to-[#D4891A]/40" />
+        {/* Bottom Kente strip */}
+        <div className="flex w-full overflow-hidden h-1 mt-12 mx-auto max-w-3xl rounded">
+          {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E','#D4891A'].map(
+            (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
+          )}
         </div>
       </div>
     </section>

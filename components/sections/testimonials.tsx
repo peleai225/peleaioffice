@@ -61,12 +61,6 @@ export function Testimonials() {
           <p className="mt-4 text-lg" style={{ color: '#6B4423' }}>
             Découvrez les retours d&apos;expérience de ceux qui nous ont fait confiance.
           </p>
-          {/* Kente underline */}
-          <div className="flex justify-center gap-px mt-5 mx-auto w-32 h-1.5 overflow-hidden rounded">
-            {['#C1440E', '#D4891A', '#1B3A6B', '#C1440E', '#8B5A00', '#D4891A', '#C1440E'].map((c, i) => (
-              <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
-            ))}
-          </div>
         </div>
 
         {/* Testimonials grid */}

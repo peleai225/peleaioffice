@@ -131,9 +131,9 @@ export const defaultSiteContent: SiteContent = {
   },
   contact: {
     email: "peleai.ci@gmail.com",
-    phoneDisplay: "+225 05 06 80 53 82",
-    phoneTelHref: "+2250506805382",
-    whatsappDigits: "2250506805382",
+    phoneDisplay: "+225 05 08 05 382",
+    phoneTelHref: "+225050805382",
+    whatsappDigits: "225050805382",
     address: "Abidjan, Côte d'Ivoire",
     openingHoursWeekdays: "9h00 - 18h00",
     openingHoursSaturday: "9h00 - 13h00",

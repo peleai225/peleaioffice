@@ -38,8 +38,8 @@ const stats = [
 /* ─── Kente-strip decorative rule ──────────────────────────────────────────── */
 function KenteStrip() {
   return (
-    <div className="flex w-full overflow-hidden rounded h-2 mb-10 mx-auto max-w-3xl">
-      {['#C1440E', '#D4891A', '#1B3A6B', '#C1440E', '#8B5A00', '#D4891A', '#C1440E', '#1B3A6B', '#D4891A', '#C1440E', '#8B5A00', '#1B3A6B'].map(
+    <div className="flex w-full overflow-hidden rounded h-1 mb-10 mx-auto max-w-3xl">
+      {['#C1440E', '#D4891A', '#1B3A6B', '#C1440E', '#8B5A00', '#D4891A', '#C1440E', '#1B3A6B'].map(
         (color, i) => (
           <div key={i} className="flex-1 h-full" style={{ backgroundColor: color }} />
         )
@@ -119,8 +119,6 @@ export function Stats() {
             </div>
           ))}
         </div>
-
-        <KenteStrip />
       </div>
     </section>
   )

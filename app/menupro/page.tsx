@@ -155,7 +155,7 @@ export default function MenuProPage() {
           )}
         </div>
         {/* Geo texture */}
-        <div className="absolute inset-0 opacity-[0.06]">
+        <div className="absolute inset-0 opacity-[0.03]">
           <svg className="w-full h-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="mp-geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
@@ -242,7 +242,7 @@ export default function MenuProPage() {
                     <div className="px-4 pb-6 space-y-4">
                       {/* Kente strip */}
                       <div className="flex overflow-hidden h-1 rounded">
-                        {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E'].map(
+                        {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A'].map(
                           (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
                         )}
                       </div>
@@ -299,12 +299,6 @@ export default function MenuProPage() {
               </div>
             </div>
           </div>
-        </div>
-        {/* Kente bottom */}
-        <div className="absolute bottom-0 left-0 right-0 flex overflow-hidden h-1">
-          {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E','#D4891A'].map(
-            (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c, opacity: 0.7 }} />
-          )}
         </div>
       </section>
 

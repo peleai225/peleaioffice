@@ -180,8 +180,8 @@ export default function PortfolioPage() {
             <p className="mt-2 text-lg max-w-2xl mx-auto" style={{ color: '#6B4423' }}>
               Ce qui guide mon travail : innovation utile, transmission et résultats mesurables.
             </p>
-            <div className="flex justify-center gap-px mt-4 mx-auto w-32 h-1.5 overflow-hidden rounded">
-              {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E'].map((c, i) => (
+            <div className="flex justify-center gap-px mt-4 mx-auto w-32 h-1 overflow-hidden rounded">
+              {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A'].map((c, i) => (
                 <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
               ))}
             </div>
@@ -226,12 +226,6 @@ export default function PortfolioPage() {
                 Domaines dans lesquels j&apos;interviens : de la stratégie à la production (web, IA,
                 metavers, marketing, médias).
               </p>
-              {/* Kente strip decoration */}
-              <div className="flex gap-px mt-6 w-48 h-2 overflow-hidden rounded">
-                {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E','#D4891A','#1B3A6B','#8B5A00','#C1440E','#D4891A'].map(
-                  (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
-                )}
-              </div>
             </div>
 
             <div className="space-y-5">
