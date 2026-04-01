@@ -11,38 +11,32 @@ export function TrustedBy() {
     content.partners.length > 0 ? content.partners : [{ name: "Partenaire" }]
 
   return (
-    <section className="py-10" style={{ backgroundColor: '#FFFAF4' }}>
+    <section className="py-10" style={{ backgroundColor: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="h-px w-8" style={{ backgroundColor: '#D4891A' }}/>
-          <div className="h-1.5 w-1.5 rotate-45" style={{ backgroundColor: '#D4891A' }}/>
-          <p className="text-center text-sm font-semibold uppercase tracking-wider" style={{ color: '#8B5A00' }}>
-            {content.partnersSectionTitle}
-          </p>
-          <div className="h-1.5 w-1.5 rotate-45" style={{ backgroundColor: '#D4891A' }}/>
-          <div className="h-px w-8" style={{ backgroundColor: '#D4891A' }}/>
-        </div>
+        <p className="text-center text-xs font-semibold uppercase tracking-widest mb-8" style={{ color: '#94A3B8' }}>
+          {content.partnersSectionTitle}
+        </p>
 
         <div className="relative overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-muted/30 to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-muted/30 to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 z-10" style={{ background: 'linear-gradient(to right, #F8FAFC, transparent)' }} />
+          <div className="absolute right-0 top-0 bottom-0 w-16 z-10" style={{ background: 'linear-gradient(to left, #F8FAFC, transparent)' }} />
 
           <div className="flex animate-scroll">
             {[...clients, ...clients].map((client, i) => (
               <div
-                key={`${client.name}-${client.logo ?? "t"}-${i}`}
+                key={`${client.name}-${i}`}
                 className={cn(
-                  "flex-shrink-0 mx-8 flex items-center justify-center",
-                  "h-14 min-w-[100px] max-w-[200px] px-4 rounded-lg"
+                  "flex-shrink-0 mx-6 flex items-center justify-center",
+                  "h-12 min-w-[100px] max-w-[180px] px-4 rounded-xl bg-white"
                 )}
-                style={{ backgroundColor: 'white', border: '1.5px solid rgba(193,68,14,0.15)' }}
+                style={{ border: '1px solid #E2E8F0' }}
               >
                 {client.logo ? (
-                  // eslint-disable-next-line @next/next/no-img-element -- SVG locaux ; évite soucis next/image + SVG
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-10 w-auto max-w-[180px] object-contain object-center"
+                    className="max-h-8 w-auto max-w-[160px] object-contain"
                     onError={(e) => {
                       const fallback = TRUSTED_PARTNER_LOGOS[client.name]
                       if (!fallback) return
@@ -52,7 +46,7 @@ export function TrustedBy() {
                     }}
                   />
                 ) : (
-                  <span className="text-sm font-semibold whitespace-nowrap text-center" style={{ color: '#8B5A00' }}>
+                  <span className="text-sm font-semibold whitespace-nowrap" style={{ color: '#94A3B8' }}>
                     {client.name}
                   </span>
                 )}
@@ -64,12 +58,8 @@ export function TrustedBy() {
 
       <style jsx>{`
         @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
         .animate-scroll {
           animation: scroll 30s linear infinite;
