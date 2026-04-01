@@ -141,7 +141,7 @@ export function CTASection() {
                 background: 'rgba(255,255,255,0.1)',
               }}
             >
-              <a href="tel:+22900000000">
+              <a href="tel:+225050805382">
                 <Phone className="h-4 w-4" />
                 Nous appeler
               </a>
