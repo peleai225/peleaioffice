@@ -279,36 +279,14 @@ export function Hero() {
             </div>
           </div>
 
-          {/* ── Right: Team / workspace photo ── */}
-          {/* TODO: Remplacer /images/hero-team.jpg par une vraie photo de l'équipe PeleAI */}
+          {/* ── Right: African professional illustration ── */}
           <div className="hidden lg:flex items-center justify-center">
             <div className="relative w-[420px] h-[480px]">
               <div
                 className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl"
-                style={{ border: '2px solid rgba(46,90,156,0.25)' }}
+                style={{ background: 'linear-gradient(135deg, #1B3A6B 0%, #0D1B2E 60%, #2E5A9C 100%)', border: '2px solid rgba(46,90,156,0.25)' }}
               >
-                {/* Photo de l'équipe — à remplacer par /images/hero-team.jpg */}
-                <div
-                  className="w-full h-full flex flex-col items-center justify-center gap-4 text-center px-8"
-                  style={{ background: 'linear-gradient(135deg, #1B3A6B 0%, #0D1B2E 60%, #2E5A9C 100%)' }}
-                >
-                  {/* Logo mark */}
-                  <div
-                    className="flex h-20 w-20 items-center justify-center rounded-2xl shadow-lg"
-                    style={{ backgroundColor: 'rgba(212,137,26,0.15)', border: '1.5px solid rgba(212,137,26,0.3)' }}
-                  >
-                    <span className="text-4xl font-black" style={{ color: '#D4891A' }}>P</span>
-                  </div>
-                  <p className="text-white/50 text-sm leading-relaxed">
-                    Ajoutez une photo de votre équipe<br />ou d&apos;un client en action
-                  </p>
-                  <p className="text-white/30 text-xs">
-                    → /public/images/hero-team.jpg
-                  </p>
-                </div>
-                {/* Gradient overlay bottom */}
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,27,46,0.7) 0%, transparent 50%)' }} />
-                {/* Stats overlay */}
+                <AfricanProfessionalIllustration />
                 <div className="absolute bottom-4 left-4 right-4 flex gap-3">
                   {[
                     { value: '15+', label: 'Projets' },
