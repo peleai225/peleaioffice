@@ -59,36 +59,12 @@ const painPoints = [
   "Vous manquez des opportunités de vente par manque de suivi ?",
 ]
 
-const KenteStrip = ({ colors }: { colors: string[] }) => (
-  <div className="flex overflow-hidden h-1.5 w-full">
-    {colors.map((c, i) => <div key={i} className="flex-1" style={{ backgroundColor: c }}/>)}
-  </div>
-)
-
 export default function PeleAI360Page() {
   return (
     <>
       {/* Hero */}
       <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden" style={{ backgroundColor: '#0D1B2E' }}>
-        {/* SVG geometric texture */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="p360-hero" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-                <rect x="20" y="20" width="40" height="40" fill="none" stroke="white" strokeWidth="1" transform="rotate(45 40 40)"/>
-                <circle cx="40" cy="40" r="4" fill="white" opacity="0.5"/>
-                <line x1="0" y1="0" x2="80" y2="80" stroke="white" strokeWidth="0.5"/>
-                <line x1="80" y1="0" x2="0" y2="80" stroke="white" strokeWidth="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#p360-hero)"/>
-          </svg>
-        </div>
-
-        {/* Top Kente strip */}
-        <div className="absolute top-0 left-0 right-0">
-          <KenteStrip colors={['#C1440E','#D4891A','#1B3A6B','#8B5A00','#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#1B3A6B','#C1440E','#D4891A','#8B5A00','#1B3A6B','#C1440E','#D4891A','#8B5A00','#1B3A6B','#C1440E']}/>
-        </div>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(46,90,156,0.3) 0%, transparent 65%)' }} />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
@@ -110,14 +86,7 @@ export default function PeleAI360Page() {
                 Votre assistant digital tout-en-un
               </p>
 
-              {/* Gold ornament */}
-              <div className="flex items-center gap-2 my-4">
-                <div className="h-px w-8" style={{ backgroundColor: '#D4891A' }}/>
-                <div className="h-1.5 w-1.5 rotate-45" style={{ backgroundColor: '#D4891A' }}/>
-                <div className="h-px w-8" style={{ backgroundColor: '#D4891A' }}/>
-              </div>
-
-              <p className="text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
+              <p className="mt-4 text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 Au même titre que{' '}
                 <a href="https://menupro.ci/" target="_blank" rel="noopener noreferrer" style={{ color: '#D4891A' }} className="font-medium hover:underline underline-offset-4">
                   MenuPro
@@ -128,7 +97,7 @@ export default function PeleAI360Page() {
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button
                   asChild size="lg" className="gap-2 font-semibold"
-                  style={{ background: 'linear-gradient(135deg, #C1440E, #E05A20)', border: 'none', color: 'white' }}
+                  style={{ backgroundColor: '#2E5A9C', border: 'none', color: 'white' }}
                 >
                   <a href="#demo">
                     Demander une démo gratuite
@@ -172,8 +141,7 @@ export default function PeleAI360Page() {
                   <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>PeleAI360 Dashboard</span>
                   <div/>
                 </div>
-                {/* Kente header strip */}
-                <KenteStrip colors={['#C1440E','#D4891A','#1B3A6B','#8B5A00','#C1440E','#D4891A','#1B3A6B','#C1440E','#D4891A','#1B3A6B']}/>
+                <div className="h-0.5" style={{ backgroundColor: '#2E5A9C' }}/>
 
                 <div className="p-5" style={{ backgroundColor: '#0D1B2E' }}>
                   {/* Stats row */}
@@ -245,16 +213,12 @@ export default function PeleAI360Page() {
       </section>
 
       {/* Pain points */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: '#F5EDD8' }}>
+      <section className="py-16 lg:py-20" style={{ backgroundColor: '#F8FAFC' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-2 w-2 rotate-45" style={{ backgroundColor: '#C1440E' }}/>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: '#1a0a00' }}>
-                Vous vous reconnaissez ?
-              </h2>
-              <div className="h-2 w-2 rotate-45" style={{ backgroundColor: '#C1440E' }}/>
-            </div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4" style={{ color: '#0D1B2E' }}>
+              Vous vous reconnaissez ?
+            </h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {painPoints.map((point, i) => (
                 <div
@@ -268,11 +232,11 @@ export default function PeleAI360Page() {
                   >
                     ?
                   </div>
-                  <p className="text-sm" style={{ color: '#3a1a00' }}>{point}</p>
+                  <p className="text-sm" style={{ color: '#374151' }}>{point}</p>
                 </div>
               ))}
             </div>
-            <p className="mt-8 text-lg font-semibold" style={{ color: '#C1440E' }}>
+            <p className="mt-8 text-lg font-semibold" style={{ color: '#2E5A9C' }}>
               PeleAI360 est la solution à tous ces problèmes.
             </p>
           </div>
@@ -280,24 +244,16 @@ export default function PeleAI360Page() {
       </section>
 
       {/* Features */}
-      <section id="features" className="py-16 lg:py-24 scroll-mt-20" style={{ backgroundColor: '#FFFAF4' }}>
+      <section id="features" className="py-16 lg:py-24 scroll-mt-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-12 lg:mb-16">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: '#C1440E' }}>
+            <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: '#2E5A9C' }}>
               Fonctionnalités
             </p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#1a0a00' }}>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#0D1B2E' }}>
               Tout ce dont vous avez besoin, au même endroit
             </h2>
-            {/* Kente underline */}
-            <div className="flex justify-center mt-4">
-              <div className="flex overflow-hidden h-1 w-24 rounded">
-                {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A'].map((c,i) => (
-                  <div key={i} className="flex-1" style={{ backgroundColor: c }}/>
-                ))}
-              </div>
-            </div>
-            <p className="mt-4 text-lg" style={{ color: '#6B4423' }}>
+            <p className="mt-4 text-lg" style={{ color: '#64748B' }}>
               Une suite complète d&apos;outils pour gérer et développer votre entreprise.
             </p>
           </div>
@@ -309,16 +265,14 @@ export default function PeleAI360Page() {
                 className="rounded-2xl p-6 transition-all hover:shadow-lg hover:-translate-y-1"
                 style={{ backgroundColor: 'white', border: `1.5px solid ${feature.accent}20` }}
               >
-                {/* Top accent bar */}
-                <div className="h-1 rounded mb-5 w-full" style={{ background: `linear-gradient(to right, ${feature.accent}, ${feature.accent}60)` }}/>
                 <div
                   className="flex h-12 w-12 items-center justify-center rounded-xl mb-4 text-white"
                   style={{ backgroundColor: feature.accent }}
                 >
                   <feature.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-lg font-bold mb-2" style={{ color: '#1a0a00' }}>{feature.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#6B4423' }}>{feature.description}</p>
+                <h3 className="text-lg font-bold mb-2" style={{ color: '#0D1B2E' }}>{feature.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>{feature.description}</p>
               </div>
             ))}
           </div>
@@ -326,24 +280,8 @@ export default function PeleAI360Page() {
       </section>
 
       {/* Benefits */}
-      <section className="relative py-16 lg:py-20 overflow-hidden" style={{ backgroundColor: '#B8421A' }}>
-        {/* Tribal pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="p360-benefits" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                <circle cx="30" cy="30" r="12" fill="none" stroke="white" strokeWidth="1.5"/>
-                <line x1="30" y1="0" x2="30" y2="60" stroke="white" strokeWidth="0.5"/>
-                <line x1="0" y1="30" x2="60" y2="30" stroke="white" strokeWidth="0.5"/>
-                <rect x="24" y="24" width="12" height="12" fill="none" stroke="white" strokeWidth="1" transform="rotate(45 30 30)"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#p360-benefits)"/>
-          </svg>
-        </div>
-        <KenteStrip colors={['#D4891A','#F5C842','#D4891A','#8B5A00','#D4891A','#F5C842','#D4891A','#8B5A00','#D4891A','#F5C842','#D4891A','#8B5A00']}/>
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-6">
+      <section className="py-16 lg:py-20" style={{ backgroundColor: '#0D1B2E' }}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Les résultats parlent d&apos;eux-mêmes
@@ -373,13 +311,13 @@ export default function PeleAI360Page() {
       </section>
 
       {/* How it works */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: '#F5EDD8' }}>
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#F8FAFC' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-12 lg:mb-16">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: '#C1440E' }}>
+            <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: '#2E5A9C' }}>
               Comment ça marche
             </p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: '#1a0a00' }}>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: '#0D1B2E' }}>
               Démarrez en 3 étapes simples
             </h2>
           </div>
@@ -406,8 +344,8 @@ export default function PeleAI360Page() {
                   >
                     {item.step}
                   </div>
-                  <h3 className="text-xl font-bold mb-2" style={{ color: '#1a0a00' }}>{item.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: '#6B4423' }}>{item.description}</p>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: '#0D1B2E' }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>{item.description}</p>
                 </div>
               </div>
             ))}
@@ -416,26 +354,18 @@ export default function PeleAI360Page() {
       </section>
 
       {/* Demo form */}
-      <section id="demo" className="py-16 lg:py-24 scroll-mt-20" style={{ backgroundColor: '#FFFAF4' }}>
+      <section id="demo" className="py-16 lg:py-24 scroll-mt-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Content */}
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: '#C1440E' }}>
+              <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: '#2E5A9C' }}>
                 Essai gratuit
               </p>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#1a0a00' }}>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#0D1B2E' }}>
                 Prêt à simplifier votre gestion ?
               </h2>
-              {/* Kente underline */}
-              <div className="flex mt-3 mb-5">
-                <div className="flex overflow-hidden h-1 w-20 rounded">
-                  {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A'].map((c,i) => (
-                    <div key={i} className="flex-1" style={{ backgroundColor: c }}/>
-                  ))}
-                </div>
-              </div>
-              <p className="text-lg leading-relaxed" style={{ color: '#6B4423' }}>
+              <p className="mt-4 text-lg leading-relaxed" style={{ color: '#64748B' }}>
                 Demandez une démonstration personnalisée et découvrez comment PeleAI360
                 peut transformer votre façon de travailler.
               </p>
@@ -456,7 +386,7 @@ export default function PeleAI360Page() {
                       >
                         <Check className="h-4 w-4" />
                       </div>
-                      <span style={{ color: '#3a1a00' }}>{item}</span>
+                      <span style={{ color: '#374151' }}>{item}</span>
                     </li>
                   )
                 })}
@@ -475,7 +405,7 @@ export default function PeleAI360Page() {
                     style={{ backgroundColor: `${s.accent}12`, border: `1.5px solid ${s.accent}25` }}
                   >
                     <p className="text-xl font-bold" style={{ color: s.accent }}>{s.value}</p>
-                    <p className="text-xs" style={{ color: '#6B4423' }}>{s.label}</p>
+                    <p className="text-xs" style={{ color: '#64748B' }}>{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -486,13 +416,7 @@ export default function PeleAI360Page() {
               className="rounded-2xl p-6 sm:p-8 shadow-xl"
               style={{ backgroundColor: 'white', border: '1.5px solid rgba(193,68,14,0.15)' }}
             >
-              {/* Top kente */}
-              <div className="flex overflow-hidden h-1.5 rounded-t -mx-6 sm:-mx-8 -mt-6 sm:-mt-8 mb-6">
-                {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#1B3A6B','#C1440E','#D4891A','#8B5A00'].map((c,i) => (
-                  <div key={i} className="flex-1" style={{ backgroundColor: c }}/>
-                ))}
-              </div>
-              <h3 className="text-xl font-bold mb-6" style={{ color: '#1a0a00' }}>
+              <h3 className="text-xl font-bold mb-6" style={{ color: '#0D1B2E' }}>
                 Demander une démo
               </h3>
               <DemoForm />

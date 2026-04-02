@@ -167,24 +167,15 @@ export default function PortfolioPage() {
       <PortfolioAboutSection />
 
       {/* Values Section */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: '#F5EDD8' }}>
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#F8FAFC' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-1.5 w-1.5 rotate-45 bg-[#C1440E]"/>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#1a0a00' }}>
-                Mes valeurs
-              </h2>
-              <div className="h-1.5 w-1.5 rotate-45 bg-[#C1440E]"/>
-            </div>
-            <p className="mt-2 text-lg max-w-2xl mx-auto" style={{ color: '#6B4423' }}>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#0D1B2E' }}>
+              Mes valeurs
+            </h2>
+            <p className="mt-2 text-lg max-w-2xl mx-auto" style={{ color: '#64748B' }}>
               Ce qui guide mon travail : innovation utile, transmission et résultats mesurables.
             </p>
-            <div className="flex justify-center gap-px mt-4 mx-auto w-32 h-1 overflow-hidden rounded">
-              {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A'].map((c, i) => (
-                <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
-              ))}
-            </div>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -197,12 +188,11 @@ export default function PortfolioPage() {
                   className="text-center rounded-xl p-6 transition-all hover:shadow-lg hover:-translate-y-0.5"
                   style={{ backgroundColor: 'white', border: `1.5px solid ${accent}22` }}
                 >
-                  <div className="h-1 rounded mb-6" style={{ backgroundColor: accent }} />
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl mb-4" style={{ backgroundColor: `${accent}15`, color: accent }}>
                     <value.icon className="h-7 w-7" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3" style={{ color: '#1a0a00' }}>{value.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: '#6B4423' }}>{value.description}</p>
+                  <h3 className="text-xl font-bold mb-3" style={{ color: '#0D1B2E' }}>{value.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>{value.description}</p>
                 </div>
               )
             })}
@@ -211,18 +201,14 @@ export default function PortfolioPage() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFAF4' }}>
+      <section className="py-16 lg:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-0.5 w-8 rounded" style={{ backgroundColor: '#C1440E' }}/>
-                <div className="h-3 w-3 rotate-45" style={{ backgroundColor: '#C1440E' }}/>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#1a0a00' }}>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#0D1B2E' }}>
                 Compétences & expertise
               </h2>
-              <p className="mt-4 text-lg" style={{ color: '#6B4423' }}>
+              <p className="mt-4 text-lg" style={{ color: '#64748B' }}>
                 Domaines dans lesquels j&apos;interviens : de la stratégie à la production (web, IA,
                 metavers, marketing, médias).
               </p>
@@ -236,7 +222,7 @@ export default function PortfolioPage() {
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <skill.icon className="h-4 w-4 shrink-0" style={{ color: accent }} />
-                        <span className="font-medium text-sm" style={{ color: '#1a0a00' }}>{skill.name}</span>
+                        <span className="font-medium text-sm" style={{ color: '#0D1B2E' }}>{skill.name}</span>
                       </div>
                       <span className="text-sm font-semibold" style={{ color: accent }}>{skill.level}%</span>
                     </div>
@@ -255,17 +241,13 @@ export default function PortfolioPage() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: '#F5EDD8' }}>
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#F8FAFC' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-1.5 w-1.5 rotate-45 bg-[#C1440E]"/>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#1a0a00' }}>
-                Parcours professionnel
-              </h2>
-              <div className="h-1.5 w-1.5 rotate-45 bg-[#C1440E]"/>
-            </div>
-            <p className="mt-2 max-w-2xl mx-auto" style={{ color: '#6B4423' }}>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-balance" style={{ color: '#0D1B2E' }}>
+              Parcours professionnel
+            </h2>
+            <p className="mt-2 max-w-2xl mx-auto" style={{ color: '#64748B' }}>
               Extraits de missions : institutions, entreprises et produits lancés (dont PeleAI &amp; MenuPro en 2025).
             </p>
           </div>
@@ -291,18 +273,18 @@ export default function PortfolioPage() {
                   >
                     <div className="h-0.5 rounded mb-4" style={{ backgroundColor: accent, opacity: 0.4 }} />
                     <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <h3 className="font-bold text-base" style={{ color: '#1a0a00' }}>{exp.title}</h3>
+                      <h3 className="font-bold text-base" style={{ color: '#0D1B2E' }}>{exp.title}</h3>
                       <span style={{ color: '#C1440E' }} className="font-semibold text-sm">— {exp.company}</span>
                     </div>
                     <p className="text-xs font-medium mb-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5" style={{ backgroundColor: `${accent}15`, color: accent }}>
                       {exp.period}
                     </p>
-                    <p className="text-sm mb-3" style={{ color: '#6B4423' }}>{exp.description}</p>
+                    <p className="text-sm mb-3" style={{ color: '#64748B' }}>{exp.description}</p>
                     <ul className="space-y-1.5">
                       {exp.achievements.map((achievement) => (
                         <li key={achievement} className="flex items-start gap-2 text-sm">
                           <Award className="h-4 w-4 mt-0.5 shrink-0" style={{ color: accent }} />
-                          <span style={{ color: '#3a1a00' }}>{achievement}</span>
+                          <span style={{ color: '#374151' }}>{achievement}</span>
                         </li>
                       ))}
                     </ul>
@@ -317,10 +299,10 @@ export default function PortfolioPage() {
       <PortfolioMajorProjects />
 
       {/* Langues */}
-      <section className="py-12 lg:py-16" style={{ backgroundColor: '#FFFAF4' }}>
+      <section className="py-12 lg:py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold" style={{ color: '#1a0a00' }}>Langues</h2>
+            <h2 className="text-2xl font-bold" style={{ color: '#0D1B2E' }}>Langues</h2>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {languages.map((lang, i) => {
@@ -333,8 +315,8 @@ export default function PortfolioPage() {
                 >
                   <GraduationCap className="h-5 w-5 shrink-0" style={{ color: accent }} />
                   <div>
-                    <p className="font-semibold text-sm" style={{ color: '#1a0a00' }}>{lang.name}</p>
-                    <p className="text-xs" style={{ color: '#6B4423' }}>{lang.detail}</p>
+                    <p className="font-semibold text-sm" style={{ color: '#0D1B2E' }}>{lang.name}</p>
+                    <p className="text-xs" style={{ color: '#64748B' }}>{lang.detail}</p>
                   </div>
                 </div>
               )

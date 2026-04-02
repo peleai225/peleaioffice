@@ -141,43 +141,17 @@ export default function RealisationsPage() {
     <>
       {/* Hero — dark navy African */}
       <section className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-20" style={{ backgroundColor: '#0D1B2E' }}>
-        {/* Kente top */}
-        <div className="absolute top-0 left-0 right-0 flex overflow-hidden h-1">
-          {['#C1440E','#D4891A','#1B3A6B','#C1440E','#D4891A','#8B5A00','#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A'].map(
-            (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
-          )}
-        </div>
-        {/* Texture */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <svg className="w-full h-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="real-geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-                <polyline points="0,12 10,0 20,12 30,0 40,12 50,0 60,12 70,0 80,12" fill="none" stroke="white" strokeWidth="1.2"/>
-                <line x1="0" y1="34" x2="80" y2="34" stroke="white" strokeWidth="0.5"/>
-                <polygon points="40,38 52,50 40,62 28,50" fill="none" stroke="white" strokeWidth="1"/>
-                <circle cx="10" cy="75" r="1.8" fill="white"/><circle cx="30" cy="75" r="1.8" fill="white"/>
-                <circle cx="50" cy="75" r="1.8" fill="white"/><circle cx="70" cy="75" r="1.8" fill="white"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#real-geo)"/>
-          </svg>
-        </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="flex items-center gap-3 justify-center mb-5">
-              <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#D4891A]"/>
-              <div className="h-2 w-2 rotate-45 bg-[#D4891A]"/>
-              <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#D4891A]"/>
-            </div>
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#F5A470' }}>Portfolio</p>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: 'rgba(255,255,255,0.65)' }}>Portfolio</p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl text-balance">
-              Nos <span style={{ color: '#F5A470' }}>réalisations</span>
+              Nos <span style={{ color: '#D4891A' }}>réalisations</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.72)' }}>
               Une sélection de produits SaaS et de sites web conçus par PeleAI —{' '}
-              <a href="https://menupro.ci/" target="_blank" rel="noopener noreferrer" style={{ color: '#F5A470' }} className="underline underline-offset-4">MenuPro</a>,{' '}
-              <Link href="/peleai360" style={{ color: '#F5A470' }} className="underline underline-offset-4">PeleAI360</Link>{' '}
+              <a href="https://menupro.ci/" target="_blank" rel="noopener noreferrer" style={{ color: '#D4891A' }} className="underline underline-offset-4">MenuPro</a>,{' '}
+              <Link href="/peleai360" style={{ color: '#D4891A' }} className="underline underline-offset-4">PeleAI360</Link>{' '}
               et bien plus.
             </p>
             {/* Category pills */}
@@ -186,7 +160,7 @@ export default function RealisationsPage() {
                 <span
                   key={cat}
                   className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium"
-                  style={{ backgroundColor: `${color}22`, border: `1px solid ${color}55`, color: color === '#1B3A6B' ? '#7BA7E8' : '#F5A470' }}
+                  style={{ backgroundColor: 'rgba(46,90,156,0.15)', border: '1px solid rgba(46,90,156,0.3)', color: 'rgba(255,255,255,0.7)' }}
                 >
                   {cat}
                 </span>
@@ -197,14 +171,14 @@ export default function RealisationsPage() {
       </section>
 
       {/* Grid */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFAF4' }}>
+      <section className="py-16 lg:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
               <div
                 key={project.title}
                 className="group overflow-hidden rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                style={{ backgroundColor: 'white', border: `1.5px solid ${project.accent}22` }}
+                style={{ backgroundColor: 'white', border: '1.5px solid #E2E8F0' }}
               >
                 {/* Image */}
                 <div className="aspect-video relative overflow-hidden" style={{ backgroundColor: `${project.accent}0D` }}>
@@ -222,17 +196,14 @@ export default function RealisationsPage() {
                   </div>
                 </div>
 
-                {/* Top accent bar */}
-                <div className="h-1" style={{ backgroundColor: project.accent }} />
-
                 <div className="p-5">
                   <h3
-                    className="text-lg font-bold mb-2 transition-colors duration-200 group-hover:text-[#C1440E]"
-                    style={{ color: '#1a0a00' }}
+                    className="text-lg font-bold mb-2 transition-colors duration-200 group-hover:text-[#2E5A9C]"
+                    style={{ color: '#0D1B2E' }}
                   >
                     {project.title}
                   </h3>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: '#6B4423' }}>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: '#64748B' }}>
                     {project.description}
                   </p>
 
@@ -254,7 +225,7 @@ export default function RealisationsPage() {
                     asChild
                     size="sm"
                     className="gap-2 w-full text-white font-semibold"
-                    style={{ background: `linear-gradient(135deg, ${project.accent}, ${project.accent}cc)`, border: 'none' }}
+                    style={{ backgroundColor: project.accent, border: 'none' }}
                   >
                     {project.isExternal ? (
                       <a href={project.url} target="_blank" rel="noopener noreferrer">
@@ -280,19 +251,13 @@ export default function RealisationsPage() {
 
           {/* Bottom CTA */}
           <div className="mt-14 text-center rounded-2xl p-10" style={{ background: 'linear-gradient(135deg, #0D1B2E, #1B3A6B)' }}>
-            {/* Kente strip */}
-            <div className="flex overflow-hidden h-1 rounded mb-6 mx-auto max-w-xs">
-              {['#C1440E','#D4891A','#1B3A6B','#C1440E','#8B5A00','#D4891A','#C1440E','#D4891A'].map(
-                (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
-              )}
-            </div>
             <p className="text-white/70 mb-3 text-lg">Un projet similaire en tête ?</p>
             <h2 className="text-2xl font-bold text-white mb-6">Parlons de votre vision</h2>
             <Button
               asChild
               size="lg"
               className="gap-2 font-semibold text-white"
-              style={{ background: 'linear-gradient(135deg, #C1440E, #E05A20)', border: 'none' }}
+              style={{ backgroundColor: '#2E5A9C', border: 'none' }}
             >
               <Link href="/contact">
                 Démarrer votre projet

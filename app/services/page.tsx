@@ -123,42 +123,14 @@ export default function ServicesPage() {
         className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-20"
         style={{ backgroundColor: '#0D1B2E' }}
       >
-        {/* Kente strip top */}
-        <div className="absolute top-0 left-0 right-0 flex overflow-hidden h-1">
-          {['#C1440E','#D4891A','#1B3A6B','#C1440E','#D4891A','#8B5A00','#C1440E','#D4891A'].map(
-            (c, i) => <div key={i} className="flex-1 h-full" style={{ backgroundColor: c }} />
-          )}
-        </div>
-        {/* Geometric texture */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ color: 'white' }}>
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <pattern id="svc-geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-                <polyline points="0,12 10,0 20,12 30,0 40,12 50,0 60,12 70,0 80,12" fill="none" stroke="white" strokeWidth="1.2"/>
-                <polyline points="0,26 10,14 20,26 30,14 40,26 50,14 60,26 70,14 80,26" fill="none" stroke="white" strokeWidth="1.2"/>
-                <line x1="0" y1="34" x2="80" y2="34" stroke="white" strokeWidth="0.5"/>
-                <polygon points="40,38 52,50 40,62 28,50" fill="none" stroke="white" strokeWidth="1"/>
-                <circle cx="10" cy="75" r="1.8" fill="white"/><circle cx="30" cy="75" r="1.8" fill="white"/>
-                <circle cx="50" cy="75" r="1.8" fill="white"/><circle cx="70" cy="75" r="1.8" fill="white"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#svc-geo)"/>
-          </svg>
-        </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            {/* Gold ornament */}
-            <div className="flex items-center gap-3 justify-center mb-5">
-              <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#D4891A]"/>
-              <div className="h-2 w-2 rotate-45 bg-[#D4891A]"/>
-              <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#D4891A]"/>
-            </div>
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#F5A470' }}>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: 'rgba(255,255,255,0.7)' }}>
               Nos services
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl text-balance">
               Des solutions complètes pour votre{' '}
-              <span style={{ color: '#F5A470' }}>transformation digitale</span>
+              <span style={{ color: '#D4891A' }}>transformation digitale</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.72)' }}>
               Nous accompagnons les PME, startups et entrepreneurs africains dans leur croissance
@@ -171,7 +143,7 @@ export default function ServicesPage() {
                   key={s.id}
                   href={`#${s.id}`}
                   className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium transition-all hover:scale-105"
-                  style={{ backgroundColor: `${SERVICE_ACCENTS[i]}25`, border: `1px solid ${SERVICE_ACCENTS[i]}55`, color: SERVICE_ACCENTS[i] === '#1B3A6B' ? '#7BA7E8' : '#F5A470' }}
+                  style={{ backgroundColor: 'rgba(46,90,156,0.15)', border: '1px solid rgba(46,90,156,0.3)', color: 'white' }}
                 >
                   <s.icon className="h-3.5 w-3.5" />
                   {s.title.split(' ')[0]}
@@ -183,7 +155,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services detailed */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFAF4' }}>
+      <section className="py-16 lg:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-20">
             {services.map((service, index) => {
@@ -194,12 +166,7 @@ export default function ServicesPage() {
                   id={service.id}
                   className="scroll-mt-24"
                 >
-                  {/* Section divider with color */}
-                  <div className="flex items-center gap-4 mb-10">
-                    <div className="h-0.5 w-8 rounded" style={{ backgroundColor: accent }} />
-                    <div className="h-3 w-3 rotate-45 rounded-sm" style={{ backgroundColor: accent }} />
-                    <div className="h-0.5 flex-1 rounded opacity-20" style={{ backgroundColor: accent }} />
-                  </div>
+                  <div className="w-12 h-0.5 mb-10" style={{ backgroundColor: '#2E5A9C' }} />
 
                   <div className={`grid gap-12 lg:grid-cols-2 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                     {/* Content */}
@@ -212,11 +179,11 @@ export default function ServicesPage() {
                         <service.icon className="h-7 w-7 relative" style={{ color: accent }} />
                       </div>
 
-                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: '#1a0a00' }}>
+                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: '#0D1B2E' }}>
                         {service.title}
                       </h2>
 
-                      <p className="mt-4 text-lg leading-relaxed" style={{ color: '#6B4423' }}>
+                      <p className="mt-4 text-lg leading-relaxed" style={{ color: '#64748B' }}>
                         {service.description}
                       </p>
 
@@ -229,7 +196,7 @@ export default function ServicesPage() {
                             >
                               <Check className="h-3.5 w-3.5" style={{ color: accent }} />
                             </div>
-                            <span style={{ color: '#3a1a00' }}>{benefit}</span>
+                            <span style={{ color: '#374151' }}>{benefit}</span>
                           </li>
                         ))}
                       </ul>
@@ -267,7 +234,7 @@ export default function ServicesPage() {
                             >
                               <feature.icon className="h-5 w-5" />
                             </div>
-                            <p className="font-semibold text-sm" style={{ color: '#1a0a00' }}>
+                            <p className="font-semibold text-sm" style={{ color: '#0D1B2E' }}>
                               {feature.text}
                             </p>
                           </div>
