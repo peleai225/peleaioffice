@@ -6,7 +6,6 @@ import {
   MessageSquare,
   FileText,
   Settings,
-  Plug,
   ArrowRight,
   Check,
   Zap,
@@ -14,6 +13,11 @@ import {
   TrendingUp,
   Shield,
   Play,
+  ShoppingCart,
+  Monitor,
+  Package,
+  Wallet,
+  Star,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DemoForm } from '@/components/forms/demo-form'
@@ -31,13 +35,79 @@ export const metadata: Metadata = {
   },
 }
 
-const features = [
-  { icon: Users,       title: 'Gestion des clients (CRM)',    description: 'Centralisez toutes vos interactions clients, suivez vos prospects et fidélisez votre clientèle.', accent: '#C1440E' },
-  { icon: MessageSquare, title: 'Automatisation marketing',   description: 'Envoyez des campagnes email et SMS automatisées basées sur le comportement de vos clients.', accent: '#D4891A' },
-  { icon: BarChart3,   title: 'Analyse & Reporting',          description: 'Tableaux de bord en temps réel pour suivre vos KPIs et prendre des décisions éclairées.', accent: '#1B3A6B' },
-  { icon: FileText,    title: 'Facturation simplifiée',       description: 'Créez des devis et factures professionnels en quelques clics. Suivez vos paiements facilement.', accent: '#8B5A00' },
-  { icon: Settings,    title: 'Gestion des tâches',           description: 'Organisez votre équipe avec un système de tâches collaboratif et des rappels automatiques.', accent: '#C1440E' },
-  { icon: Plug,        title: 'Intégrations multiples',       description: 'Connectez PeleAI360 à vos outils favoris : WhatsApp, email, mobile money, et plus encore.', accent: '#D4891A' },
+const featureCategories = [
+  {
+    icon: BarChart3,
+    title: 'Tableau de bord & Pilotage',
+    accent: '#2E5A9C',
+    features: [
+      'Vue synthétique des activités (ventes, stock, caisse, commandes)',
+      'Statistiques et graphiques en temps réel',
+      'Alertes et notifications personnalisables',
+    ],
+  },
+  {
+    icon: ShoppingCart,
+    title: 'E-commerce & Catalogue',
+    accent: '#C1440E',
+    features: [
+      'Gestion des produits (catégories, variantes, prix, stock)',
+      'Boutique en ligne intégrée avec panier',
+      'Promotions, réductions et codes promo',
+    ],
+  },
+  {
+    icon: Monitor,
+    title: 'Point de Vente (POS)',
+    accent: '#1B3A6B',
+    features: [
+      'Interface caisse tactile optimisée',
+      'Paiements (espèces, Mobile Money, carte)',
+      'Tickets de caisse et reçus numériques',
+    ],
+  },
+  {
+    icon: Package,
+    title: 'Commandes & Logistique',
+    accent: '#D4891A',
+    features: [
+      'Gestion des commandes (en ligne et en boutique)',
+      'Suivi des livraisons et des transporteurs',
+      'Gestion des retours et litiges',
+      'Multi-entrepôts et mouvements de stock',
+    ],
+  },
+  {
+    icon: Wallet,
+    title: 'Finance & Comptabilité',
+    accent: '#8B5A00',
+    features: [
+      'Facturation, devis et avoirs',
+      'Suivi des encaissements et dépenses',
+      'Rapports financiers (CA, marges, TVA)',
+    ],
+  },
+  {
+    icon: Users,
+    title: 'Marketing & CRM',
+    accent: '#C1440E',
+    features: [
+      'Fiche client complète (historique, notes)',
+      'Campagnes SMS/Email automatisées',
+      'Programme de fidélité et points de récompense',
+      'Segmentation et filtres avancés',
+    ],
+  },
+  {
+    icon: Settings,
+    title: 'Administration & Paramétrage',
+    accent: '#2E5A9C',
+    features: [
+      'Gestion des utilisateurs et des droits d\'accès',
+      'Multi-boutiques / Multi-points de vente',
+      'Intégrations API (WhatsApp, Mobile Money, livraison)',
+    ],
+  },
 ]
 
 const benefits = [
@@ -254,25 +324,33 @@ export default function PeleAI360Page() {
               Tout ce dont vous avez besoin, au même endroit
             </h2>
             <p className="mt-4 text-lg" style={{ color: '#64748B' }}>
-              Une suite complète d&apos;outils pour gérer et développer votre entreprise.
+              7 modules complets pour piloter votre entreprise de A à Z.
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {featureCategories.map((cat) => (
               <div
-                key={feature.title}
-                className="rounded-2xl p-6 transition-all hover:shadow-lg hover:-translate-y-1"
-                style={{ backgroundColor: 'white', border: `1.5px solid ${feature.accent}20` }}
+                key={cat.title}
+                className="rounded-2xl p-5 transition-all hover:shadow-lg hover:-translate-y-1"
+                style={{ backgroundColor: 'white', border: `1.5px solid ${cat.accent}22` }}
               >
+                <div className="h-1 rounded mb-5" style={{ backgroundColor: cat.accent }} />
                 <div
-                  className="flex h-12 w-12 items-center justify-center rounded-xl mb-4 text-white"
-                  style={{ backgroundColor: feature.accent }}
+                  className="flex h-11 w-11 items-center justify-center rounded-xl mb-4 text-white"
+                  style={{ backgroundColor: cat.accent }}
                 >
-                  <feature.icon className="h-6 w-6" />
+                  <cat.icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold mb-2" style={{ color: '#0D1B2E' }}>{feature.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>{feature.description}</p>
+                <h3 className="text-base font-bold mb-3" style={{ color: '#0D1B2E' }}>{cat.title}</h3>
+                <ul className="space-y-2">
+                  {cat.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2">
+                      <Star className="h-3.5 w-3.5 mt-0.5 shrink-0" style={{ color: cat.accent }} />
+                      <span className="text-xs leading-snug" style={{ color: '#64748B' }}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

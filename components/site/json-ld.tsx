@@ -41,14 +41,14 @@ export function OrganizationJsonLd() {
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+225050805382',
+        telephone: '+2250506805382',
         contactType: 'customer service',
         availableLanguage: ['French'],
         contactOption: 'TollFree',
       },
     ],
     email: 'peleai.ci@gmail.com',
-    telephone: '+225 05 08 05 382',
+    telephone: '+225 05 06 80 53 82',
     areaServed: [
       { '@type': 'Country', name: "Côte d'Ivoire" },
       { '@type': 'Country', name: 'Sénégal' },

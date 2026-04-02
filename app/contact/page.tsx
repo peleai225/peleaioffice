@@ -6,7 +6,7 @@ import { ContactWhatsAppCta } from '@/components/contact/contact-whatsapp-cta'
 
 export const metadata: Metadata = {
   title: 'Contactez-nous — Audit Gratuit de votre Présence Digitale',
-  description: 'Contactez PeleAI à Abidjan pour un audit gratuit de votre présence digitale. Création web, marketing digital, branding et IA. Réponse sous 24h. +225 05 08 05 382.',
+  description: 'Contactez PeleAI à Abidjan pour un audit gratuit de votre présence digitale. Création web, marketing digital, branding et IA. Réponse sous 24h. +225 05 06 80 53 82.',
   keywords: ['contact agence digitale Abidjan', 'audit digital gratuit', 'devis site web Côte d\'Ivoire', 'PeleAI contact'],
   alternates: { canonical: '/contact' },
   openGraph: {

@@ -44,9 +44,9 @@ export function CTASection() {
             className="gap-2"
             style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'white', background: 'rgba(255,255,255,0.06)' }}
           >
-            <a href="tel:+225050805382">
+            <a href="tel:+2250506805382">
               <Phone className="h-4 w-4" />
-              +225 05 08 05 382
+              +225 05 06 80 53 82
             </a>
           </Button>
         </div>

@@ -161,11 +161,11 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex lg:items-center lg:gap-3">
             <a
-              href="tel:+225050805382"
+              href="tel:+2250506805382"
               className="flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-[#2E5A9C] transition-colors"
             >
               <Phone className="h-3.5 w-3.5" />
-              <span className="hidden xl:inline">05 08 05 382</span>
+              <span className="hidden xl:inline">05 06 80 53 82</span>
             </a>
             <Button
               asChild
@@ -259,11 +259,11 @@ export function Header() {
 
             <div className="pt-3 px-4 space-y-3">
               <a
-                href="tel:+225050805382"
+                href="tel:+2250506805382"
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-sm font-medium text-[#2E5A9C] bg-[#2E5A9C]/[0.06]"
               >
                 <Phone className="h-4 w-4" />
-                +225 05 08 05 382
+                +225 05 06 80 53 82
               </a>
               <Button
                 asChild
