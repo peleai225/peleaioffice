@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-// Google Fonts unavailable in this environment — using CSS font-family fallback
+import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Header } from '@/components/layout/header'
@@ -13,78 +13,62 @@ import { getSiteUrl } from '@/lib/site-url'
 const siteUrl = getSiteUrl()
 const defaultOgImage = '/images/peleai-logo-on-white.png'
 
-const fontVars = '--font-inter --font-geist-mono'
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+const geistMono = Geist_Mono({ 
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'PeleAI — Agence Digitale & IA | Abidjan, Côte d\'Ivoire',
+    default: 'PeleAI - L\'Innovation par l\'Intelligence Artificielle',
     template: '%s | PeleAI',
   },
-  description: 'PeleAI, agence digitale #1 à Abidjan : création de sites web, marketing digital, branding et solutions IA sur-mesure pour PME et startups africaines. Résultats garantis.',
-  keywords: [
-    'agence digitale Abidjan',
-    'agence digitale Côte d\'Ivoire',
-    'agence digitale Afrique',
-    'création site web Abidjan',
-    'marketing digital Côte d\'Ivoire',
-    'intelligence artificielle Afrique',
-    'branding Abidjan',
-    'PME Afrique digitale',
-    'startup Côte d\'Ivoire',
-    'PeleAI',
-    'Pelecho Kone',
-    'transformation digitale Afrique',
-    'agence web Abidjan',
-    'SEO Côte d\'Ivoire',
-    'automatisation IA',
-    'MenuPro',
-    'PeleAI360',
-  ],
-  authors: [{ name: 'Pelecho Junior Kone', url: siteUrl }],
+  description: 'Agence digitale spécialisée dans la création de sites web, marketing digital, branding et solutions IA. Transformez votre entreprise avec PeleAI.',
+  keywords: ['agence digitale', 'intelligence artificielle', 'création site web', 'marketing digital', 'branding', 'Afrique', 'PME', 'startup'],
+  authors: [{ name: 'PeleAI' }],
   creator: 'PeleAI',
-  publisher: 'PeleAI',
-  category: 'technology',
   alternates: {
     canonical: '/',
-    languages: { 'fr-CI': '/', 'fr': '/' },
   },
   openGraph: {
     type: 'website',
-    locale: 'fr_CI',
+    locale: 'fr_FR',
     siteName: 'PeleAI',
     url: '/',
-    title: 'PeleAI — Agence Digitale & IA | Abidjan',
-    description: 'Création web, marketing digital, branding et solutions IA pour PME et startups africaines. Expert en transformation digitale à Abidjan, Côte d\'Ivoire.',
+    title: 'PeleAI - L\'Innovation par l\'Intelligence Artificielle',
+    description: 'Transformez votre entreprise avec des solutions digitales sur-mesure.',
     images: [
       {
         url: defaultOgImage,
         width: 1200,
         height: 630,
-        alt: 'PeleAI — Agence Digitale & Intelligence Artificielle Abidjan',
+        alt: 'PeleAI',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PeleAI — Agence Digitale & IA | Abidjan',
-    description: 'Création web, marketing digital, branding et IA pour PME africaines. Abidjan, Côte d\'Ivoire.',
+    title: 'PeleAI - L\'Innovation par l\'Intelligence Artificielle',
+    description: 'Transformez votre entreprise avec des solutions digitales sur-mesure.',
     images: [defaultOgImage],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' },
   },
   icons: {
     icon: [{ url: '/images/peleai-icon-dark.png', type: 'image/png' }],
-    apple: [{ url: '/images/peleai-icon-dark.png' }],
   },
-  verification: {},
 }
 
 export const viewport: Viewport = {
-  themeColor: '#C1440E',
+  themeColor: '#2E5A9C',
   width: 'device-width',
   initialScale: 1,
 }
@@ -95,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${inter.variable} ${geistMono.variable}`} data-scroll-behavior="smooth">
       <body className="font-sans antialiased" suppressHydrationWarning>
         <OrganizationJsonLd />
         <SiteContentProvider>

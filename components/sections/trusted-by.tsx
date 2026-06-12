@@ -11,32 +11,31 @@ export function TrustedBy() {
     content.partners.length > 0 ? content.partners : [{ name: "Partenaire" }]
 
   return (
-    <section className="py-10" style={{ backgroundColor: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
+    <section className="py-14 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-xs font-semibold uppercase tracking-widest mb-8" style={{ color: '#94A3B8' }}>
+        <p className="text-center text-sm font-medium text-muted-foreground mb-10">
           {content.partnersSectionTitle}
         </p>
 
         <div className="relative overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-16 z-10" style={{ background: 'linear-gradient(to right, #F8FAFC, transparent)' }} />
-          <div className="absolute right-0 top-0 bottom-0 w-16 z-10" style={{ background: 'linear-gradient(to left, #F8FAFC, transparent)' }} />
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
 
           <div className="flex animate-scroll">
             {[...clients, ...clients].map((client, i) => (
               <div
-                key={`${client.name}-${i}`}
+                key={`${client.name}-${client.logo ?? "t"}-${i}`}
                 className={cn(
-                  "flex-shrink-0 mx-6 flex items-center justify-center",
-                  "h-12 min-w-[100px] max-w-[180px] px-4 rounded-xl bg-white"
+                  "flex-shrink-0 mx-10 flex items-center justify-center",
+                  "h-14 min-w-[120px] max-w-[200px] px-6 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                 )}
-                style={{ border: '1px solid #E2E8F0' }}
               >
                 {client.logo ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-8 w-auto max-w-[160px] object-contain"
+                    className="max-h-10 w-auto max-w-[180px] object-contain object-center"
                     onError={(e) => {
                       const fallback = TRUSTED_PARTNER_LOGOS[client.name]
                       if (!fallback) return
@@ -46,7 +45,7 @@ export function TrustedBy() {
                     }}
                   />
                 ) : (
-                  <span className="text-sm font-semibold whitespace-nowrap" style={{ color: '#94A3B8' }}>
+                  <span className="text-sm font-semibold text-muted-foreground whitespace-nowrap">
                     {client.name}
                   </span>
                 )}

@@ -1,81 +1,73 @@
 import type { Metadata } from 'next'
-import { Globe, Zap, Target, CheckCircle } from 'lucide-react'
+import Link from 'next/link'
 import { ContactForm } from '@/components/forms/contact-form'
 import { ContactInfoSection } from '@/components/contact/contact-info-section'
 import { ContactWhatsAppCta } from '@/components/contact/contact-whatsapp-cta'
+import { Shield, Clock, Lightbulb } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contactez-nous — Audit Gratuit de votre Présence Digitale',
-  description: 'Contactez PeleAI à Abidjan pour un audit gratuit de votre présence digitale. Création web, marketing digital, branding et IA. Réponse sous 24h. +225 05 06 80 53 82.',
-  keywords: ['contact agence digitale Abidjan', 'audit digital gratuit', 'devis site web Côte d\'Ivoire', 'PeleAI contact'],
+  title: 'Contact',
+  description: 'Contactez PeleAI pour discuter de votre projet digital. Création web, marketing, branding et solutions IA.',
   alternates: { canonical: '/contact' },
-  openGraph: {
-    url: '/contact',
-    title: 'Contactez PeleAI — Audit Gratuit | Abidjan',
-    description: 'Obtenez un audit gratuit de votre présence digitale. Réponse sous 24h.',
-  },
+  openGraph: { url: '/contact' },
 }
 
 const reasons = [
   {
-    icon: Globe,
-    accent: '#2E5A9C',
+    icon: Lightbulb,
     title: 'Expertise africaine',
     description: 'Nous comprenons les défis spécifiques du marché africain et adaptons nos solutions en conséquence.',
   },
   {
-    icon: Zap,
-    accent: '#D4891A',
+    icon: Clock,
     title: 'Support réactif',
-    description: "Notre équipe est disponible pour vous accompagner à chaque étape de votre projet. Réponse sous 24h.",
+    description: 'Notre équipe est disponible pour vous accompagner à chaque étape de votre projet.',
   },
   {
-    icon: Target,
-    accent: '#1B3A6B',
+    icon: Shield,
     title: 'Solutions sur-mesure',
-    description: "Chaque projet est unique. Nous créons des solutions adaptées à vos besoins et à votre budget.",
+    description: 'Chaque projet est unique. Nous créons des solutions adaptées à vos besoins et à votre budget.',
   },
 ]
 
 export default function ContactPage() {
   return (
     <>
-      {/* Hero — dark navy + African pattern */}
-      <section
-        className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-20"
-        style={{ backgroundColor: '#0D1B2E' }}
-      >
+      {/* Hero banner */}
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 bg-primary overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-[20%] right-[15%] h-[250px] w-[250px] rounded-full bg-accent/[0.08] blur-[80px]" />
+          <div className="absolute bottom-[10%] left-[10%] h-[200px] w-[200px] rounded-full bg-accent/[0.05] blur-[60px]" />
+        </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: 'rgba(255,255,255,0.65)' }}>
+            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">
               Contact
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl text-balance">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
               Parlons de votre{' '}
-              <span style={{ color: '#D4891A' }}>projet</span>
+              <span className="text-accent">projet</span>
             </h1>
-            <p className="mt-6 text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.72)' }}>
+            <p className="mt-6 text-lg text-white/60 leading-relaxed">
               Prêt à transformer votre entreprise ? Contactez-nous pour discuter de vos besoins
-              et découvrir comment nous pouvons vous aider à atteindre vos objectifs.
+              et découvrir comment nous pouvons vous aider.
             </p>
-            {/* Trust badges */}
-            <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm">
-              {['Réponse sous 24h', 'Audit gratuit', '10+ entreprises accompagnées'].map((badge) => (
-                <span
-                  key={badge}
-                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1"
-                  style={{ backgroundColor: 'rgba(46,90,156,0.2)', border: '1px solid rgba(46,90,156,0.4)', color: 'rgba(255,255,255,0.75)' }}
-                >
-                  <CheckCircle className="h-3.5 w-3.5 shrink-0" style={{ color: '#D4891A' }} /> {badge}
-                </span>
-              ))}
+            <div className="mt-4 flex items-center justify-center gap-2 text-sm text-white/40">
+              <Link href="/" className="hover:text-white/70 transition-colors">Accueil</Link>
+              <span>/</span>
+              <span className="text-accent">Contact</span>
             </div>
           </div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" preserveAspectRatio="none">
+            <path d="M0 50L1440 50L1440 15C1440 15 1200 0 720 0C240 0 0 15 0 15L0 50Z" fill="var(--background)" />
+          </svg>
         </div>
       </section>
 
       {/* Contact section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
             {/* Contact info */}
@@ -85,14 +77,11 @@ export default function ContactPage() {
 
             {/* Contact form */}
             <div className="lg:col-span-3">
-              <div
-                className="rounded-2xl p-6 sm:p-8 shadow-xl"
-                style={{ backgroundColor: 'white', border: '1.5px solid #C1440E22' }}
-              >
-                <h2 className="text-2xl font-bold mb-2" style={{ color: '#0D1B2E' }}>
+              <div className="rounded-2xl bg-card p-7 sm:p-9 shadow-xl shadow-black/[0.04] border border-border/50">
+                <h2 className="text-2xl font-bold text-foreground mb-2">
                   Envoyez-nous un message
                 </h2>
-                <p className="mb-6 text-sm" style={{ color: '#64748B' }}>
+                <p className="text-muted-foreground mb-8">
                   Remplissez le formulaire : un message prérempli s&apos;ouvre dans WhatsApp pour nous
                   transmettre votre demande.
                 </p>
@@ -104,32 +93,27 @@ export default function ContactPage() {
       </section>
 
       {/* Why choose us */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: '#F8FAFC' }}>
+      <section className="py-20 lg:py-24 bg-secondary">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-12">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: '#0D1B2E' }}>
-                Pourquoi choisir PeleAI ?
-              </h2>
-            </div>
+          <div className="mx-auto max-w-2xl text-center mb-14">
+            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">
+              Nos atouts
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Pourquoi choisir PeleAI ?
+            </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3">
             {reasons.map((reason) => (
-              <div
-                key={reason.title}
-                className="rounded-xl p-6 text-center"
-                style={{ backgroundColor: 'white', border: `1.5px solid ${reason.accent}22` }}
-              >
-                {/* Top accent */}
-                <div className="h-1 rounded mb-6" style={{ backgroundColor: reason.accent }} />
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl mb-4" style={{ backgroundColor: `${reason.accent}15`, color: reason.accent }}>
+              <div key={reason.title} className="bg-card rounded-2xl p-8 text-center border border-border/50 hover:shadow-lg hover:shadow-accent/[0.05] hover:-translate-y-1 transition-all duration-300">
+                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent">
                   <reason.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3" style={{ color: '#0D1B2E' }}>
+                <h3 className="text-lg font-bold text-foreground mb-3">
                   {reason.title}
                 </h3>
-                <p className="leading-relaxed text-sm" style={{ color: '#64748B' }}>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {reason.description}
                 </p>
               </div>
@@ -138,14 +122,14 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FAQ hint */}
-      <section className="py-16 lg:py-20 bg-white">
+      {/* WhatsApp CTA */}
+      <section className="py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0D1B2E' }}>
+            <h2 className="text-2xl font-bold text-foreground mb-4">
               Des questions ?
             </h2>
-            <p className="mb-6" style={{ color: '#64748B' }}>
+            <p className="text-muted-foreground mb-8">
               Consultez notre FAQ ou contactez-nous directement. Notre équipe est là pour vous aider.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

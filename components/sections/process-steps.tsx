@@ -5,13 +5,13 @@ const steps = [
     icon: Search,
     number: '01',
     title: 'Analyse',
-    description: "Nous étudions vos besoins, votre marché et vos objectifs pour comprendre votre vision.",
+    description: 'Nous étudions vos besoins, votre marché et vos objectifs pour comprendre votre vision.',
   },
   {
     icon: Lightbulb,
     number: '02',
     title: 'Stratégie',
-    description: "Nous élaborons une stratégie sur-mesure et un plan d'action détaillé pour votre projet.",
+    description: 'Nous élaborons une stratégie sur-mesure et un plan d\'action détaillé pour votre projet.',
   },
   {
     icon: PenTool,
@@ -29,54 +29,54 @@ const steps = [
 
 export function ProcessSteps() {
   return (
-    <section className="py-20 lg:py-28" style={{ backgroundColor: '#F8FAFC' }}>
+    <section className="py-20 lg:py-28 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center mb-14">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#2E5A9C' }}>
-            Notre processus
+        {/* Section header */}
+        <div className="mx-auto max-w-2xl text-center mb-14 lg:mb-20">
+          <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">
+            Notre Processus
           </p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: '#0D1B2E' }}>
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] leading-tight">
             De la vision à la réalisation
           </h2>
-          <p className="mt-4 text-lg" style={{ color: '#64748B' }}>
-            Une méthodologie éprouvée pour garantir le succès de votre projet.
+          <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+            Une méthodologie éprouvée en 4 étapes pour garantir le succès de chaque projet.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, i) => (
-            <div key={step.title} className="relative">
-              {/* Connector line desktop */}
-              {i < steps.length - 1 && (
-                <div
-                  className="hidden lg:block absolute top-5 h-px"
-                  style={{ left: 'calc(50% + 2rem)', right: '-50%', backgroundColor: '#E2E8F0' }}
-                />
-              )}
+        {/* Steps */}
+        <div className="relative">
+          {/* Connector line for desktop */}
+          <div className="hidden lg:block absolute top-16 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-transparent via-border to-transparent" />
 
-              <div
-                className="rounded-2xl p-6 bg-white"
-                style={{ border: '1px solid #E2E8F0' }}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className="flex h-10 w-10 items-center justify-center rounded-xl shrink-0"
-                    style={{ backgroundColor: 'rgba(46,90,156,0.1)' }}
-                  >
-                    <step.icon className="h-5 w-5" style={{ color: '#2E5A9C' }} />
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step) => (
+              <div key={step.title} className="relative group">
+                <div className="flex flex-col items-center text-center">
+                  {/* Number badge */}
+                  <div className="relative mb-6">
+                    {/* Outer ring */}
+                    <div className="flex h-28 w-28 items-center justify-center rounded-full bg-secondary border-2 border-border transition-all duration-300 group-hover:border-accent/30 group-hover:shadow-lg group-hover:shadow-accent/10">
+                      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white group-hover:scale-105">
+                        <step.icon className="h-8 w-8" />
+                      </div>
+                    </div>
+                    {/* Step number */}
+                    <span className="absolute -top-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-accent text-xs font-bold text-white shadow-md shadow-accent/30">
+                      {step.number}
+                    </span>
                   </div>
-                  <span className="text-2xl font-black" style={{ color: '#E2E8F0' }}>{step.number}</span>
-                </div>
 
-                <h3 className="text-base font-bold mb-2" style={{ color: '#0D1B2E' }}>
-                  {step.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>
-                  {step.description}
-                </p>
+                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed max-w-[220px]">
+                    {step.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
