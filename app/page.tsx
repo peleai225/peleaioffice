@@ -1,23 +1,25 @@
-import { Hero } from '@/components/sections/hero'
-import { TrustedBy } from '@/components/sections/trusted-by'
-import { ServicesGrid } from '@/components/sections/services-grid'
-import { Stats } from '@/components/sections/stats'
-import { ProcessSteps } from '@/components/sections/process-steps'
-import { FeaturedSolution } from '@/components/sections/featured-solution'
-import { Testimonials } from '@/components/sections/testimonials'
-import { CTASection } from '@/components/sections/cta-section'
+import { FeaturedCases } from '@/components/sections/home/featured-cases'
+import { FinalCta } from '@/components/sections/home/final-cta'
+import { HomeHero } from '@/components/sections/home/home-hero'
+import { MethodSteps } from '@/components/sections/home/method-steps'
+import { ProofBand } from '@/components/sections/home/proof-band'
+import { ServicesOverview } from '@/components/sections/home/services-overview'
+import { TestimonialsSection } from '@/components/sections/home/testimonials-section'
+import { TrainingTeaser } from '@/components/sections/home/training-teaser'
+import { ValueSection } from '@/components/sections/home/value-section'
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <TrustedBy />
-      <ServicesGrid />
-      <Stats />
-      <ProcessSteps />
-      <FeaturedSolution />
-      <Testimonials />
-      <CTASection />
+      <HomeHero />
+      <ProofBand />
+      <ValueSection />
+      <ServicesOverview />
+      <MethodSteps />
+      <FeaturedCases />
+      <TestimonialsSection />
+      <TrainingTeaser />
+      <FinalCta />
     </>
   )
 }

@@ -1,104 +1,155 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
+/* ==========================================================================
+   PeleAI — design system v4
+   Toute la palette dérive du bleu mesuré dans le logo : #345594 (rang 600).
+   ========================================================================== */
 
 :root {
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.13 0.03 260);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0.03 260);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0.03 260);
+  /* Échelle du bleu de marque */
+  --brand-50: #f3f6fb;
+  --brand-100: #e4eaf5;
+  --brand-200: #c9d5ea;
+  --brand-300: #9db4dd;
+  --brand-400: #6e8bc1;
+  --brand-500: #4b6dac;
+  --brand-600: #345594;
+  --brand-700: #2b4679;
+  --brand-800: #243a63;
+  --brand-900: #1c2d4c;
+  --brand-950: #0b1527;
 
-  /* Primary - Deep Navy Blue */
-  --primary: oklch(0.25 0.08 260);
-  --primary-foreground: oklch(0.99 0 0);
+  /* Rôles */
+  --paper: #faf8f4; /* fond principal, blanc cassé chaud */
+  --tint: #edf1f8; /* sections alternées */
+  --night: #0b1527; /* sections fortes, footer */
+  --ink: #0b1527; /* texte */
+  --ink-soft: #556079; /* texte secondaire — 5,94:1 sur paper */
+  --line: #d9dfea;
 
-  /* Secondary - Light Gray sections */
-  --secondary: oklch(0.97 0.003 260);
-  --secondary-foreground: oklch(0.2 0.06 260);
+  /* Accent unique : ambre (option B validée) */
+  --cta: #f5a524; /* fond de bouton, texte nuit dessus — 8,94:1 */
+  --cta-hover: #ffb43d;
+  --cta-soft: #fde9c2;
+  --cta-ink: #b4530a; /* texte ambre sur fond clair — 4,73:1 */
 
-  /* Muted */
-  --muted: oklch(0.96 0.003 260);
-  --muted-foreground: oklch(0.45 0.015 260);
+  --success: #1e7a4c;
+  --danger: #b42318;
 
-  /* Accent - Electric Blue */
-  --accent: oklch(0.55 0.22 260);
-  --accent-foreground: oklch(0.99 0 0);
+  /* Focus : bleu marque sur fond clair, ambre sur fond nuit */
+  --focus: var(--brand-600);
 
-  /* Destructive */
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
+  /* Mouvement */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Borders and inputs */
-  --border: oklch(0.92 0.005 260);
-  --input: oklch(0.92 0.005 260);
-  --ring: oklch(0.55 0.22 260);
-
-  /* Chart colors */
-  --chart-1: oklch(0.55 0.22 260);
-  --chart-2: oklch(0.6 0.18 250);
-  --chart-3: oklch(0.65 0.15 180);
-  --chart-4: oklch(0.75 0.12 90);
-  --chart-5: oklch(0.55 0.2 30);
-
+  /* --- Correspondance avec les tokens shadcn (anciens composants, retirés à l'étape 6) --- */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink);
+  --primary: var(--brand-600);
+  --primary-foreground: #ffffff;
+  --secondary: var(--tint);
+  --secondary-foreground: var(--brand-800);
+  --muted: var(--tint);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--cta);
+  --accent-foreground: var(--night);
+  --destructive: var(--danger);
+  --destructive-foreground: #ffffff;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--brand-600);
+  --chart-1: var(--brand-600);
+  --chart-2: var(--brand-400);
+  --chart-3: var(--brand-300);
+  --chart-4: var(--cta);
+  --chart-5: var(--brand-800);
   --radius: 0.75rem;
-
-  /* Accent warm (touches subtiles) */
-  --afro-gold: oklch(0.75 0.14 75);
-  --afro-terracotta: oklch(0.55 0.14 40);
-  --afro-ochre: oklch(0.7 0.1 65);
-  --afro-sand: oklch(0.97 0.015 75);
-
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.15 0.02 260);
-  --sidebar-primary: oklch(0.25 0.08 260);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.95 0.02 250);
-  --sidebar-accent-foreground: oklch(0.25 0.08 250);
-  --sidebar-border: oklch(0.92 0.005 260);
-  --sidebar-ring: oklch(0.55 0.22 260);
-}
-
-.dark {
-  --background: oklch(0.1 0.02 260);
-  --foreground: oklch(0.97 0 0);
-  --card: oklch(0.14 0.02 260);
-  --card-foreground: oklch(0.97 0 0);
-  --popover: oklch(0.14 0.02 260);
-  --popover-foreground: oklch(0.97 0 0);
-  --primary: oklch(0.6 0.15 250);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.18 0.02 260);
-  --secondary-foreground: oklch(0.97 0 0);
-  --muted: oklch(0.18 0.02 260);
-  --muted-foreground: oklch(0.6 0.015 260);
-  --accent: oklch(0.6 0.2 260);
-  --accent-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.22 0.015 260);
-  --input: oklch(0.22 0.015 260);
-  --ring: oklch(0.6 0.2 260);
-  --chart-1: oklch(0.55 0.18 250);
-  --chart-2: oklch(0.65 0.15 180);
-  --chart-3: oklch(0.75 0.12 90);
-  --chart-4: oklch(0.6 0.2 300);
-  --chart-5: oklch(0.6 0.22 20);
-  --sidebar: oklch(0.14 0.02 260);
-  --sidebar-foreground: oklch(0.97 0 0);
-  --sidebar-primary: oklch(0.6 0.15 250);
-  --sidebar-primary-foreground: oklch(0.97 0 0);
-  --sidebar-accent: oklch(0.18 0.02 260);
-  --sidebar-accent-foreground: oklch(0.97 0 0);
-  --sidebar-border: oklch(0.22 0.015 260);
-  --sidebar-ring: oklch(0.6 0.15 250);
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--brand-600);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--tint);
+  --sidebar-accent-foreground: var(--brand-800);
+  --sidebar-border: var(--line);
+  --sidebar-ring: var(--brand-600);
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  /* Polices (chargées par next/font dans app/layout.tsx) */
+  --font-sans: var(--font-source-sans), 'Source Sans 3', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-display: var(--font-outfit), 'Outfit', 'Century Gothic', 'Segoe UI', sans-serif;
+
+  /* Couleurs de marque */
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
+  --color-brand: var(--brand-600);
+  --color-paper: var(--paper);
+  --color-tint: var(--tint);
+  --color-night: var(--night);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
+  --color-cta-soft: var(--cta-soft);
+  --color-cta-ink: var(--cta-ink);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+
+  /* Échelle typographique fluide (mobile → desktop) */
+  --text-display: clamp(2.75rem, 1.5rem + 5.5vw, 6.5rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.03em;
+  --text-h1: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);
+  --text-h1--line-height: 1.05;
+  --text-h1--letter-spacing: -0.025em;
+  --text-h2: clamp(1.875rem, 1.4rem + 1.8vw, 3rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h3: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.01em;
+  --text-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --text-lead--line-height: 1.55;
+  --text-body: 1.125rem;
+  --text-body--line-height: 1.6;
+  --text-small: 0.9375rem;
+  --text-small--line-height: 1.5;
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1.2;
+  --text-label--letter-spacing: 0.1em;
+
+  /* Trois rayons, pas plus */
+  --radius-field: 8px;
+  --radius-card: 20px;
+  /* rounded-full pour les boutons (extrémité de la hampe du P) */
+
+  /* Anciens rayons shadcn */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Une seule ombre, au survol */
+  --shadow-lift: 0 18px 40px -20px rgb(11 21 39 / 0.22);
+
+  --ease-out: var(--ease-out);
+
+  /* Tokens shadcn */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -123,14 +174,6 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --color-afro-gold: var(--afro-gold);
-  --color-afro-terracotta: var(--afro-terracotta);
-  --color-afro-ochre: var(--afro-ochre);
-  --color-afro-sand: var(--afro-sand);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -143,14 +186,394 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-paper font-sans text-body text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--brand-200);
+    color: var(--ink);
+  }
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 }
 
-/* Animations */
+/* Tonalités de section : chaque tonalité fixe le fond, le texte et la couleur de focus */
+@utility tone-paper {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+@utility tone-tint {
+  background-color: var(--tint);
+  color: var(--ink);
+}
+@utility tone-white {
+  background-color: #ffffff;
+  color: var(--ink);
+}
+@utility tone-night {
+  background-color: var(--night);
+  color: #ffffff;
+  --focus: var(--cta);
+  --line: rgb(157 180 221 / 0.18);
+  --ink-soft: var(--brand-300);
+}
+@utility tone-brand {
+  background-color: var(--brand-600);
+  color: #ffffff;
+  --focus: #ffffff;
+  --line: rgb(255 255 255 / 0.22);
+  --ink-soft: var(--brand-100);
+}
+
+/* Conteneur : 1240 px de contenu, gouttière fluide 16 → 48 px */
+@utility container-site {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+  max-width: calc(77.5rem + 2 * clamp(1rem, 4vw, 3rem));
+}
+
+/* Respirations verticales : 64 → 128 px, et 80 → 160 px pour les sections fortes */
+@utility section-y {
+  padding-block: clamp(4rem, 2.4rem + 5vw, 8rem);
+}
+@utility section-y-lg {
+  padding-block: clamp(5rem, 2.5rem + 7.5vw, 10rem);
+}
+@utility section-y-sm {
+  padding-block: clamp(3rem, 2rem + 3vw, 5rem);
+}
+
+@utility text-measure {
+  max-width: 65ch;
+}
+
+/* --------------------------------------------------------------------------
+   Ondes du hero (CSS pur : rendu dès le premier affichage, sans JavaScript)
+   -------------------------------------------------------------------------- */
+@keyframes signal-wave {
+  0%,
+  100% {
+    opacity: var(--wave-rest, 0.07);
+  }
+  22% {
+    opacity: var(--wave-peak, 0.4);
+  }
+  50% {
+    opacity: calc(var(--wave-rest, 0.07) * 1.4);
+  }
+}
+.signal-wave {
+  opacity: var(--wave-rest, 0.07);
+  animation: signal-wave 4.2s var(--ease-out) infinite;
+  animation-delay: calc(var(--wave-index, 0) * 0.35s);
+}
+
+/* ==========================================================================
+   Animations signature
+   Règles : transform / opacity / clip-path uniquement ; contenu jamais bloqué ;
+   tout est coupé avec prefers-reduced-motion (voir en bas de fichier).
+   ========================================================================== */
+
+/* --- 1. Hero : construction du monogramme, titre mot par mot, émission --- */
+@property --sweep {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 360deg;
+}
+@keyframes mono-sweep {
+  from {
+    --sweep: 0deg;
+  }
+  to {
+    --sweep: 360deg;
+  }
+}
+.hero-mono {
+  /* Centre de l'arc du logo dans icone-p.png (244,3 / 236,8 sur 512) */
+  -webkit-mask-image: conic-gradient(from 0deg at 47.7% 46.2%, #000 var(--sweep), transparent 0);
+  mask-image: conic-gradient(from 0deg at 47.7% 46.2%, #000 var(--sweep), transparent 0);
+  animation: mono-sweep 1.25s cubic-bezier(0.65, 0, 0.35, 1) 0.15s both;
+}
+@keyframes arc-ignite {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.hero-arc-glow {
+  opacity: 0;
+  animation: arc-ignite 1.4s var(--ease-out) 1.2s both;
+}
+@keyframes wave-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: var(--wave-rest, 0.07);
+  }
+}
+.signal-intro .signal-wave {
+  animation:
+    wave-in 0.7s var(--ease-out) calc(1.35s + var(--wave-index, 0) * 0.12s) both,
+    signal-wave 4.2s var(--ease-out) calc(2s + var(--wave-index, 0) * 0.35s) infinite;
+}
+
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+@keyframes word-up {
+  from {
+    transform: translateY(108%) rotate(3deg);
+  }
+}
+.word-up {
+  display: inline-block;
+  transform-origin: 0 100%;
+  animation: word-up 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) calc(0.1s + var(--i, 0) * 0.07s) both;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+.rise {
+  animation: rise 0.9s var(--ease-out) var(--d, 0s) both;
+}
+
+/* --- 2. Titres de section : mots qui montent à travers un masque (SplitText) --- */
+.split-inner {
+  display: inline-block;
+  transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 45ms);
+}
+.split-waiting .split-inner {
+  transform: translateY(110%) rotate(3deg);
+}
+
+/* --- 3. Défilant des clients --- */
+.marquee {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* --- 4. Transition de page : une onde bleue qui se retire vers le coin haut droit --- */
+@keyframes page-wave {
+  from {
+    clip-path: circle(150% at 100% 0%);
+  }
+  to {
+    clip-path: circle(0% at 100% 0%);
+  }
+}
+.page-wave {
+  display: none;
+}
+html.nav-ready .page-wave {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  background: var(--brand-600);
+  animation: page-wave 0.75s cubic-bezier(0.7, 0, 0.2, 1) both;
+}
+
+/* --- 5. Animations liées au défilement (amélioration progressive) --- */
+@keyframes hero-art-out {
+  to {
+    transform: translateY(-14%) scale(1.14);
+    opacity: 0.3;
+  }
+}
+@keyframes draw-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes curtain {
+  from {
+    clip-path: inset(14% 10% 14% 10% round 28px);
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 0);
+  }
+}
+@keyframes parallax {
+  from {
+    transform: scale(1.1) translateY(-3%);
+  }
+  to {
+    transform: scale(1.1) translateY(3%);
+  }
+}
+@keyframes bloom {
+  from {
+    transform: scale(0.55) rotate(-10deg);
+    opacity: 0;
+  }
+}
+.bloom-in {
+  animation: bloom 1.6s var(--ease-out) 0.15s both;
+}
+.draw-line {
+  position: relative;
+}
+.draw-line::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: -2px;
+  height: 2px;
+  background: var(--brand-600);
+  transform-origin: left;
+}
+@supports (animation-timeline: view()) {
+  .hero-scroll-art {
+    animation: hero-art-out linear both;
+    animation-timeline: view();
+    animation-range: exit 0% exit 100%;
+  }
+  .draw-line::before {
+    animation: draw-x linear both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 45%;
+  }
+  .curtain {
+    animation: curtain linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+  .parallax-img {
+    animation: parallax linear both;
+    animation-timeline: view();
+  }
+  .bloom {
+    animation: bloom linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 55%;
+  }
+}
+
+@keyframes arc-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.arc-pulse {
+  animation: arc-pulse 1.6s ease-in-out infinite;
+}
+
+/* Arc qui se dessine au survol d'une carte (pathLength="100") */
+.arc-draw {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.4s var(--ease-out);
+}
+.group:hover .arc-draw,
+.group:focus-within .arc-draw {
+  stroke-dashoffset: 0;
+}
+
+/*
+ * Moins d'animations demandé : on coupe tout ce qui DÉPLACE (translations, parallaxe, défilant,
+ * inclinaison, onde de transition), on garde ce qui ne fait que changer d'opacité ou se dévoiler sur place
+ * (fondus, pulsation des ondes, construction du monogramme, compteurs). Recommandation WCAG 2.3.3.
+ */
+@keyframes fade-only {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .word-up,
+  .rise {
+    animation-name: fade-only;
+  }
+  .split-inner {
+    transform: none !important;
+    transition-property: opacity;
+  }
+  .split-waiting .split-inner {
+    opacity: 0;
+  }
+  .marquee-track,
+  .hero-scroll-art,
+  .draw-line::before,
+  .curtain,
+  .parallax-img,
+  .bloom {
+    animation: none !important;
+  }
+  .bloom-in {
+    animation-name: fade-only;
+  }
+  .marquee-track {
+    flex-wrap: wrap;
+    width: auto;
+  }
+  html.nav-ready .page-wave {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   LEGACY — classes utilisées par les anciennes pages, supprimées à l'étape 6
+   ========================================================================== */
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -161,12 +584,14 @@
     transform: translateY(0);
   }
 }
-
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
 @keyframes slide-in-left {
   from {
     opacity: 0;
@@ -177,7 +602,6 @@
     transform: translateX(0);
   }
 }
-
 @keyframes slide-in-right {
   from {
     opacity: 0;
@@ -188,66 +612,66 @@
     transform: translateX(0);
   }
 }
-
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
-
 @keyframes pulse-ring {
-  0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(1.6); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
-
-@keyframes count-up {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 .animate-fade-in-up {
   animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
 }
-
 .animate-slide-in-left {
   animation: slide-in-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
 .animate-slide-in-right {
   animation: slide-in-right 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
 .animate-float {
   animation: float 5s ease-in-out infinite;
 }
-
 .animate-pulse-ring {
   animation: pulse-ring 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
-
-/* Stagger delays */
-.animate-delay-100 { animation-delay: 100ms; }
-.animate-delay-200 { animation-delay: 200ms; }
-.animate-delay-300 { animation-delay: 300ms; }
-.animate-delay-400 { animation-delay: 400ms; }
-.animate-delay-500 { animation-delay: 500ms; }
-.animate-delay-600 { animation-delay: 600ms; }
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
+.animate-delay-100 {
+  animation-delay: 100ms;
 }
-
-/* Legacy support for african-decor components used on other pages */
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+.animate-delay-600 {
+  animation-delay: 600ms;
+}
 .afro-pattern-overlay {
   background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 11px, oklch(0.25 0.08 260 / 0.04) 11px, oklch(0.25 0.08 260 / 0.04) 12px),
-    repeating-linear-gradient(90deg, transparent, transparent 11px, oklch(0.25 0.08 260 / 0.04) 11px, oklch(0.25 0.08 260 / 0.04) 12px);
+    repeating-linear-gradient(0deg, transparent, transparent 11px, rgb(52 85 148 / 0.04) 11px, rgb(52 85 148 / 0.04) 12px),
+    repeating-linear-gradient(90deg, transparent, transparent 11px, rgb(52 85 148 / 0.04) 11px, rgb(52 85 148 / 0.04) 12px);
 }
-
 .afro-card-edge {
   position: relative;
 }

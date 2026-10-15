@@ -1,143 +1,110 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import { ContactForm } from '@/components/forms/contact-form'
-import { ContactInfoSection } from '@/components/contact/contact-info-section'
-import { ContactWhatsAppCta } from '@/components/contact/contact-whatsapp-cta'
-import { Shield, Clock, Lightbulb } from 'lucide-react'
+import { Button, Card, Section, Todo } from '@/components/ds'
+import { ProjectForm } from '@/components/forms/project-form'
+import { PageHero } from '@/components/sections/page-hero'
+import { MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from '@/components/site/icons'
+import { contact, site, whatsappUrl } from '@/content/site'
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Contactez PeleAI pour discuter de votre projet digital. Création web, marketing, branding et solutions IA.',
+  description:
+    'Contactez PeleAI à Abidjan : devis gratuit pour votre site internet, solution IA, création de contenu ou formation. Réponse rapide, par email ou WhatsApp.',
   alternates: { canonical: '/contact' },
-  openGraph: { url: '/contact' },
 }
 
-const reasons = [
-  {
-    icon: Lightbulb,
-    title: 'Expertise africaine',
-    description: 'Nous comprenons les défis spécifiques du marché africain et adaptons nos solutions en conséquence.',
-  },
-  {
-    icon: Clock,
-    title: 'Support réactif',
-    description: 'Notre équipe est disponible pour vous accompagner à chaque étape de votre projet.',
-  },
-  {
-    icon: Shield,
-    title: 'Solutions sur-mesure',
-    description: 'Chaque projet est unique. Nous créons des solutions adaptées à vos besoins et à votre budget.',
-  },
-]
+type Props = { searchParams: Promise<{ objet?: string }> }
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: Props) {
+  const { objet } = await searchParams
+
   return (
     <>
-      {/* Hero banner */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 bg-primary overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-[20%] right-[15%] h-[250px] w-[250px] rounded-full bg-accent/[0.08] blur-[80px]" />
-          <div className="absolute bottom-[10%] left-[10%] h-[200px] w-[200px] rounded-full bg-accent/[0.05] blur-[60px]" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">
-              Contact
-            </p>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
-              Parlons de votre{' '}
-              <span className="text-accent">projet</span>
-            </h1>
-            <p className="mt-6 text-lg text-white/60 leading-relaxed">
-              Prêt à transformer votre entreprise ? Contactez-nous pour discuter de vos besoins
-              et découvrir comment nous pouvons vous aider.
-            </p>
-            <div className="mt-4 flex items-center justify-center gap-2 text-sm text-white/40">
-              <Link href="/" className="hover:text-white/70 transition-colors">Accueil</Link>
-              <span>/</span>
-              <span className="text-accent">Contact</span>
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" preserveAspectRatio="none">
-            <path d="M0 50L1440 50L1440 15C1440 15 1200 0 720 0C240 0 0 15 0 15L0 50Z" fill="var(--background)" />
-          </svg>
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: 'Contact', href: '/contact' }]}
+        eyebrow="Contact"
+        title="Parlons de votre projet."
+        lead={`Décrivez votre besoin en quelques lignes. ${site.responseTime}, avec des questions précises puis un devis gratuit.`}
+      />
 
-      {/* Contact section */}
-      <section className="py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
-            {/* Contact info */}
-            <div className="lg:col-span-2">
-              <ContactInfoSection />
-            </div>
+      <Section tone="tint" aria-label="Formulaire et coordonnées">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-6">
+          <Card padding="lg" className="self-start lg:col-span-7">
+            <ProjectForm defaultSubject={objet} />
+          </Card>
 
-            {/* Contact form */}
-            <div className="lg:col-span-3">
-              <div className="rounded-2xl bg-card p-7 sm:p-9 shadow-xl shadow-black/[0.04] border border-border/50">
-                <h2 className="text-2xl font-bold text-foreground mb-2">
-                  Envoyez-nous un message
-                </h2>
-                <p className="text-muted-foreground mb-8">
-                  Remplissez le formulaire : un message prérempli s&apos;ouvre dans WhatsApp pour nous
-                  transmettre votre demande.
-                </p>
-                <ContactForm />
+          <div className="grid content-start gap-6 lg:col-span-5">
+            <Card padding="lg" className="relative isolate grid gap-5 overflow-hidden border-0 bg-night text-white">
+              <p className="font-display text-label font-medium uppercase text-brand-300">Le plus rapide</p>
+              <p className="font-display text-h3 font-semibold">Écrivez-nous sur WhatsApp, nous répondons pendant les heures d’ouverture.</p>
+              <div>
+                <Button href={whatsappUrl()} size="lg" icon={<WhatsAppIcon className="size-5" />}>
+                  Ouvrir WhatsApp
+                </Button>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </Card>
 
-      {/* Why choose us */}
-      <section className="py-20 lg:py-24 bg-secondary">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-14">
-            <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-4">
-              Nos atouts
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Pourquoi choisir PeleAI ?
-            </h2>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {reasons.map((reason) => (
-              <div key={reason.title} className="bg-card rounded-2xl p-8 text-center border border-border/50 hover:shadow-lg hover:shadow-accent/[0.05] hover:-translate-y-1 transition-all duration-300">
-                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent">
-                  <reason.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">
-                  {reason.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {reason.description}
-                </p>
+            <Card className="grid gap-5">
+              <ul className="grid gap-4">
+                <li>
+                  <a href={contact.phoneHref} className="group flex items-center gap-4 rounded-field">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand-100 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
+                      <PhoneIcon className="size-5" />
+                    </span>
+                    <span className="grid">
+                      <span className="text-small text-ink-soft">Téléphone</span>
+                      <span className="font-semibold text-ink">{contact.phoneDisplay}</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href={`mailto:${contact.email}`} className="group flex items-center gap-4 rounded-field">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand-100 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
+                      <MailIcon className="size-5" />
+                    </span>
+                    <span className="grid min-w-0">
+                      <span className="text-small text-ink-soft">Email</span>
+                      <span className="break-all font-semibold text-ink">{contact.email}</span>
+                    </span>
+                  </a>
+                </li>
+                <li className="flex items-center gap-4">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand-100 text-brand">
+                    <PinIcon className="size-5" />
+                  </span>
+                  <span className="grid">
+                    <span className="text-small text-ink-soft">Adresse</span>
+                    <span className="font-semibold text-ink">{contact.address}</span>
+                  </span>
+                </li>
+              </ul>
+              <div className="grid gap-2 border-t border-line pt-5">
+                <p className="font-display text-label font-medium uppercase text-ink-soft">Horaires</p>
+                <dl className="grid gap-1">
+                  {contact.hours.map((h) => (
+                    <div key={h.days} className="flex justify-between gap-4">
+                      <dt className="text-ink-soft">{h.days}</dt>
+                      <dd className="font-semibold tabular-nums text-ink">{h.time}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </Card>
 
-      {/* WhatsApp CTA */}
-      <section className="py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              Des questions ?
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Consultez notre FAQ ou contactez-nous directement. Notre équipe est là pour vous aider.
-            </p>
-            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <ContactWhatsAppCta />
+            <div className="overflow-hidden rounded-card border border-line bg-white">
+              <iframe
+                title="Carte : PeleAI à Abidjan"
+                src="https://www.google.com/maps?q=Abidjan%2C%20C%C3%B4te%20d%E2%80%99Ivoire&z=12&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="block aspect-[4/3] w-full border-0"
+              />
+              <p className="p-4">
+                <Todo>adresse précise du bureau pour centrer la carte</Todo>
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     </>
   )
 }

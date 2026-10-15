@@ -1,26 +1,30 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Geist_Mono } from 'next/font/google'
+import { Outfit, Source_Sans_3 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-import { Header } from '@/components/layout/header'
-import { Footer } from '@/components/layout/footer'
-import { WhatsAppButton } from '@/components/whatsapp-button'
+import { SiteHeader } from '@/components/layout/site-header'
+import { SiteFooter } from '@/components/layout/site-footer'
+import { WhatsAppFloat } from '@/components/site/whatsapp-float'
+import { NavTransitionMarker } from '@/components/ds/motion'
 import { SiteContentProvider } from '@/components/providers/site-content-provider'
-import { DynamicSiteHead } from '@/components/site/dynamic-site-head'
 import { OrganizationJsonLd } from '@/components/site/json-ld'
 import { getSiteUrl } from '@/lib/site-url'
 
 const siteUrl = getSiteUrl()
 const defaultOgImage = '/images/peleai-logo-on-white.png'
 
-const inter = Inter({ 
+/** Titres : géométrique, en écho au mot « PeleAI » du logo. */
+const outfit = Outfit({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-outfit',
+  display: 'swap',
 })
 
-const geistMono = Geist_Mono({ 
+/** Texte courant : humaniste, lisible en petite taille sur mobile. */
+const sourceSans = Source_Sans_3({
   subsets: ['latin'],
-  variable: '--font-geist-mono',
+  variable: '--font-source-sans',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -63,12 +67,13 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [{ url: '/images/peleai-icon-dark.png', type: 'image/png' }],
+    icon: [{ url: '/brand/icone-p.png', type: 'image/png' }],
+    apple: [{ url: '/brand/icone-p.png' }],
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#2E5A9C',
+  themeColor: '#345594',
   width: 'device-width',
   initialScale: 1,
 }
@@ -79,17 +84,23 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${geistMono.variable}`} data-scroll-behavior="smooth">
-      <body className="font-sans antialiased" suppressHydrationWarning>
+    <html lang="fr" className={`${outfit.variable} ${sourceSans.variable}`} data-scroll-behavior="smooth">
+      <body suppressHydrationWarning>
+        <a
+          href="#contenu"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-night focus:px-5 focus:py-3 focus:font-display focus:font-semibold focus:text-white"
+        >
+          Aller au contenu
+        </a>
         <OrganizationJsonLd />
         <SiteContentProvider>
-          <DynamicSiteHead />
-          <Header />
-          <main className="min-h-screen">
+          <SiteHeader />
+          <main id="contenu" className="min-h-screen">
             {children}
           </main>
-          <Footer />
-          <WhatsAppButton />
+          <SiteFooter />
+          <WhatsAppFloat />
+          <NavTransitionMarker />
         </SiteContentProvider>
         <Analytics />
       </body>
