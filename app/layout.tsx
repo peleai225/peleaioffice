@@ -1,74 +1,78 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Geist_Mono } from 'next/font/google'
+import { Outfit, Source_Sans_3 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-import { Header } from '@/components/layout/header'
-import { Footer } from '@/components/layout/footer'
-import { WhatsAppButton } from '@/components/whatsapp-button'
-import { SiteContentProvider } from '@/components/providers/site-content-provider'
-import { DynamicSiteHead } from '@/components/site/dynamic-site-head'
+import { SiteHeader } from '@/components/layout/site-header'
+import { SiteFooter } from '@/components/layout/site-footer'
+import { WhatsAppFloat } from '@/components/site/whatsapp-float'
+import { NavTransitionMarker } from '@/components/ui/motion'
 import { OrganizationJsonLd } from '@/components/site/json-ld'
+import { site } from '@/content/site'
 import { getSiteUrl } from '@/lib/site-url'
 
 const siteUrl = getSiteUrl()
-const defaultOgImage = '/images/peleai-logo-on-white.png'
+const defaultTitle = 'PeleAI — Agence digitale et IA à Abidjan, Côte d’Ivoire'
 
-const inter = Inter({ 
+/** Titres : géométrique, en écho au mot « PeleAI » du logo. */
+const outfit = Outfit({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-outfit',
+  display: 'swap',
 })
 
-const geistMono = Geist_Mono({ 
+/** Texte courant : humaniste, lisible en petite taille sur mobile. */
+const sourceSans = Source_Sans_3({
   subsets: ['latin'],
-  variable: '--font-geist-mono',
+  variable: '--font-source-sans',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'PeleAI - L\'Innovation par l\'Intelligence Artificielle',
+    default: defaultTitle,
     template: '%s | PeleAI',
   },
-  description: 'Agence digitale spécialisée dans la création de sites web, marketing digital, branding et solutions IA. Transformez votre entreprise avec PeleAI.',
-  keywords: ['agence digitale', 'intelligence artificielle', 'création site web', 'marketing digital', 'branding', 'Afrique', 'PME', 'startup'],
-  authors: [{ name: 'PeleAI' }],
+  description: site.description,
+  applicationName: 'PeleAI',
+  authors: [{ name: 'Pelecho Junior Koné', url: '/a-propos/pelecho-junior-kone' }],
   creator: 'PeleAI',
+  publisher: 'PeleAI',
   alternates: {
     canonical: '/',
   },
+  // L'image de partage est générée par app/opengraph-image.tsx (convention de fichier Next.js).
   openGraph: {
     type: 'website',
-    locale: 'fr_FR',
+    locale: 'fr_CI',
     siteName: 'PeleAI',
     url: '/',
-    title: 'PeleAI - L\'Innovation par l\'Intelligence Artificielle',
-    description: 'Transformez votre entreprise avec des solutions digitales sur-mesure.',
-    images: [
-      {
-        url: defaultOgImage,
-        width: 1200,
-        height: 630,
-        alt: 'PeleAI',
-      },
-    ],
+    title: defaultTitle,
+    description: site.description,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PeleAI - L\'Innovation par l\'Intelligence Artificielle',
-    description: 'Transformez votre entreprise avec des solutions digitales sur-mesure.',
-    images: [defaultOgImage],
+    title: defaultTitle,
+    description: site.description,
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
+  // Codes de vérification Search Console / Bing, posés via les variables d'environnement (jamais en dur).
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.BING_SITE_VERIFICATION ? { 'msvalidate.01': process.env.BING_SITE_VERIFICATION } : undefined,
   },
   icons: {
-    icon: [{ url: '/images/peleai-icon-dark.png', type: 'image/png' }],
+    icon: [{ url: '/brand/icone-p.png', type: 'image/png' }],
+    apple: [{ url: '/brand/icone-p.png' }],
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#2E5A9C',
+  themeColor: '#345594',
   width: 'device-width',
   initialScale: 1,
 }
@@ -79,18 +83,22 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${geistMono.variable}`} data-scroll-behavior="smooth">
-      <body className="font-sans antialiased" suppressHydrationWarning>
+    <html lang="fr" className={`${outfit.variable} ${sourceSans.variable}`} data-scroll-behavior="smooth">
+      <body suppressHydrationWarning>
+        <a
+          href="#contenu"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-night focus:px-5 focus:py-3 focus:font-display focus:font-semibold focus:text-white"
+        >
+          Aller au contenu
+        </a>
         <OrganizationJsonLd />
-        <SiteContentProvider>
-          <DynamicSiteHead />
-          <Header />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
-          <WhatsAppButton />
-        </SiteContentProvider>
+        <SiteHeader />
+        <main id="contenu" className="min-h-screen">
+          {children}
+        </main>
+        <SiteFooter />
+        <WhatsAppFloat />
+        <NavTransitionMarker />
         <Analytics />
       </body>
     </html>

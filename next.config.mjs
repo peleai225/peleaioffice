@@ -9,16 +9,22 @@ const nextConfig = {
   turbopack: {
     root: __dirname,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  /** Images servies en AVIF ou WebP, redimensionnées selon l’écran (connexions mobiles lentes). */
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+  },
+  /** Anciennes adresses du site v3, redirigées vers leurs équivalents. */
+  async redirects() {
+    return [
+      { source: '/portfolio', destination: '/a-propos', permanent: true },
+      { source: '/menupro', destination: '/realisations/menupro', permanent: true },
+      { source: '/peleai360', destination: '/realisations', permanent: true },
+    ]
   },
   async headers() {
     return [
       {
-        source: '/admin/:path*',
+        source: '/design-system',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
       },
     ]
