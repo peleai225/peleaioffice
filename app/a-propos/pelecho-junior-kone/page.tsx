@@ -159,6 +159,7 @@ export default function FounderPage() {
                 <h3 className="font-display text-h3 font-semibold text-ink">
                   {c.role} · {c.org}
                 </h3>
+                <p className="text-ink-soft">{c.text}</p>
                 {c.todo && (
                   <span>
                     <Todo>{c.todo}</Todo>
@@ -167,6 +168,56 @@ export default function FounderPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </Section>
+
+      <Section tone="paper" aria-labelledby="formation-titre">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid content-start gap-8">
+            <SectionHeader id="formation-titre" eyebrow="Formation" title="Diplômes." />
+            <ul className="grid gap-4">
+              {founder.education.map((e) => (
+                <li key={e.degree}>
+                  <Reveal className="grid gap-2 rounded-card border border-line bg-white p-6">
+                    <span className="font-display text-label font-medium uppercase text-brand">{e.year}</span>
+                    <h3 className="font-display text-h3 font-semibold text-ink">
+                      {e.degree}
+                      {!e.field.startsWith('[') && ` en ${e.field.charAt(0).toLowerCase()}${e.field.slice(1)}`}
+                    </h3>
+                    {!e.school.startsWith('[') && <p className="text-ink-soft">{e.school}</p>}
+                    {e.note && <p className="text-small text-ink-soft">{e.note}</p>}
+                    {e.todo && (
+                      <span>
+                        <Todo>{e.todo}</Todo>
+                      </span>
+                    )}
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="grid content-start gap-8">
+            <SectionHeader eyebrow="Distinctions" title="Prix et certificats." />
+            <ul className="grid gap-4">
+              {founder.awards.map((a) => (
+                <li key={a.title}>
+                  <Reveal className="grid grid-cols-[2rem_minmax(0,1fr)] gap-4 rounded-card border border-line bg-white p-6">
+                    <Arc size={26} className="mt-1 text-cta" />
+                    <div className="grid gap-2">
+                      <span className="font-display text-label font-medium uppercase text-brand">{a.year}</span>
+                      <h3 className="font-display text-[1.1875rem] font-semibold leading-snug text-ink">{a.title}</h3>
+                      {a.detail && <p className="text-small text-ink-soft">{a.detail}</p>}
+                      {a.todo && (
+                        <span>
+                          <Todo>{a.todo}</Todo>
+                        </span>
+                      )}
+                    </div>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Section>
 

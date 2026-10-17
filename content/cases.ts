@@ -46,7 +46,7 @@ export const cases: CaseStudy[] = [
       'Des notifications WhatsApp pour tenir le client informé',
       'Des visuels de lancement pour faire connaître le service',
     ],
-    results: ['Plateforme en ligne sur menupro.ci depuis 2025'],
+    results: ['11 restaurants actifs sur la plateforme', 'En ligne sur menupro.ci depuis 2025'],
     image: {
       src: '/realisations/showcase/menupro-promo-scan-qr.png',
       alt: 'Visuel de lancement MenuPro : un client commande depuis son téléphone après avoir scanné le QR code de sa table.',
@@ -74,7 +74,7 @@ export const cases: CaseStudy[] = [
       },
     ],
     url: 'https://menupro.ci/',
-    todo: 'nombre de restaurants équipés ou de commandes traitées',
+    todo: 'captures d’écran de la plateforme (menu, commande, tableau de bord)',
   },
   {
     slug: 'laboratoires-virtuels-uvci-iua',
@@ -86,7 +86,7 @@ export const cases: CaseStudy[] = [
     services: ['Plateforme web', 'Transformation digitale'],
     serviceSlugs: ['transformation-digitale', 'sites-internet'],
     context:
-      'Les travaux pratiques demandent des équipements et des salles. Pour une université à distance comme l’UVCI, ou pour des étudiants qui ne peuvent pas toujours se déplacer, c’est un frein réel.',
+      'Les travaux pratiques demandent des équipements et des salles. Pour une université à distance comme l’UVCI, ou pour des étudiants qui ne peuvent pas toujours se déplacer, c’est un frein réel. Le sujet est familier à PeleAI : le mémoire de master de son fondateur (UVCI, 2025) portait sur la réalisation d’un laboratoire virtuel pour l’apprentissage des sciences expérimentales.',
     challenge:
       'Donner accès aux séances pratiques et aux ressources pédagogiques en ligne, sans dépendre d’une salle ni d’un matériel coûteux.',
     solution: [

@@ -22,32 +22,74 @@ export const founder = {
   languages: 'Français · Anglais',
   /** Résumé court : page À propos, signature d'article, llms.txt. */
   summary:
-    'Pelecho Junior Koné est le fondateur de PeleAI, agence de transformation numérique basée à Abidjan. Consultant en transformation numérique, il accompagne entreprises, entrepreneurs et organisations dans le développement web, le commerce en ligne et l’intelligence artificielle, et forme leurs équipes aux outils numériques.',
+    'Pelecho Junior Koné est le fondateur de PeleAI, agence de transformation numérique basée à Abidjan. Consultant en transformation numérique et titulaire d’un master en design 3D et animation de l’Université Virtuelle de Côte d’Ivoire, il accompagne entreprises, entrepreneurs et organisations dans le développement web, le commerce en ligne et l’intelligence artificielle, et forme leurs équipes aux outils numériques.',
   bio: [
     'Consultant spécialisé en transformation numérique, Pelecho Junior Koné aide les entreprises à surmonter leurs défis technologiques en proposant des solutions adaptées et en facilitant leur déploiement. Il a accompagné plus de dix entreprises dans leurs projets.',
-    'À travers PeleAI, il conçoit et déploie des solutions digitales pour les entreprises ivoiriennes : sites internet, boutiques en ligne, outils métier et solutions d’intelligence artificielle. Il est à l’origine de MenuPro, une plateforme lancée en 2025 pour digitaliser la restauration en Côte d’Ivoire.',
-    'Il organise des masterclass sur l’IA, le code et le numérique, et assure lui-même la formation. Son parcours comprend également des projets autour des technologies immersives et de la formation aux outils numériques dans l’enseignement supérieur.',
+    'À travers PeleAI, il conçoit et déploie des solutions digitales pour les entreprises ivoiriennes : sites internet, boutiques en ligne, outils métier et solutions d’intelligence artificielle. Il est à l’origine de MenuPro, une plateforme lancée en 2025 qui équipe aujourd’hui 11 restaurants en Côte d’Ivoire.',
+    'Avant PeleAI, il a dirigé MIRIGROUP, une startup spécialisée dans le métavers, récompensée par le prix spécial de la meilleure initiative de l’année académique 2022-2023 pour sa contribution à la vulgarisation du numérique. À l’Université Virtuelle de Côte d’Ivoire, il a développé des environnements virtuels et des espaces de métavers.',
+    'Formé à l’Université Virtuelle de Côte d’Ivoire, il est titulaire d’une licence en développement d’applications et e-services et d’un master en design 3D et animation (2025), obtenu avec un mémoire sur la réalisation d’un laboratoire virtuel pour l’apprentissage des sciences expérimentales. Il prépare aujourd’hui un doctorat.',
+    'Il organise des masterclass sur l’IA, le code et le numérique, et assure lui-même la formation.',
   ],
   /** Domaines d'expertise (données structurées « knowsAbout »). */
   expertise: [
     'Transformation numérique',
     'Intelligence artificielle',
     'Développement web',
+    'Métavers et environnements virtuels',
+    'Design 3D et animation',
+    'Laboratoires virtuels',
     'Commerce en ligne',
     'Formation aux outils numériques',
-    'Technologies immersives',
   ],
   /** Projets portés ou réalisés (slugs de content/cases.ts quand ils existent). */
   highlights: [
-    { title: 'MenuPro', text: 'Plateforme de commande et de paiement Mobile Money pour les restaurants, lancée en 2025.', href: '/realisations/menupro' },
+    { title: 'MenuPro', text: 'Plateforme de commande et de paiement Mobile Money pour les restaurants, lancée en 2025 : 11 restaurants actifs.', href: '/realisations/menupro' },
     { title: 'Laboratoires virtuels UVCI et IUA', text: 'Travaux pratiques en ligne pour l’enseignement supérieur.', href: '/realisations/laboratoires-virtuels-uvci-iua' },
     { title: 'Masterclass IA & codage', text: 'Sessions ouvertes pour apprendre à utiliser l’IA et à coder avec elle (décembre 2025).', href: '/formations' },
   ],
-  /** Parcours : intitulés et dates à confirmer avant publication détaillée. */
+  /** Parcours professionnel. */
   career: [
-    { org: 'PeleAI', role: 'Fondateur', period: '[À CONFIRMER]', todo: 'année de création de PeleAI' },
-    { org: 'MIRIGROUP', role: 'Consultant', period: '[À CONFIRMER]', todo: 'intitulé exact du poste et dates' },
-    { org: 'UVCI', role: 'Projets numériques et formation', period: 'Depuis 2024 [À CONFIRMER]', todo: 'fonction exacte et dates' },
+    { org: 'PeleAI', role: 'Fondateur', period: '[À CONFIRMER]', text: 'Agence de transformation numérique à Abidjan.', todo: 'année de création de PeleAI' },
+    {
+      org: 'UVCI',
+      role: 'Développeur d’environnements virtuels et métavers',
+      period: '[À CONFIRMER]',
+      text: 'Conception et développement d’environnements virtuels 3D pour l’Université Virtuelle de Côte d’Ivoire.',
+      todo: 'dates de début et de fin',
+    },
+    {
+      org: 'MIRIGROUP',
+      role: 'Gérant',
+      period: '[À CONFIRMER]',
+      text: 'Startup spécialisée dans le métavers. Prix spécial de la meilleure initiative de l’année académique 2022-2023.',
+      todo: 'dates de début et de fin',
+    },
+  ],
+  /** Formation universitaire. */
+  education: [
+    { degree: 'Doctorat', field: '[À CONFIRMER]', school: '[À CONFIRMER]', year: 'En cours', todo: 'établissement et sujet de thèse' },
+    {
+      degree: 'Master',
+      field: 'Design 3D et animation',
+      school: 'Université Virtuelle de Côte d’Ivoire (UVCI)',
+      year: '2025',
+      note: 'Mémoire : réalisation d’un laboratoire virtuel pour l’apprentissage des sciences expérimentales.',
+    },
+    { degree: 'Licence', field: 'Développement d’applications et e-services', school: 'Université Virtuelle de Côte d’Ivoire (UVCI)', year: '[À CONFIRMER]', todo: 'année d’obtention' },
+  ],
+  /** Prix et certificats. */
+  awards: [
+    {
+      title: 'Prix spécial de la meilleure initiative de l’année académique 2022-2023',
+      detail: 'Décerné à MIRIGROUP en reconnaissance de son excellence et de sa contribution à la vulgarisation du numérique.',
+      year: '2022-2023',
+    },
+    {
+      title: 'Certificat de participation : organisation de l’Africa CEO Tech Day',
+      detail: 'Club des DSI, 13 et 14 juin 2024.',
+      year: '2024',
+    },
+    { title: 'Certificat de participation, Abidjan Business School', detail: '', year: '[À CONFIRMER]', todo: 'intitulé de la formation et année' },
   ],
   /** Profils publics vérifiés : alimentent « sameAs » (essentiel pour Google et les IA). */
   profiles: [
@@ -55,5 +97,5 @@ export const founder = {
     { label: 'MarTech Africa', url: 'https://martechafrica.com/experts/pelecho-junior-kone/' },
   ],
   linkedin: 'https://ci.linkedin.com/in/pelecho-junior-kone-0b569a278',
-  todo: 'études, diplômes, certifications, interventions publiques (dates et lieux), photos en situation',
+  todo: 'interventions publiques (dates et lieux) et photos en situation',
 }

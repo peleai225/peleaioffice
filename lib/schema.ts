@@ -31,6 +31,16 @@ export function founderSchema() {
     knowsAbout: founder.expertise,
     knowsLanguage: ['fr', 'en'],
     homeLocation: { '@type': 'Place', name: founder.location },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Université Virtuelle de Côte d’Ivoire', alternateName: 'UVCI', url: 'https://www.uvci.edu.ci/' },
+    hasCredential: founder.education
+      .filter((e) => !e.field.startsWith('['))
+      .map((e) => ({
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'degree',
+        name: `${e.degree} en ${e.field}`,
+        recognizedBy: { '@type': 'CollegeOrUniversity', name: e.school },
+      })),
+    award: founder.awards.filter((a) => !a.todo).map((a) => a.title),
     sameAs: founder.profiles.map((p) => p.url),
   }
 }

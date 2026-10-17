@@ -16,7 +16,7 @@ export const stats: Stat[] = [
   // Source : bio du fondateur (« plus de dix entreprises accompagnées »). À confirmer.
   { figure: '10+', label: 'entreprises accompagnées', gauge: 0.8 },
   { figure: 'XX', label: 'personnes formées', gauge: 0.6, todo: 'nombre de personnes formées' },
-  { figure: 'XX', label: "années d’activité", gauge: 0.4, todo: "années d’activité" },
+  { figure: '11', label: 'restaurants équipés de MenuPro', gauge: 0.55 },
 ]
 
 /** Clients et projets réels cités sur l’ancien site. [À CONFIRMER : accord de chaque client pour être cité] */
