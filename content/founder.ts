@@ -28,7 +28,7 @@ export const founder = {
     'À travers PeleAI, il conçoit et déploie des solutions digitales pour les entreprises ivoiriennes : sites internet, boutiques en ligne, outils métier et solutions d’intelligence artificielle. Il est à l’origine de MenuPro, une plateforme lancée en 2025 qui équipe aujourd’hui 11 restaurants en Côte d’Ivoire.',
     'Son parcours s’est construit autour du métavers et des environnements immersifs. Il a dirigé MIRIGROUP, une startup spécialisée dans le métavers, récompensée par le prix spécial de la meilleure initiative de l’année académique 2022-2023 pour sa contribution à la vulgarisation du numérique. À l’Université Virtuelle de Côte d’Ivoire, il a mis en place la plateforme de conférence virtuelle ; à l’Institut Universitaire d’Abidjan, il a conçu des espaces 3D et assuré des formations à l’IA pédagogique.',
     'Il est également directeur marketing et DSI de DayConsulting depuis octobre 2024.',
-    'Formé à l’Université Virtuelle de Côte d’Ivoire, il est titulaire d’une licence en développement d’applications et e-services et d’un master en design 3D et animation (2025), obtenu avec un mémoire sur la réalisation d’un laboratoire virtuel pour l’apprentissage des sciences expérimentales. Il prépare aujourd’hui un doctorat.',
+    'Formé à l’Université Virtuelle de Côte d’Ivoire, il est titulaire d’une licence en développement d’applications et e-services et d’un master en design 3D et animation, obtenu avec mention en décembre 2025 ; son mémoire portait sur la réalisation d’un laboratoire virtuel pour l’apprentissage des sciences expérimentales. Il prépare aujourd’hui un doctorat.',
     'Il organise des masterclass sur l’IA, le code et le numérique, et assure lui-même la formation.',
   ],
   /** Domaines d'expertise (données structurées « knowsAbout »). */
@@ -52,10 +52,10 @@ export const founder = {
   /** Parcours professionnel. */
   career: [
     {
-      org: 'PeleAI et MenuPro',
+      org: 'PeleAI',
       role: 'Fondateur et CEO',
-      period: '2025 – aujourd’hui',
-      text: 'Pilotage de PeleAI (agence IA) et de MenuPro (SaaS de restauration), et gestion de PeleAI360, plateforme de pilotage pour PME.',
+      period: '2023 – aujourd’hui',
+      text: 'Pilotage de l’agence PeleAI, de MenuPro (SaaS de restauration lancé en 2025) et de PeleAI360, plateforme de pilotage pour PME.',
     },
     { org: 'DayConsulting', role: 'Directeur marketing et DSI', period: 'Oct. 2024 – aujourd’hui', text: 'Marketing et systèmes d’information.' },
     {
@@ -81,7 +81,6 @@ export const founder = {
       role: 'Gérant',
       period: '2022 – oct. 2024',
       text: 'Startup spécialisée dans le métavers. Prix spécial de la meilleure initiative de l’année académique 2022-2023.',
-      todo: 'intitulé : « Gérant » (ton message) ou « Consultant en transformation numérique » (ton CV) ?',
     },
     {
       org: 'CVD Daloa et Croquettes de Viande',
@@ -97,9 +96,8 @@ export const founder = {
       degree: 'Master',
       field: 'Design 3D et animation audiovisuelle',
       school: 'Université Virtuelle de Côte d’Ivoire (UVCI)',
-      year: '2025',
-      note: 'Mémoire : réalisation d’un laboratoire virtuel pour l’apprentissage des sciences expérimentales.',
-      todo: 'ton CV indique Master 1 en 2024-2025 et Master 2 en 2025-2026 : confirmer l’année d’obtention du master',
+      year: 'Décembre 2025',
+      note: 'Obtenu avec mention. Mémoire : réalisation d’un laboratoire virtuel pour l’apprentissage des sciences expérimentales.',
     },
     { degree: 'Licence', field: 'Développement d’applications et e-services', school: 'Université Virtuelle de Côte d’Ivoire (UVCI)', year: '[À CONFIRMER]', todo: 'année d’obtention' },
   ],

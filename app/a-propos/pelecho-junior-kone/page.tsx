@@ -155,16 +155,11 @@ export default function FounderPage() {
             {founder.career.map((c) => (
               <li key={c.org} className="relative grid gap-1">
                 <span aria-hidden="true" className="absolute -left-[41px] top-1.5 size-4 rounded-full border-4 border-tint bg-brand" />
-                <span className="font-display text-label font-medium uppercase text-brand">{c.period}</span>
+                <span className="font-display text-label font-medium uppercase text-brand">{c.period.startsWith('[') ? '' : c.period}</span>
                 <h3 className="font-display text-h3 font-semibold text-ink">
                   {c.role} · {c.org}
                 </h3>
                 <p className="text-ink-soft">{c.text}</p>
-                {c.todo && (
-                  <span>
-                    <Todo>{c.todo}</Todo>
-                  </span>
-                )}
               </li>
             ))}
           </ol>
@@ -179,7 +174,7 @@ export default function FounderPage() {
               {founder.education.map((e) => (
                 <li key={e.degree}>
                   <Reveal className="grid gap-2 rounded-card border border-line bg-white p-6">
-                    <span className="font-display text-label font-medium uppercase text-brand">{e.year}</span>
+                    <span className="font-display text-label font-medium uppercase text-brand">{e.year.startsWith('[') ? '' : e.year}</span>
                     <h3 className="font-display text-h3 font-semibold text-ink">
                       {e.degree}
                       {!e.field.startsWith('[') && ` en ${e.field.charAt(0).toLowerCase()}${e.field.slice(1)}`}
@@ -204,7 +199,7 @@ export default function FounderPage() {
                   <Reveal className="grid grid-cols-[2rem_minmax(0,1fr)] gap-4 rounded-card border border-line bg-white p-6">
                     <Arc size={26} className="mt-1 text-cta" />
                     <div className="grid gap-2">
-                      <span className="font-display text-label font-medium uppercase text-brand">{a.year}</span>
+                      <span className="font-display text-label font-medium uppercase text-brand">{a.year.startsWith('[') ? '' : a.year}</span>
                       <h3 className="font-display text-[1.1875rem] font-semibold leading-snug text-ink">{a.title}</h3>
                       {a.detail && <p className="text-small text-ink-soft">{a.detail}</p>}
                       {a.todo && (

@@ -1,7 +1,6 @@
 /**
  * Pages légales, adaptées au droit ivoirien (loi n° 2013-450 du 19 juin 2013 relative à la protection
  * des données à caractère personnel ; autorité de contrôle : ARTCI).
- * Les informations d’immatriculation manquent : elles portent [À REMPLACER : …].
  * À faire relire par un juriste avant la mise en ligne.
  */
 
@@ -15,22 +14,14 @@ export const mentions: LegalSection[] = [
       'Siège : Abidjan, Côte d’Ivoire.',
       'Téléphone : +225 05 06 80 53 82 · Email : peleai.ci@gmail.com',
     ],
-    todo: [
-      'société qui exploite la marque PeleAI (SARLU PELEGROUP en cours de création ?), forme juridique et capital social',
-      'adresse complète du siège',
-      'numéro RCCM',
-      'numéro de compte contribuable (NCC)',
-    ],
   },
   {
     title: 'Directeur de la publication',
-    paragraphs: ['Le directeur de la publication est le représentant légal de PeleAI.'],
-    todo: ['nom du directeur de la publication'],
+    paragraphs: ['Le directeur de la publication est Pelecho Junior Koné, fondateur de PeleAI.'],
   },
   {
     title: 'Hébergement',
     paragraphs: ['Le site est hébergé par Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis — vercel.com.'],
-    todo: ['confirmer l’hébergeur retenu pour la mise en ligne'],
   },
   {
     title: 'Propriété intellectuelle',
@@ -58,7 +49,6 @@ export const privacy: LegalSection[] = [
       'PeleAI, Abidjan, Côte d’Ivoire, est responsable des traitements de données personnelles réalisés via ce site. Contact : peleai.ci@gmail.com.',
       'Les traitements sont réalisés conformément à la loi n° 2013-450 du 19 juin 2013 relative à la protection des données à caractère personnel.',
     ],
-    todo: ['numéro de déclaration ou d’autorisation auprès de l’ARTCI, le cas échéant'],
   },
   {
     title: 'Données collectées',
@@ -83,8 +73,7 @@ export const privacy: LegalSection[] = [
   },
   {
     title: 'Durée de conservation',
-    paragraphs: ['Les demandes de contact sont conservées le temps nécessaire au traitement de votre demande, puis archivées ou supprimées.'],
-    todo: ['durée de conservation précise (par exemple 3 ans après le dernier échange)'],
+    paragraphs: ['Les demandes de contact sont conservées le temps nécessaire au traitement de votre demande, puis au plus trois ans après notre dernier échange. Elles sont ensuite supprimées.'],
   },
   {
     title: 'Vos droits',

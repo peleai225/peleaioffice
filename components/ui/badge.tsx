@@ -26,7 +26,13 @@ export function Badge({ variant = 'neutral', className, children }: { variant?: 
   )
 }
 
-/** Marque visible d'un contenu manquant : `[À REMPLACER : …]`. */
+/**
+ * Marque d'un contenu manquant : `[À REMPLACER : …]`.
+ * Visible en développement ; masquée sur le site public, sauf si NEXT_PUBLIC_SHOW_TODOS=true
+ * (à poser sur les prévisualisations Vercel pour relire ce qui manque).
+ */
 export function Todo({ children }: { children: ReactNode }) {
+  const visible = process.env.NODE_ENV !== 'production' || process.env.NEXT_PUBLIC_SHOW_TODOS === 'true'
+  if (!visible) return null
   return <Badge variant="todo">[À REMPLACER : {children}]</Badge>
 }

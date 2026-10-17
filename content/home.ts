@@ -15,7 +15,7 @@ export type Stat = { figure: string; label: string; gauge: number; todo?: string
 export const stats: Stat[] = [
   // Source : bio du fondateur (« plus de dix entreprises accompagnées »). À confirmer.
   { figure: '10+', label: 'entreprises accompagnées', gauge: 0.8 },
-  { figure: 'XX', label: 'personnes formées', gauge: 0.6, todo: 'nombre de personnes formées' },
+  { figure: '60+', label: 'personnes formées', gauge: 0.65 },
   { figure: '11', label: 'restaurants équipés de MenuPro', gauge: 0.55 },
 ]
 

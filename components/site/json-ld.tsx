@@ -16,6 +16,7 @@ export function OrganizationJsonLd() {
           '@id': `${base}/#organization`,
           name: site.name,
           slogan: site.slogan,
+          foundingDate: '2023',
           description: site.description,
           url: base,
           logo: { '@type': 'ImageObject', url: `${base}/brand/logo-bleu.png`, width: 1200, height: 515 },

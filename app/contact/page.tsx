@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Button, Card, Section, Todo } from '@/components/ui'
+import { Button, Card, Section } from '@/components/ui'
 import { ProjectForm } from '@/components/forms/project-form'
 import { PageHero } from '@/components/sections/page-hero'
 import { MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from '@/components/site/icons'
@@ -98,9 +98,6 @@ export default async function ContactPage({ searchParams }: Props) {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="block aspect-[4/3] w-full border-0"
               />
-              <p className="p-4">
-                <Todo>adresse précise du bureau pour centrer la carte</Todo>
-              </p>
             </div>
           </div>
         </div>

@@ -129,6 +129,10 @@
   p {
     text-wrap: pretty;
   }
+  /* Conteneurs de mentions [À REMPLACER] masquées en production : ne pas laisser d'espace vide. */
+  span:not([class]):empty {
+    display: none;
+  }
   ::selection {
     background: var(--brand-200);
     color: var(--ink);

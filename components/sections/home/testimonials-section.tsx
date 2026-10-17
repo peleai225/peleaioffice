@@ -4,6 +4,8 @@ import { testimonials } from '@/content/home'
 /** Témoignages : une grande citation à la fois. Aucun témoignage n'est inventé. */
 export function TestimonialsSection() {
   const [first] = testimonials
+  // Aucun témoignage inventé : sans témoignage réel, la section ne s’affiche pas.
+  if (!first) return null
 
   return (
     <Section tone="tint" aria-labelledby="temoignages-titre">
