@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { SignalWaves } from '@/components/ds'
+import { SignalWaves } from '@/components/ui'
 
 /**
  * Ondes du hero qui suivent légèrement le curseur (pointeur fin uniquement).

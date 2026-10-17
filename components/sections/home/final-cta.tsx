@@ -1,4 +1,4 @@
-import { ArcWatermark, Button, Magnetic, Section } from '@/components/ds'
+import { ArcWatermark, Button, Magnetic, Section } from '@/components/ui'
 import { PhoneIcon, WhatsAppIcon } from '@/components/site/icons'
 import { finalCta } from '@/content/home'
 import { contact, primaryCta, site, whatsappUrl } from '@/content/site'

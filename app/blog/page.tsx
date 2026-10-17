@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArcWatermark, Badge, Reveal, Section, Tilt } from '@/components/ds'
+import { ArcWatermark, Badge, Reveal, Section, Tilt } from '@/components/ui'
 import { PageHero } from '@/components/sections/page-hero'
 import { formatDate, posts, readingTime } from '@/content/blog'
 

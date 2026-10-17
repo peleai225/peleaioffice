@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArcList, Button, Eyebrow, Heading, Lead, Section } from '@/components/ds'
+import { ArcList, Button, Eyebrow, Heading, Lead, Section } from '@/components/ui'
 import { training } from '@/content/home'
 
 export function TrainingTeaser() {

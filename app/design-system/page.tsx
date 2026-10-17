@@ -22,7 +22,7 @@ import {
   SignalWaves,
   Textarea,
   Todo,
-} from '@/components/ds'
+} from '@/components/ui'
 import { brandScale, contrasts, motion, roles, spacing, typeScale } from '@/lib/design-tokens'
 
 export const metadata: Metadata = {

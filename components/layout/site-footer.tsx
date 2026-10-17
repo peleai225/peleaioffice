@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArcWatermark, Logo } from '@/components/ds'
+import { ArcWatermark, Logo } from '@/components/ui'
 import { MailIcon, PhoneIcon, PinIcon, WhatsAppIcon, socialIcons } from '@/components/site/icons'
 import { services } from '@/content/services'
 import { contact, legalNav, mainNav, site, social, whatsappUrl } from '@/content/site'

@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from 'react'
 import { sendContact } from '@/app/contact/actions'
-import { Arc, ArcLoader, Button, Field, Input, Select, Textarea } from '@/components/ds'
+import { Arc, ArcLoader, Button, Field, Input, Select, Textarea } from '@/components/ui'
 import { WhatsAppIcon } from '@/components/site/icons'
 import { whatsappUrl } from '@/content/site'
 import { contactSubjects, type ContactFields, type ContactState } from '@/lib/contact'

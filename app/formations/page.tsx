@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { ArcList, ArcWatermark, Badge, Button, Card, Reveal, Section, SectionHeader, Tilt, Todo } from '@/components/ds'
+import { ArcList, ArcWatermark, Badge, Button, Card, Reveal, Section, SectionHeader, Tilt, Todo } from '@/components/ui'
 import { Faq } from '@/components/sections/faq'
 import { FinalCta } from '@/components/sections/home/final-cta'
 import { PageHero } from '@/components/sections/page-hero'

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ArcList, Button, Heading, Lead, Reveal, Section } from '@/components/ds'
+import { ArcList, Button, Heading, Lead, Reveal, Section } from '@/components/ui'
 import { FinalCta } from '@/components/sections/home/final-cta'
 import { MethodSteps } from '@/components/sections/home/method-steps'
 import { PageHero } from '@/components/sections/page-hero'

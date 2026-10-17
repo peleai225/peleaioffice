@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Arc, ArcList, ArcWatermark, Button, Card, Reveal, Section, SectionHeader, Tilt, Todo } from '@/components/ds'
+import { Arc, ArcList, ArcWatermark, Button, Card, Reveal, Section, SectionHeader, Tilt, Todo } from '@/components/ui'
 import { Faq } from '@/components/sections/faq'
 import { FinalCta } from '@/components/sections/home/final-cta'
 import { PageHero } from '@/components/sections/page-hero'

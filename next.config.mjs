@@ -9,9 +9,6 @@ const nextConfig = {
   turbopack: {
     root: __dirname,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   /** Images servies en AVIF ou WebP, redimensionnées selon l’écran (connexions mobiles lentes). */
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -26,10 +23,6 @@ const nextConfig = {
   },
   async headers() {
     return [
-      {
-        source: '/admin/:path*',
-        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
-      },
       {
         source: '/design-system',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],

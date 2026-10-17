@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Arc, Button, Reveal, Section, SectionHeader } from '@/components/ds'
+import { Arc, Button, Reveal, Section, SectionHeader } from '@/components/ui'
 import { services } from '@/content/services'
 
 /** Services en liste éditoriale : une ligne par service, pas de grille de cartes identiques. */

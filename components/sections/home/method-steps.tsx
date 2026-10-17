@@ -1,4 +1,4 @@
-import { Reveal, Section, SectionHeader } from '@/components/ds'
+import { Reveal, Section, SectionHeader } from '@/components/ui'
 import { method } from '@/content/home'
 
 /** Méthode : une vraie séquence, donc numérotée. */

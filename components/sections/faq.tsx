@@ -1,4 +1,4 @@
-import { Section, SectionHeader } from '@/components/ds'
+import { Section, SectionHeader } from '@/components/ui'
 import { JsonLd } from '@/components/site/structured-data'
 
 /** Questions fréquentes : <details> natif (clavier et lecteurs d'écran sans JavaScript) + FAQPage JSON-LD. */

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArcWatermark, Badge, Button, Card, Reveal, Section, SectionHeader, Tilt, Todo } from '@/components/ds'
+import { ArcWatermark, Badge, Button, Card, Reveal, Section, SectionHeader, Tilt, Todo } from '@/components/ui'
 import { cases } from '@/content/cases'
 
 /** Réalisations : une étude mise en avant en grand, deux plus courtes. */

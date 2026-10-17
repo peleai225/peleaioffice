@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Badge, Button, Reveal, Section } from '@/components/ds'
+import { Badge, Button, Reveal, Section } from '@/components/ui'
 import { CaseCard, CaseVisual } from '@/components/sections/case-card'
 import { FinalCta } from '@/components/sections/home/final-cta'
 import { PageHero } from '@/components/sections/page-hero'

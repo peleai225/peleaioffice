@@ -5,8 +5,7 @@ import './globals.css'
 import { SiteHeader } from '@/components/layout/site-header'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { WhatsAppFloat } from '@/components/site/whatsapp-float'
-import { NavTransitionMarker } from '@/components/ds/motion'
-import { SiteContentProvider } from '@/components/providers/site-content-provider'
+import { NavTransitionMarker } from '@/components/ui/motion'
 import { OrganizationJsonLd } from '@/components/site/json-ld'
 import { getSiteUrl } from '@/lib/site-url'
 
@@ -93,15 +92,13 @@ export default function RootLayout({
           Aller au contenu
         </a>
         <OrganizationJsonLd />
-        <SiteContentProvider>
-          <SiteHeader />
-          <main id="contenu" className="min-h-screen">
-            {children}
-          </main>
-          <SiteFooter />
-          <WhatsAppFloat />
-          <NavTransitionMarker />
-        </SiteContentProvider>
+        <SiteHeader />
+        <main id="contenu" className="min-h-screen">
+          {children}
+        </main>
+        <SiteFooter />
+        <WhatsAppFloat />
+        <NavTransitionMarker />
         <Analytics />
       </body>
     </html>

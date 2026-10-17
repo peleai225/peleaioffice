@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Arc, Button, Section } from '@/components/ds'
+import { Arc, Button, Section } from '@/components/ui'
 
 export const metadata: Metadata = {
   title: 'Page introuvable',

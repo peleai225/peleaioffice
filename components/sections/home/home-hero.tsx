@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import { Button, Eyebrow, Heading, HeroTitleWords, Lead, Magnetic, Section } from '@/components/ds'
+import { Button, Eyebrow, Heading, HeroTitleWords, Lead, Magnetic, Section } from '@/components/ui'
 import { hero } from '@/content/home'
 import { primaryCta, site } from '@/content/site'
 import { HeroWaves } from './hero-waves'

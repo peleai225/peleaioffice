@@ -1,4 +1,4 @@
-import { ArcGauge, ArcWatermark, Section, Todo } from '@/components/ds'
+import { ArcGauge, ArcWatermark, Section, Todo } from '@/components/ui'
 import { clients, stats } from '@/content/home'
 
 /** Bande de preuve : chiffres et clients, juste sous le hero. */

@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react'
-import { ArcWatermark, Eyebrow, Heading, HeroTitleWords, Lead, Section } from '@/components/ds'
+import { ArcWatermark, Eyebrow, Heading, HeroTitleWords, Lead, Section } from '@/components/ui'
 import { Breadcrumbs, type Crumb } from '@/components/site/structured-data'
 
 const delay = (s: number) => ({ '--d': `${s}s` }) as CSSProperties

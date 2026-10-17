@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArcWatermark, Card, Tilt, Todo } from '@/components/ds'
+import { ArcWatermark, Card, Tilt, Todo } from '@/components/ui'
 import type { CaseStudy } from '@/content/cases'
 
 /** Visuel d'une étude de cas : l'image réelle si elle existe, sinon une vignette typographique aux arcs du logo. */

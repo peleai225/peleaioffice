@@ -1,4 +1,4 @@
-import { Arc, Eyebrow, Heading, Reveal, Section } from '@/components/ds'
+import { Arc, Eyebrow, Heading, Reveal, Section } from '@/components/ui'
 import { valuePoints } from '@/content/home'
 
 /** Proposition de valeur : une colonne de titre, une colonne d'engagements. */

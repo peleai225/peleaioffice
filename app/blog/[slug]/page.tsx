@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Arc, Badge, Button, Section } from '@/components/ds'
+import { Arc, Badge, Button, Section } from '@/components/ui'
 import { FinalCta } from '@/components/sections/home/final-cta'
 import { PageHero } from '@/components/sections/page-hero'
 import { JsonLd } from '@/components/site/structured-data'

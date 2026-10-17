@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
 
 /* ==========================================================================
    PeleAI — design system v4
@@ -42,41 +41,6 @@
 
   /* Mouvement */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-
-  /* --- Correspondance avec les tokens shadcn (anciens composants, retirés à l'étape 6) --- */
-  --background: var(--paper);
-  --foreground: var(--ink);
-  --card: #ffffff;
-  --card-foreground: var(--ink);
-  --popover: #ffffff;
-  --popover-foreground: var(--ink);
-  --primary: var(--brand-600);
-  --primary-foreground: #ffffff;
-  --secondary: var(--tint);
-  --secondary-foreground: var(--brand-800);
-  --muted: var(--tint);
-  --muted-foreground: var(--ink-soft);
-  --accent: var(--cta);
-  --accent-foreground: var(--night);
-  --destructive: var(--danger);
-  --destructive-foreground: #ffffff;
-  --border: var(--line);
-  --input: var(--line);
-  --ring: var(--brand-600);
-  --chart-1: var(--brand-600);
-  --chart-2: var(--brand-400);
-  --chart-3: var(--brand-300);
-  --chart-4: var(--cta);
-  --chart-5: var(--brand-800);
-  --radius: 0.75rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: var(--ink);
-  --sidebar-primary: var(--brand-600);
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: var(--tint);
-  --sidebar-accent-foreground: var(--brand-800);
-  --sidebar-border: var(--line);
-  --sidebar-ring: var(--brand-600);
 }
 
 @theme inline {
@@ -138,55 +102,15 @@
   --radius-card: 20px;
   /* rounded-full pour les boutons (extrémité de la hampe du P) */
 
-  /* Anciens rayons shadcn */
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-
   /* Une seule ombre, au survol */
   --shadow-lift: 0 18px 40px -20px rgb(11 21 39 / 0.22);
 
   --ease-out: var(--ease-out);
-
-  /* Tokens shadcn */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--line);
   }
   html {
     -webkit-text-size-adjust: 100%;
@@ -569,109 +493,4 @@ html.nav-ready .page-wave {
   html.nav-ready .page-wave {
     display: none;
   }
-}
-
-/* ==========================================================================
-   LEGACY — classes utilisées par les anciennes pages, supprimées à l'étape 6
-   ========================================================================== */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-@keyframes pulse-ring {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1.6);
-    opacity: 0;
-  }
-}
-.animate-fade-in-up {
-  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
-}
-.animate-slide-in-left {
-  animation: slide-in-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.animate-slide-in-right {
-  animation: slide-in-right 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.animate-float {
-  animation: float 5s ease-in-out infinite;
-}
-.animate-pulse-ring {
-  animation: pulse-ring 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-.animate-delay-100 {
-  animation-delay: 100ms;
-}
-.animate-delay-200 {
-  animation-delay: 200ms;
-}
-.animate-delay-300 {
-  animation-delay: 300ms;
-}
-.animate-delay-400 {
-  animation-delay: 400ms;
-}
-.animate-delay-500 {
-  animation-delay: 500ms;
-}
-.animate-delay-600 {
-  animation-delay: 600ms;
-}
-.afro-pattern-overlay {
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 11px, rgb(52 85 148 / 0.04) 11px, rgb(52 85 148 / 0.04) 12px),
-    repeating-linear-gradient(90deg, transparent, transparent 11px, rgb(52 85 148 / 0.04) 11px, rgb(52 85 148 / 0.04) 12px);
-}
-.afro-card-edge {
-  position: relative;
 }

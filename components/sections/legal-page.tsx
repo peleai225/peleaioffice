@@ -1,4 +1,4 @@
-import { Section, Todo } from '@/components/ds'
+import { Section, Todo } from '@/components/ui'
 import { PageHero } from '@/components/sections/page-hero'
 import type { LegalSection } from '@/content/legal'
 

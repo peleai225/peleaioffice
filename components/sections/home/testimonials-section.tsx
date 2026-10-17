@@ -1,4 +1,4 @@
-import { Arc, Section, SectionHeader, Todo } from '@/components/ds'
+import { Arc, Section, SectionHeader, Todo } from '@/components/ui'
 import { testimonials } from '@/content/home'
 
 /** Témoignages : une grande citation à la fois. Aucun témoignage n'est inventé. */
