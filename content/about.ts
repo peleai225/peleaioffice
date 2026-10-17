@@ -14,8 +14,8 @@ export const values = [
 
 export { founder } from './founder'
 
-export const timeline = [
-  { year: '[À CONFIRMER]', title: 'Création de PeleAI', text: 'Lancement de l’agence à Abidjan.', todo: 'année de création (2023 selon l’ancien site)' },
+export const timeline: { year: string; title: string; text: string; todo?: string }[] = [
+  { year: '2025', title: 'Création de PeleAI', text: 'Lancement de l’agence à Abidjan, aux côtés de MenuPro.' },
   { year: '2025', title: 'Lancement de MenuPro', text: 'Une plateforme de commande et de paiement Mobile Money pour les restaurants.' },
   { year: '2025', title: 'Masterclass IA & codage', text: 'Une session ouverte pour apprendre à utiliser l’IA et à coder avec elle.' },
 ]

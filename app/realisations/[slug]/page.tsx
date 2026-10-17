@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Arc, ArcList, Button, Heading, Reveal, Section, Todo } from '@/components/ui'
-import { CaseVisual } from '@/components/sections/case-card'
+import { BrowserFrame, CaseVisual } from '@/components/sections/case-card'
 import { FinalCta } from '@/components/sections/home/final-cta'
 import { PageHero } from '@/components/sections/page-hero'
 import { JsonLd } from '@/components/site/structured-data'
@@ -79,16 +79,28 @@ export default async function CasePage({ params }: Props) {
       </PageHero>
 
       <Section tone="white" space="none" className="pb-4" aria-label="Visuel du projet">
-        <div className="curtain overflow-hidden rounded-card">
-          <CaseVisual c={c} sizes="(min-width: 1280px) 1240px, 100vw" className="aspect-[16/9] max-h-[640px] w-full" />
-        </div>
+        {c.screenshot ? (
+          <div className="rise mx-auto max-w-[1100px]" style={{ '--d': '0.5s' } as React.CSSProperties}>
+            <BrowserFrame shot={c.screenshot} url={c.url} sizes="(min-width: 1180px) 1100px, 100vw" priority />
+          </div>
+        ) : (
+          <div className="curtain overflow-hidden rounded-card">
+            <CaseVisual c={c} sizes="(min-width: 1280px) 1240px, 100vw" className="aspect-[16/9] max-h-[640px] w-full" />
+          </div>
+        )}
       </Section>
 
       <Section tone="white" aria-labelledby="histoire-titre">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-6">
           <aside className="lg:col-span-4">
             <dl className="grid gap-5 lg:sticky lg:top-28">
-              <Fact label="Client">{c.client}</Fact>
+              <Fact label="Client">
+                {c.logo ? (
+                  <Image src={c.logo.src} alt={c.client} width={c.logo.width} height={c.logo.height} sizes="160px" className="mt-1 h-10 w-auto" />
+                ) : (
+                  c.client
+                )}
+              </Fact>
               <Fact label="Secteur">{c.sector}</Fact>
               {c.year && <Fact label="Année">{c.year}</Fact>}
               <Fact label="Services">

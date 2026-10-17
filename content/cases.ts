@@ -18,7 +18,11 @@ export type CaseStudy = {
   challenge: string
   solution: string[]
   results: string[]
+  /** Visuel carré ou promotionnel (cartes, mise en avant). */
   image?: { src: string; alt: string; width: number; height: number }
+  /** Capture d'écran du site ou de l'application livré (affichée dans un cadre de navigateur). */
+  screenshot?: { src: string; alt: string; width: number; height: number }
+  logo?: { src: string; width: number; height: number }
   gallery?: { src: string; alt: string; width: number; height: number }[]
   url?: string
   todo?: string
@@ -44,6 +48,7 @@ export const cases: CaseStudy[] = [
       'La commande envoyée directement au restaurant',
       'Le paiement par Orange Money, MTN MoMo, Wave et Moov Money',
       'Des notifications WhatsApp pour tenir le client informé',
+      'Un restaurant mis en ligne en 15 minutes, sans commission sur ses ventes',
       'Des visuels de lancement pour faire connaître le service',
     ],
     results: ['11 restaurants actifs sur la plateforme', 'En ligne sur menupro.ci depuis 2025'],
@@ -53,6 +58,13 @@ export const cases: CaseStudy[] = [
       width: 1024,
       height: 1024,
     },
+    screenshot: {
+      src: '/realisations/captures/menupro-site.jpg',
+      alt: 'Page d’accueil de menupro.ci : « La plateforme restaurants qui fait vendre », avec les paiements Wave, Orange, MTN et Moov.',
+      width: 1910,
+      height: 861,
+    },
+    logo: { src: '/realisations/logos/menupro.png', width: 1400, height: 482 },
     gallery: [
       {
         src: '/realisations/showcase/menupro-promo-menu-digitale.png',
@@ -74,7 +86,7 @@ export const cases: CaseStudy[] = [
       },
     ],
     url: 'https://menupro.ci/',
-    todo: 'captures d’écran de la plateforme (menu, commande, tableau de bord)',
+    todo: 'captures de l’application (menu client, commande, tableau de bord restaurateur)',
   },
   {
     slug: 'laboratoires-virtuels-uvci-iua',
@@ -137,16 +149,30 @@ export const cases: CaseStudy[] = [
     slug: 'boua-group',
     client: 'BOUA GROUP',
     sector: 'Conseil · Institutionnel',
-    title: 'Un site institutionnel pour un groupe de conseil.',
-    summary: 'Site institutionnel de BOUA GROUP : conseil stratégique, solutions technologiques et accompagnement des entreprises africaines.',
+    title: 'Un site institutionnel pour un groupe qui connecte institutions et entreprises.',
+    summary:
+      'Site institutionnel de BOUA GROUP (Business Of Unified Africa Group) : présentation des activités du groupe, espace presse, prise de rendez-vous et demande de devis.',
     services: ['Site internet'],
     serviceSlugs: ['sites-internet'],
-    context: 'BOUA GROUP accompagne les entreprises africaines en conseil stratégique et en solutions technologiques.',
-    challenge: 'Présenter des activités variées sous une seule identité, lisible pour des décideurs.',
-    solution: ['Site institutionnel présentant les pôles d’activité', 'Parcours de contact pour les entreprises'],
+    context:
+      'BOUA GROUP connecte institutions, entreprises et territoires pour accélérer le développement en Afrique, à travers le conseil stratégique et les solutions technologiques.',
+    challenge: 'Présenter des activités variées sous une seule identité, crédible pour des décideurs publics et privés, et transformer les visites en rendez-vous.',
+    solution: [
+      'Une page d’accueil qui pose la promesse du groupe : « Innovation, résilience et croissance durable »',
+      'Un univers BOUA qui présente chaque pôle d’activité',
+      'Un espace presse',
+      'Prise de rendez-vous et demande de devis accessibles sur chaque page',
+      'Recherche, sélecteur de langue et mode sombre',
+    ],
     results: ['Site en ligne sur bouagroup.com'],
+    screenshot: {
+      src: '/realisations/captures/boua-group-site.jpg',
+      alt: 'Page d’accueil de bouagroup.com : « Innovation, résilience et croissance durable », avec les boutons Démarrer un projet et Découvrir le groupe.',
+      width: 1902,
+      height: 908,
+    },
     url: 'https://bouagroup.com/',
-    todo: 'capture d’écran et accord du client',
+    todo: 'accord du client pour être cité',
   },
   {
     slug: 'charms',
