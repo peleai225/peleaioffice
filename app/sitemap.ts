@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cases.map((c) => ({ path: `/realisations/${c.slug}`, changeFrequency: 'yearly' as const, priority: 0.7 })),
     { path: '/formations', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/a-propos', changeFrequency: 'yearly', priority: 0.7 },
+    { path: '/a-propos/pelecho-junior-kone', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/blog', changeFrequency: 'weekly', priority: 0.7 },
     ...posts.map((p) => ({ path: `/blog/${p.slug}`, changeFrequency: 'yearly' as const, priority: 0.6, lastModified: p.date })),
     { path: '/contact', changeFrequency: 'yearly', priority: 0.9 },

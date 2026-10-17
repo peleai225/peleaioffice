@@ -12,17 +12,7 @@ export const values = [
   { title: 'Proximité', text: 'Basés à Abidjan, joignables sur WhatsApp, nous connaissons les réalités locales : Mobile Money, connexions mobiles, habitudes de vos clients.' },
 ]
 
-export const founder = {
-  name: 'Pelecho Junior Kone',
-  role: 'Fondateur de PeleAI · Consultant en transformation numérique',
-  photo: '/images/portfolio/pelecho-junior-kone-portrait.png',
-  bio: [
-    'Consultant spécialisé en transformation numérique, il aide les entreprises à surmonter leurs défis technologiques en proposant des solutions adaptées et en facilitant leur déploiement. Il a accompagné plus de dix entreprises dans leurs projets.',
-    'Il organise des masterclass sur l’IA, le code et le numérique, et assure lui-même la formation. Il a conçu MenuPro, lancé en 2025 pour digitaliser la restauration en Côte d’Ivoire.',
-  ],
-  languages: 'Français · Anglais',
-  linkedin: 'https://ci.linkedin.com/in/pelecho-junior-kone-0b569a278',
-}
+export { founder } from './founder'
 
 export const timeline = [
   { year: '[À CONFIRMER]', title: 'Création de PeleAI', text: 'Lancement de l’agence à Abidjan.', todo: 'année de création (2023 selon l’ancien site)' },

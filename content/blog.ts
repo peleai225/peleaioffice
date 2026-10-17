@@ -29,7 +29,7 @@ export const posts: Post[] = [
       'Pas besoin d’un grand projet pour commencer avec l’intelligence artificielle. Voici cinq tâches du quotidien qu’une PME peut lui confier tout de suite, et les précautions à prendre.',
     category: 'Intelligence artificielle',
     date: '2026-10-06',
-    author: 'Pelecho Junior Kone',
+    author: 'Pelecho Junior Koné',
     relatedService: 'solutions-ia',
     blocks: [
       {
@@ -92,7 +92,7 @@ export const posts: Post[] = [
       'Un visiteur décide très vite s’il reste sur votre site ou s’il repart. Voici ce qu’il cherche sur son téléphone, et comment le lui donner sans effort.',
     category: 'Sites internet',
     date: '2026-09-22',
-    author: 'Pelecho Junior Kone',
+    author: 'Pelecho Junior Koné',
     relatedService: 'sites-internet',
     blocks: [
       {

@@ -1,5 +1,6 @@
 import { services } from '@/content/services'
-import { contact, site, social } from '@/content/site'
+import { contact, site } from '@/content/site'
+import { founderSchema } from '@/lib/schema'
 import { getSiteUrl } from '@/lib/site-url'
 import { JsonLd } from './structured-data'
 
@@ -23,8 +24,7 @@ export function OrganizationJsonLd() {
           telephone: contact.phoneDisplay,
           address: { '@type': 'PostalAddress', addressLocality: site.city, addressCountry: 'CI' },
           areaServed: { '@type': 'Country', name: site.country },
-          founder: { '@type': 'Person', name: 'Pelecho Junior Kone' },
-          sameAs: social.map((s) => s.url),
+          founder: founderSchema(),
           hasOfferCatalog: {
             '@type': 'OfferCatalog',
             name: 'Services',

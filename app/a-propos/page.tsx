@@ -9,7 +9,7 @@ import { site } from '@/content/site'
 export const metadata: Metadata = {
   title: 'À propos',
   description:
-    'PeleAI, agence de transformation digitale à Abidjan : notre mission, nos valeurs, notre fondateur Pelecho Junior Kone et notre ancrage ivoirien.',
+    'PeleAI, agence de transformation digitale à Abidjan : notre mission, nos valeurs, notre fondateur Pelecho Junior Koné et notre ancrage ivoirien.',
   alternates: { canonical: '/a-propos' },
 }
 
@@ -52,15 +52,14 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-6 lg:col-span-6 lg:col-start-7">
             <SectionHeader id="equipe-titre" eyebrow="L’équipe" title={founder.name} lead={founder.role} />
-            {founder.bio.map((p) => (
-              <p key={p} className="text-measure text-ink">
-                {p}
-              </p>
-            ))}
+            <p className="text-measure text-ink">{founder.summary}</p>
             <p className="text-small text-ink-soft">Langues : {founder.languages}</p>
             <div className="flex flex-wrap items-center gap-4">
+              <Button href={`/a-propos/${founder.slug}`} variant="secondary" arrow>
+                Lire son profil complet
+              </Button>
               <Button href={founder.linkedin} variant="outline">
-                Voir le profil LinkedIn
+                LinkedIn
               </Button>
               <Todo>autres membres de l’équipe et partenaires réguliers</Todo>
             </div>

@@ -11,12 +11,12 @@ export const mentions: LegalSection[] = [
   {
     title: 'Éditeur du site',
     paragraphs: [
-      'Le présent site est édité par PeleAI, agence de transformation digitale.',
+      'Le présent site, accessible à l’adresse peleai.online, est édité par PeleAI, agence de transformation digitale.',
       'Siège : Abidjan, Côte d’Ivoire.',
       'Téléphone : +225 05 06 80 53 82 · Email : peleai.ci@gmail.com',
     ],
     todo: [
-      'forme juridique et capital social',
+      'société qui exploite la marque PeleAI (SARLU PELEGROUP en cours de création ?), forme juridique et capital social',
       'adresse complète du siège',
       'numéro RCCM',
       'numéro de compte contribuable (NCC)',

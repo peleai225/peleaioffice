@@ -7,6 +7,8 @@ import { PageHero } from '@/components/sections/page-hero'
 import { JsonLd } from '@/components/site/structured-data'
 import { formatDate, getPost, posts, readingTime, type Block } from '@/content/blog'
 import { getService } from '@/content/services'
+import { founder } from '@/content/founder'
+import { schemaIds } from '@/lib/schema'
 import { getSiteUrl } from '@/lib/site-url'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -78,7 +80,7 @@ export default async function PostPage({ params }: Props) {
           description: post.excerpt,
           datePublished: post.date,
           inLanguage: 'fr',
-          author: { '@type': 'Person', name: post.author },
+          author: post.author === founder.name ? { '@type': 'Person', '@id': schemaIds().founder, name: founder.name, url: schemaIds().founderUrl } : { '@type': 'Person', name: post.author },
           publisher: { '@type': 'Organization', '@id': `${base}/#organization`, name: 'PeleAI', logo: { '@type': 'ImageObject', url: `${base}/brand/logo-bleu.png` } },
           mainEntityOfPage: `${base}/blog/${post.slug}`,
         }}
@@ -106,7 +108,15 @@ export default async function PostPage({ params }: Props) {
             </div>
             <div className="flex justify-between gap-3 border-t border-line pt-3">
               <dt className="text-ink-soft">Par</dt>
-              <dd className="font-semibold">{post.author}</dd>
+              <dd className="font-semibold">
+                {post.author === founder.name ? (
+                  <Link href={`/a-propos/${founder.slug}`} rel="author" className="text-brand underline decoration-brand-200 underline-offset-4 hover:decoration-brand">
+                    {post.author}
+                  </Link>
+                ) : (
+                  post.author
+                )}
+              </dd>
             </div>
             <div className="flex justify-between gap-3 border-t border-line pt-3">
               <dt className="text-ink-soft">Lecture</dt>

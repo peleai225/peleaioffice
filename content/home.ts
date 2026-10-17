@@ -68,7 +68,7 @@ export const training = {
   text: "Ateliers en entreprise et masterclass ouvertes : on part de vos tâches réelles (rédiger, analyser, répondre aux clients) et chacun repart avec des méthodes qu’il applique dès le lendemain.",
   points: ['En entreprise ou en session ouverte', 'En présentiel à Abidjan', 'Supports remis à chaque participant'],
   lastSession: 'Dernière masterclass « IA & codage » : 6 décembre 2025',
-  trainer: { name: 'Pelecho Junior Kone', role: 'Fondateur de PeleAI, formateur', photo: '/images/portfolio/pelecho-junior-kone-portrait.png' },
+  trainer: { name: 'Pelecho Junior Koné', role: 'Fondateur de PeleAI, formateur', photo: '/images/portfolio/pelecho-junior-kone-portrait.png' },
 }
 
 export const finalCta = {
